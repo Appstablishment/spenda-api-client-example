@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lnX+GLHV6Ux8n/GQFXlQaKLHoaKgZ6aUCB+usqH/nNsK6Udz0qd1eFWQs0GSBwDMALMTU7gjntK9wrAICuHJBA==",
+  "dgSpecHash": "+AL7fE0bY0xw7MO4VMfUl2Bfw9ZbuEzoyImJyI+X07rATB8ijDYIZwFFVfefudWsRa4VvFYcs6gOyz6esemtxA==",
   "success": true,
-  "projectFilePath": "C:\\Code\\spenda-api-client-example\\C#\\.Net\\SpendaSDK\\SDK.SpendaApi.Client\\SDK.SpendaApi.Client.csproj",
+  "projectFilePath": "C:\\Code\\spenda-api-client-example\\C#\\.Net\\src\\SDK.SpendaApi.Client\\SDK.SpendaApi.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FabianM\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\FabianM\\.nuget\\packages\\restsharp.net2\\1.1.11\\restsharp.net2.1.1.11.nupkg.sha512"
