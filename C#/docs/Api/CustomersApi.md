@@ -4,20 +4,20 @@ All URIs are relative to *https://api.synkd.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CustomersAccountExemptFromMerchantSurcharge**](CustomersApi.md#customersaccountexemptfrommerchantsurcharge) | **POST** /api/Customers/{customerID}/accountexemptfrommerchantsurcharge | 
-[**CustomersDelete**](CustomersApi.md#customersdelete) | **DELETE** /api/v3/Customers/{id} | 
 [**CustomersGet**](CustomersApi.md#customersget) | **GET** /api/v3/Customers | 
-[**CustomersGetAccountCustomerForOperational**](CustomersApi.md#customersgetaccountcustomerforoperational) | **GET** /api/v3/Customers/{id}/account | 
 [**CustomersGetByID**](CustomersApi.md#customersgetbyid) | **GET** /api/v3/Customers/{id} | 
+[**CustomersGetAccountCustomerForOperational**](CustomersApi.md#customersgetaccountcustomerforoperational) | **GET** /api/v3/Customers/{id}/account | 
 [**CustomersGetCustomersWithUnpaidInvoices**](CustomersApi.md#customersgetcustomerswithunpaidinvoices) | **GET** /api/Customers/unpaidinvoices | 
+[**CustomersGetOperationalCustomersForAnAccountCustomer**](CustomersApi.md#customersgetoperationalcustomersforanaccountcustomer) | **GET** /api/v3/Customers/{id}/operational | 
+[**CustomersAccountExemptFromMerchantSurcharge**](CustomersApi.md#customersaccountexemptfrommerchantsurcharge) | **POST** /api/Customers/{customerID}/accountexemptfrommerchantsurcharge | 
 [**CustomersGetMerchantSurcharge**](CustomersApi.md#customersgetmerchantsurcharge) | **POST** /api/Customers/{customerID}/merchantsurcharge | 
 [**CustomersGetMerchantSurchargeForTransactions**](CustomersApi.md#customersgetmerchantsurchargefortransactions) | **POST** /api/Customers/{customerID}/merchantsurcharge/{paymentMethod} | 
-[**CustomersGetOperationalCustomersForAnAccountCustomer**](CustomersApi.md#customersgetoperationalcustomersforanaccountcustomer) | **GET** /api/v3/Customers/{id}/operational | 
-[**CustomersLinkCustomer**](CustomersApi.md#customerslinkcustomer) | **PUT** /api/v3/Customers/{id}/link | 
 [**CustomersPost**](CustomersApi.md#customerspost) | **POST** /api/v3/Customers | 
 [**CustomersPut**](CustomersApi.md#customersput) | **PUT** /api/v3/Customers | 
 [**CustomersSetClass**](CustomersApi.md#customerssetclass) | **PUT** /api/v3/Customers/{id}/class | 
+[**CustomersLinkCustomer**](CustomersApi.md#customerslinkcustomer) | **PUT** /api/v3/Customers/{id}/link | 
 [**CustomersUnlinkCustomer**](CustomersApi.md#customersunlinkcustomer) | **PUT** /api/v3/Customers/{id}/unlink | 
+[**CustomersDelete**](CustomersApi.md#customersdelete) | **DELETE** /api/v3/Customers/{id} | 
 
 <a name="customersaccountexemptfrommerchantsurcharge"></a>
 # **CustomersAccountExemptFromMerchantSurcharge**
