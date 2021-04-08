@@ -84,11 +84,6 @@ All URIs are relative to *https://api.synkd.net*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*CustomerClassApi* | [**CustomerClassDelete**](docs/CustomerClassApi.md#customerclassdelete) | **DELETE** /api/CustomerClass/{id} | 
-*CustomerClassApi* | [**CustomerClassGet**](docs/CustomerClassApi.md#customerclassget) | **GET** /api/CustomerClass | 
-*CustomerClassApi* | [**CustomerClassGetByID**](docs/CustomerClassApi.md#customerclassgetbyid) | **GET** /api/CustomerClass/{id} | 
-*CustomerClassApi* | [**CustomerClassPost**](docs/CustomerClassApi.md#customerclasspost) | **POST** /api/CustomerClass | 
-*CustomerClassApi* | [**CustomerClassPut**](docs/CustomerClassApi.md#customerclassput) | **PUT** /api/CustomerClass/{id} | 
 *CustomersApi* | [**Post Customers**](docs/CustomersApi.md#customerspost) | **POST** /api/v3/Customers | 
 *CustomersApi* | [**Put Customers**](docs/CustomersApi.md#customersput) | **PUT** /api/v3/Customers | 
 *CustomersApi* | [**Delete Customer**](docs/CustomersApi.md#customersdelete) | **DELETE** /api/v3/Customers/{id} | 
