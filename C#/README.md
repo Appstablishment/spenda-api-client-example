@@ -89,20 +89,20 @@ Class | Method | HTTP request | Description
 *CustomerClassApi* | [**CustomerClassGetByID**](docs/CustomerClassApi.md#customerclassgetbyid) | **GET** /api/CustomerClass/{id} | 
 *CustomerClassApi* | [**CustomerClassPost**](docs/CustomerClassApi.md#customerclasspost) | **POST** /api/CustomerClass | 
 *CustomerClassApi* | [**CustomerClassPut**](docs/CustomerClassApi.md#customerclassput) | **PUT** /api/CustomerClass/{id} | 
+*CustomersApi* | [**Post Customers**](docs/CustomersApi.md#customerspost) | **POST** /api/v3/Customers | 
+*CustomersApi* | [**Put Customers**](docs/CustomersApi.md#customersput) | **PUT** /api/v3/Customers | 
+*CustomersApi* | [**Delete Customer**](docs/CustomersApi.md#customersdelete) | **DELETE** /api/v3/Customers/{id} | 
+*CustomersApi* | [**Get Customers**](docs/CustomersApi.md#customersget) | **GET** /api/v3/Customers | 
+*CustomersApi* | [**Get Customers by ID**](docs/CustomersApi.md#customersgetbyid) | **GET** /api/v3/Customers/{id} | 
+*CustomersApi* | [**Get Customers Merchant Surcharge**](docs/CustomersApi.md#customersgetmerchantsurcharge) | **POST** /api/Customers/{customerID}/merchantsurcharge | 
+*CustomersApi* | [**Get Customers AccountCustomerForOperational**](docs/CustomersApi.md#customersgetaccountcustomerforoperational) | **GET** /api/v3/Customers/{id}/account | 
 *CustomersApi* | [**CustomersAccountExemptFromMerchantSurcharge**](docs/CustomersApi.md#customersaccountexemptfrommerchantsurcharge) | **POST** /api/Customers/{customerID}/accountexemptfrommerchantsurcharge | 
-*CustomersApi* | [**CustomersDelete**](docs/CustomersApi.md#customersdelete) | **DELETE** /api/v3/Customers/{id} | 
-*CustomersApi* | [**CustomersGet**](docs/CustomersApi.md#customersget) | **GET** /api/v3/Customers | 
-*CustomersApi* | [**CustomersGetAccountCustomerForOperational**](docs/CustomersApi.md#customersgetaccountcustomerforoperational) | **GET** /api/v3/Customers/{id}/account | 
-*CustomersApi* | [**CustomersGetByID**](docs/CustomersApi.md#customersgetbyid) | **GET** /api/v3/Customers/{id} | 
 *CustomersApi* | [**CustomersGetCustomersWithUnpaidInvoices**](docs/CustomersApi.md#customersgetcustomerswithunpaidinvoices) | **GET** /api/Customers/unpaidinvoices | 
-*CustomersApi* | [**CustomersGetMerchantSurcharge**](docs/CustomersApi.md#customersgetmerchantsurcharge) | **POST** /api/Customers/{customerID}/merchantsurcharge | 
 *CustomersApi* | [**CustomersGetMerchantSurchargeForTransactions**](docs/CustomersApi.md#customersgetmerchantsurchargefortransactions) | **POST** /api/Customers/{customerID}/merchantsurcharge/{paymentMethod} | 
 *CustomersApi* | [**CustomersGetOperationalCustomersForAnAccountCustomer**](docs/CustomersApi.md#customersgetoperationalcustomersforanaccountcustomer) | **GET** /api/v3/Customers/{id}/operational | 
-*CustomersApi* | [**CustomersLinkCustomer**](docs/CustomersApi.md#customerslinkcustomer) | **PUT** /api/v3/Customers/{id}/link | 
-*CustomersApi* | [**CustomersPost**](docs/CustomersApi.md#customerspost) | **POST** /api/v3/Customers | 
-*CustomersApi* | [**CustomersPut**](docs/CustomersApi.md#customersput) | **PUT** /api/v3/Customers | 
-*CustomersApi* | [**CustomersSetClass**](docs/CustomersApi.md#customerssetclass) | **PUT** /api/v3/Customers/{id}/class | 
-*CustomersApi* | [**CustomersUnlinkCustomer**](docs/CustomersApi.md#customersunlinkcustomer) | **PUT** /api/v3/Customers/{id}/unlink | 
+*CustomersApi* | [**Customers Set Class**](docs/CustomersApi.md#customerssetclass) | **PUT** /api/v3/Customers/{id}/class | 
+*CustomersApi* | [**Link Customer**](docs/CustomersApi.md#customerslinkcustomer) | **PUT** /api/v3/Customers/{id}/link | 
+*CustomersApi* | [**Unlink Customer**](docs/CustomersApi.md#customersunlinkcustomer) | **PUT** /api/v3/Customers/{id}/unlink | 
 
 <a name="documentation-for-models"></a>
 ## Documentation for Models
