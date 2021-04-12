@@ -1,4 +1,4 @@
-# IO.Swagger.Api.InventoryApi
+# SDK.SpendaApi.Client.Api.InventoryApi
 
 All URIs are relative to *https://api.synkd.net*
 
@@ -32,11 +32,11 @@ Method | HTTP request | Description
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryAutoCreateUnlinkedVariantsExample
     {
@@ -91,11 +91,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryCheckIfAllVariantsCanBeUnlinkedExample
     {
@@ -150,11 +150,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryCreateAndLinkVariantExample
     {
@@ -211,11 +211,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryDeleteExample
     {
@@ -270,11 +270,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryGetExample
     {
@@ -333,11 +333,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryGetDetailedSOHV2Example
     {
@@ -392,11 +392,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryGetMediaExample
     {
@@ -451,11 +451,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryGetVariantTemplateExample
     {
@@ -512,11 +512,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryLinkVariantExample
     {
@@ -573,11 +573,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryPostExample
     {
@@ -632,11 +632,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryPutExample
     {
@@ -693,11 +693,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventorySaveVariationsExample
     {
@@ -754,11 +754,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventorySearchT2Example
     {
@@ -865,11 +865,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventorySearchUsingBarcodeExample
     {
@@ -936,11 +936,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryUnlinkVariantsFromMasterExample
     {
@@ -995,11 +995,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryUpdateMediaExample
     {
@@ -1056,11 +1056,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InventoryUploadMediaExample
     {

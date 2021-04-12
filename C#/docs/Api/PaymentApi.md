@@ -1,4 +1,4 @@
-# IO.Swagger.Api.PaymentApi
+# SDK.SpendaApi.Client.Api.PaymentApi
 
 All URIs are relative to *https://api.synkd.net*
 
@@ -26,11 +26,11 @@ Method | HTTP request | Description
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class PaymentDeleteExample
     {
@@ -85,11 +85,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class PaymentGetExample
     {
@@ -170,11 +170,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class PaymentGetByIDExample
     {
@@ -241,11 +241,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class PaymentGetPaymentWithAllocationsExample
     {
@@ -300,11 +300,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class PaymentGetStatusExample
     {
@@ -359,11 +359,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class PaymentGetV2Example
     {
@@ -420,11 +420,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class PaymentPostExample
     {
@@ -479,11 +479,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class PaymentPostRefundExample
     {
@@ -540,11 +540,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class PaymentPutExample
     {
@@ -601,11 +601,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class PaymentSetManualAllocationForAdhocPaymentsExample
     {
@@ -662,11 +662,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class PaymentUpdateStatusExample
     {

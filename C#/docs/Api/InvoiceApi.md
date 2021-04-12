@@ -1,4 +1,4 @@
-# IO.Swagger.Api.InvoiceApi
+# SDK.SpendaApi.Client.Api.InvoiceApi
 
 All URIs are relative to *https://api.synkd.net*
 
@@ -27,11 +27,11 @@ Method | HTTP request | Description
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InvoiceAddLinesExample
     {
@@ -88,11 +88,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InvoiceAddLinesPreviewExample
     {
@@ -149,11 +149,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InvoiceDeleteExample
     {
@@ -208,11 +208,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InvoiceDeleteAttachmentExample
     {
@@ -267,11 +267,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InvoiceGetExample
     {
@@ -342,11 +342,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InvoiceGetByIDExample
     {
@@ -401,11 +401,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InvoiceGetMessagesExample
     {
@@ -460,11 +460,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InvoicePostExample
     {
@@ -519,11 +519,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InvoicePutExample
     {
@@ -580,11 +580,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InvoiceSaveAttachmentsExample
     {
@@ -635,11 +635,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InvoiceSendMessageExample
     {
@@ -696,11 +696,11 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class InvoiceUpdateStatusExample
     {

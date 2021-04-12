@@ -33,7 +33,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersAccountExemptFromMerchantSurchargeExample
     {
@@ -94,7 +94,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersDeleteExample
     {
@@ -153,7 +153,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersGetExample
     {
@@ -244,7 +244,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersGetAccountCustomerForOperationalExample
     {
@@ -327,7 +327,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersGetByIDExample
     {
@@ -398,7 +398,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersGetCustomersWithUnpaidInvoicesExample
     {
@@ -557,7 +557,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersGetMerchantSurchargeExample
     {
@@ -618,7 +618,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersGetMerchantSurchargeForTransactionsExample
     {
@@ -681,7 +681,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersGetOperationalCustomersForAnAccountCustomerExample
     {
@@ -842,7 +842,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersLinkCustomerExample
     {
@@ -903,7 +903,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersPostExample
     {
@@ -962,7 +962,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersPutExample
     {
@@ -1023,7 +1023,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersSetClassExample
     {
@@ -1084,7 +1084,7 @@ using SDK.SpendaApi.Client.Api;
 using SDK.SpendaApi.Client.Client;
 using SDK.SpendaApi.Client.Model;
 
-namespace Example
+namespace SDK.SpendaApi.Client
 {
     public class CustomersUnlinkCustomerExample
     {
