@@ -137,7 +137,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="customersget"></a>
 # **CustomersGet**
@@ -228,7 +228,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="customersgetaccountcustomerforoperational"></a>
 # **CustomersGetAccountCustomerForOperational**
@@ -311,7 +311,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="customersgetbyid"></a>
 # **CustomersGetByID**
@@ -382,7 +382,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="customersgetcustomerswithunpaidinvoices"></a>
 # **CustomersGetCustomersWithUnpaidInvoices**
@@ -541,7 +541,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="customersgetmerchantsurcharge"></a>
 # **CustomersGetMerchantSurcharge**
@@ -602,7 +602,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="customersgetmerchantsurchargefortransactions"></a>
 # **CustomersGetMerchantSurchargeForTransactions**
@@ -665,7 +665,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="customersgetoperationalcustomersforanaccountcustomer"></a>
 # **CustomersGetOperationalCustomersForAnAccountCustomer**
@@ -826,7 +826,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="customerslinkcustomer"></a>
 # **CustomersLinkCustomer**
@@ -887,7 +887,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="customerspost"></a>
 # **CustomersPost**
@@ -946,7 +946,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="customersput"></a>
 # **CustomersPut**
@@ -1007,7 +1007,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="customerssetclass"></a>
 # **CustomersSetClass**
@@ -1068,7 +1068,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="customersunlinkcustomer"></a>
 # **CustomersUnlinkCustomer**
@@ -1129,5 +1129,5 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]]((../Models)) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
