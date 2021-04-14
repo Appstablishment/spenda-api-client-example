@@ -18,9 +18,9 @@ Authorisation - Login
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using SDK.SpendaApi.Client.Api;
+using SDK.SpendaApi.Client.Client;
+using SDK.SpendaApi.Client.Model;
 
 namespace Example
 {
