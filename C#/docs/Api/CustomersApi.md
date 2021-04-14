@@ -891,7 +891,7 @@ No authorization required
 
 <a name="customerspost"></a>
 # **CustomersPost**
-> SynkSaveQueueResponseOfCustomerT CustomersPost (SaveRequestOfCustomerT body)
+> SynkSaveQueueResponseOfCustomerT CustomersPost (../Models/SaveRequestOfCustomerT body)
 
 
 
@@ -935,7 +935,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SynkSaveQueueResponseOfCustomerT**](SynkSaveQueueResponseOfCustomerT.md)
+[**SynkSaveQueueResponseOfCustomerT**](../Models/SynkSaveQueueResponseOfCustomerT.md)
 
 ### Authorization
 
