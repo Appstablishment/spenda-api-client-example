@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PagedActionResultsOfCustomers**](PagedActionResultsOfCustomers.md)
+[**PagedActionResultsOfCustomers**](../Models/PagedActionResultsOfCustomers.md)
 
 ### Authorization
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EditResponseOfCustomerT**](EditResponseOfCustomerT.md)
+[**EditResponseOfCustomerT**](../Models/EditResponseOfCustomerT.md)
 
 ### Authorization
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EditResponseOfCustomerT**](EditResponseOfCustomerT.md)
+[**EditResponseOfCustomerT**](../Models/EditResponseOfCustomerT.md)
 
 ### Authorization
 
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PagedActionResultsOfCustomerBalances**](PagedActionResultsOfCustomerBalances.md)
+[**PagedActionResultsOfCustomerBalances**](../Models/PagedActionResultsOfCustomerBalances.md)
 
 ### Authorization
 
@@ -591,7 +591,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResultsOfMerchantSurcharge**](ActionResultsOfMerchantSurcharge.md)
+[**ActionResultsOfMerchantSurcharge**](../Models/ActionResultsOfMerchantSurcharge.md)
 
 ### Authorization
 
@@ -654,7 +654,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResultsOfMerchantSurcharge**](ActionResultsOfMerchantSurcharge.md)
+[**ActionResultsOfMerchantSurcharge**](../Models/ActionResultsOfMerchantSurcharge.md)
 
 ### Authorization
 
@@ -815,7 +815,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PagedActionResultsOfCustomers**](PagedActionResultsOfCustomers.md)
+[**PagedActionResultsOfCustomers**](../Models/PagedActionResultsOfCustomers.md)
 
 ### Authorization
 
@@ -876,7 +876,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -931,7 +931,7 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SaveRequestOfCustomerT**](SaveRequestOfCustomerT.md)|  | 
+ **body** | [**SaveRequestOfCustomerT**](../Models/SaveRequestOfCustomerT.md)|  | 
 
 ### Return type
 
@@ -996,7 +996,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SynkSaveQueueResponseOfCustomerT**](SynkSaveQueueResponseOfCustomerT.md)
+[**SynkSaveQueueResponseOfCustomerT**](../Models/SynkSaveQueueResponseOfCustomerT.md)
 
 ### Authorization
 
@@ -1057,7 +1057,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -1118,7 +1118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
