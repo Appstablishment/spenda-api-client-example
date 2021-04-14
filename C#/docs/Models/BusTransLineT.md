@@ -113,5 +113,5 @@ Name | Type | Description | Notes
 **QuantityRefunded** | **double?** |  | [optional] 
 **ClaimRequestLines** | [**List&lt;ClaimRequestLineT&gt;**](ClaimRequestLineT.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../Models) [[Back to API list]](../Api) [[Back to README]](../README.md)
 

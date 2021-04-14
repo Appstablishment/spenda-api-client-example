@@ -76,7 +76,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="debitnoteaddlinespreview"></a>
 # **DebitNoteAddLinesPreview**
@@ -137,7 +137,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="debitnotedelete"></a>
 # **DebitNoteDelete**
@@ -196,7 +196,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="debitnotedeleteattachment"></a>
 # **DebitNoteDeleteAttachment**
@@ -255,7 +255,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="debitnoteget"></a>
 # **DebitNoteGet**
@@ -414,7 +414,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="debitnotegetbyid"></a>
 # **DebitNoteGetByID**
@@ -581,7 +581,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="debitnotegetmessages"></a>
 # **DebitNoteGetMessages**
@@ -640,7 +640,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="debitnotepost"></a>
 # **DebitNotePost**
@@ -699,7 +699,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="debitnoteput"></a>
 # **DebitNotePut**
@@ -760,7 +760,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="debitnotesaveattachments"></a>
 # **DebitNoteSaveAttachments**
@@ -815,7 +815,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="debitnotesendmessage"></a>
 # **DebitNoteSendMessage**
@@ -876,7 +876,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="debitnoteupdatestatus"></a>
 # **DebitNoteUpdateStatus**
@@ -937,5 +937,5 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 

@@ -144,5 +144,5 @@ Name | Type | Description | Notes
 **Attachments** | [**List&lt;BusTransAttachmentT&gt;**](BusTransAttachmentT.md) |  | [optional] 
 **LinkedTrans** | [**List&lt;LinkedTransactionT&gt;**](LinkedTransactionT.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../Models) [[Back to API list]](../Api) [[Back to README]](../README.md)
 
