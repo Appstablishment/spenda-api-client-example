@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
