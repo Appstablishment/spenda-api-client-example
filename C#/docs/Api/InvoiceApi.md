@@ -76,7 +76,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="invoiceaddlinespreview"></a>
 # **InvoiceAddLinesPreview**
@@ -137,7 +137,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="invoicedelete"></a>
 # **InvoiceDelete**
@@ -196,7 +196,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="invoicedeleteattachment"></a>
 # **InvoiceDeleteAttachment**
@@ -255,7 +255,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="invoiceget"></a>
 # **InvoiceGet**
@@ -330,7 +330,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="invoicegetbyid"></a>
 # **InvoiceGetByID**
@@ -389,7 +389,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="invoicegetmessages"></a>
 # **InvoiceGetMessages**
@@ -448,7 +448,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="invoicepost"></a>
 # **InvoicePost**
@@ -507,7 +507,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="invoiceput"></a>
 # **InvoicePut**
@@ -568,7 +568,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="invoicesaveattachments"></a>
 # **InvoiceSaveAttachments**
@@ -623,7 +623,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="invoicesendmessage"></a>
 # **InvoiceSendMessage**
@@ -684,7 +684,7 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
 <a name="invoiceupdatestatus"></a>
 # **InvoiceUpdateStatus**
@@ -745,5 +745,5 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../Api) [[Back to Model list]](../Models) [[Back to README]](../README.md)
 
