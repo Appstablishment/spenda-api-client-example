@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ClaimRequestLineT
+# SDK.SpendaApi.Client.Model.ClaimRequestLineT
 ## Properties
 
 Name | Type | Description | Notes

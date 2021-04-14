@@ -1,4 +1,4 @@
-# IO.Swagger.Model.FeatureValue
+# SDK.SpendaApi.Client.Model.FeatureValue
 ## Properties
 
 Name | Type | Description | Notes

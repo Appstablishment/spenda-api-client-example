@@ -1,4 +1,4 @@
-# IO.Swagger.Model.SaveRequestOfCustomerT
+# SDK.SpendaApi.Client.Model.SaveRequestOfCustomerT
 ## Properties
 
 Name | Type | Description | Notes

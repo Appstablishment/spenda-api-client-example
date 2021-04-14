@@ -1,4 +1,4 @@
-# IO.Swagger.Model.CustomerTransT
+# SDK.SpendaApi.Client.Model.CustomerTransT
 ## Properties
 
 Name | Type | Description | Notes

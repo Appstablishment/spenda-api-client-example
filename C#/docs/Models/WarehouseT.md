@@ -1,4 +1,4 @@
-# IO.Swagger.Model.WarehouseT
+# SDK.SpendaApi.Client.Model.WarehouseT
 ## Properties
 
 Name | Type | Description | Notes

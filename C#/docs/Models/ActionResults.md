@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ActionResults
+# SDK.SpendaApi.Client.Model.ActionResults
 ## Properties
 
 Name | Type | Description | Notes

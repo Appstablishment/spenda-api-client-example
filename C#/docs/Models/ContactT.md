@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ContactT
+# SDK.SpendaApi.Client.Model.ContactT
 ## Properties
 
 Name | Type | Description | Notes

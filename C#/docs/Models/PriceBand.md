@@ -1,4 +1,4 @@
-# IO.Swagger.Model.PriceBand
+# SDK.SpendaApi.Client.Model.PriceBand
 ## Properties
 
 Name | Type | Description | Notes

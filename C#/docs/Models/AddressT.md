@@ -1,4 +1,4 @@
-# IO.Swagger.Model.AddressT
+# SDK.SpendaApi.Client.Model.AddressT
 ## Properties
 
 Name | Type | Description | Notes

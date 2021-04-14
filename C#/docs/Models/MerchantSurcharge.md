@@ -1,4 +1,4 @@
-# IO.Swagger.Model.MerchantSurcharge
+# SDK.SpendaApi.Client.Model.MerchantSurcharge
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EditResponseOfCustomerT
+# SDK.SpendaApi.Client.Model.EditResponseOfCustomerT
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.BankAccountT
+# SDK.SpendaApi.Client.Model.BankAccountT
 ## Properties
 
 Name | Type | Description | Notes

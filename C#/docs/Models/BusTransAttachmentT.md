@@ -1,4 +1,4 @@
-# IO.Swagger.Model.BusTransAttachmentT
+# SDK.SpendaApi.Client.Model.BusTransAttachmentT
 ## Properties
 
 Name | Type | Description | Notes

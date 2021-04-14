@@ -1,4 +1,4 @@
-# IO.Swagger.Model.LinkedTransactionT
+# SDK.SpendaApi.Client.Model.LinkedTransactionT
 ## Properties
 
 Name | Type | Description | Notes

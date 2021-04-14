@@ -1,4 +1,4 @@
-# IO.Swagger.Model.CustomerBalance
+# SDK.SpendaApi.Client.Model.CustomerBalance
 ## Properties
 
 Name | Type | Description | Notes

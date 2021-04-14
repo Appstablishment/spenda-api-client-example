@@ -1,4 +1,4 @@
-# IO.Swagger.Model.CustomerClassT
+# SDK.SpendaApi.Client.Model.CustomerClassT
 ## Properties
 
 Name | Type | Description | Notes

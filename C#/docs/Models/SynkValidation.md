@@ -1,4 +1,4 @@
-# IO.Swagger.Model.SynkValidation
+# SDK.SpendaApi.Client.Model.SynkValidation
 ## Properties
 
 Name | Type | Description | Notes

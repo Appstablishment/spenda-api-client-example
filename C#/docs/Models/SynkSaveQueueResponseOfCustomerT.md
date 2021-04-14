@@ -1,4 +1,4 @@
-# IO.Swagger.Model.SynkSaveQueueResponseOfCustomerT
+# SDK.SpendaApi.Client.Model.SynkSaveQueueResponseOfCustomerT
 ## Properties
 
 Name | Type | Description | Notes

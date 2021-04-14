@@ -1,4 +1,4 @@
-# IO.Swagger.Model.RefBusTranT
+# SDK.SpendaApi.Client.Model.RefBusTranT
 ## Properties
 
 Name | Type | Description | Notes

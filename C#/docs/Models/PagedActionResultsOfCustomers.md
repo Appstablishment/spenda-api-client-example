@@ -1,4 +1,4 @@
-# IO.Swagger.Model.PagedActionResultsOfCustomers
+# SDK.SpendaApi.Client.Model.PagedActionResultsOfCustomers
 ## Properties
 
 Name | Type | Description | Notes

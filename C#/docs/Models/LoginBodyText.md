@@ -1,4 +1,4 @@
-# IO.Swagger.Model.LoginBodyText
+# SDK.SpendaApi.Client.Model.LoginBodyText
 ## Properties
 
 Name | Type | Description | Notes

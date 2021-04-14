@@ -1,4 +1,4 @@
-# IO.Swagger.Model.SyncLogT
+# SDK.SpendaApi.Client.Model.SyncLogT
 ## Properties
 
 Name | Type | Description | Notes
