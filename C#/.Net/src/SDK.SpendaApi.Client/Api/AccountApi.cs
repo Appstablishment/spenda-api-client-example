@@ -21,9 +21,9 @@ namespace IO.Swagger.Api
         /// jim.citizen+spenda@email.net encoded &#x3D;&gt;  jim.citizen%2Bspenda%40email.net 
         /// &#x27;+&#x27; symbol becomes &#x27;%2B&#x27; &#x27;@&#x27; symbol becomes &#x27;%40&#x27;</param>
         /// <returns></returns>
-        void AuthorisationLogin (string contentType, string body);
+        void AuthorisationLogin(string contentType, string body);
     }
-  
+
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
@@ -37,11 +37,11 @@ namespace IO.Swagger.Api
         public AccountApi(ApiClient apiClient = null)
         {
             if (apiClient == null) // use the default one in Configuration
-                this.ApiClient = Configuration.DefaultApiClient; 
+                this.ApiClient = Configuration.DefaultApiClient;
             else
                 this.ApiClient = apiClient;
         }
-    
+
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountApi"/> class.
         /// </summary>
@@ -50,7 +50,7 @@ namespace IO.Swagger.Api
         {
             this.ApiClient = new ApiClient(basePath);
         }
-    
+
         /// <summary>
         /// Sets the base path of the API client.
         /// </summary>
@@ -60,7 +60,7 @@ namespace IO.Swagger.Api
         {
             this.ApiClient.BasePath = basePath;
         }
-    
+
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
@@ -70,13 +70,13 @@ namespace IO.Swagger.Api
         {
             return this.ApiClient.BasePath;
         }
-    
+
         /// <summary>
         /// Gets or sets the API client.
         /// </summary>
         /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient {get; set;}
-    
+        public ApiClient ApiClient { get; set; }
+
         /// <summary>
         /// Authorisation - Login Authorisation - Login
         /// </summary>
@@ -92,36 +92,36 @@ namespace IO.Swagger.Api
         ///  
         ///   &#x27;@&#x27; symbol becomes &#x27;%40&#x27;</param>
         /// <returns></returns>
-        public void AuthorisationLogin (string contentType, string body)
+        public void AuthorisationLogin(string contentType, string body)
         {
             // verify the required parameter 'contentType' is set
             if (contentType == null) throw new ApiException(400, "Missing required parameter 'contentType' when calling AuthorisationLogin");
-    
+
             var path = "/api/login";
             path = path.Replace("{format}", "json");
-                
+
             var queryParams = new Dictionary<String, String>();
             var headerParams = new Dictionary<String, String>();
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
-                         if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
+
+            if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
             postBody = ApiClient.Serialize(body); // http body (model) parameter
 
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
+            String[] authSettings = new String[] { };
+
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
+            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling AuthorisationLogin: " + response.Content, response.Content);
+                throw new ApiException((int)response.StatusCode, "Error calling AuthorisationLogin: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling AuthorisationLogin: " + response.ErrorMessage, response.ErrorMessage);
-    
+                throw new ApiException((int)response.StatusCode, "Error calling AuthorisationLogin: " + response.ErrorMessage, response.ErrorMessage);
+
             return;
         }
-    
+
     }
 }
