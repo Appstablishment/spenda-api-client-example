@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -550,7 +550,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SynkSaveQueueResponse**](SynkSaveQueueResponse.md)
+[**SynkSaveQueueResponse**](../Models/SynkSaveQueueResponse.md)
 
 ### Authorization
 
@@ -665,7 +665,7 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InventorySaveRequest**](InventorySaveRequest.md)|  | 
+ **body** | [**InventorySaveRequest**](../Models/InventorySaveRequest.md)|  | 
  **id** | **int?**|  | 
 
 ### Return type
@@ -726,7 +726,7 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActionRequestOfInventoryVariations**](ActionRequestOfInventoryVariations.md)|  | 
+ **body** | [**ActionRequestOfInventoryVariations**](../Models/ActionRequestOfInventoryVariations.md)|  | 
  **masterInventoryID** | **int?**|  | 
 
 ### Return type
@@ -1028,7 +1028,7 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**List<MediaFileT>**](MediaFileT.md)|  | 
+ **body** | [**List<MediaFileT>**](../Models/MediaFileT.md)|  | 
  **id** | **int?**|  | 
 
 ### Return type
