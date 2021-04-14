@@ -586,7 +586,7 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActionRequestOfMerchantSurcharge**](ActionRequestOfMerchantSurcharge.md)|  | 
+ **body** | [**ActionRequestOfMerchantSurcharge**](../Models/ActionRequestOfMerchantSurcharge.md)|  | 
  **customerID** | **int?**|  | 
 
 ### Return type
@@ -648,7 +648,7 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**List<RefBusTranT>**](RefBusTranT.md)|  | 
+ **body** | [**List<RefBusTranT>**](../Models/RefBusTranT.md)|  | 
  **customerID** | **int?**|  | 
  **paymentMethod** | **string**|  | 
 
@@ -991,7 +991,7 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SaveRequestOfCustomerT**](SaveRequestOfCustomerT.md)|  | 
+ **body** | [**SaveRequestOfCustomerT**](../Models/SaveRequestOfCustomerT.md)|  | 
  **id** | **int?**|  | 
 
 ### Return type

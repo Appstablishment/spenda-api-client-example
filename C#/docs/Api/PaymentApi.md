@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PagedActionResultsOfPayments**](PagedActionResultsOfPayments.md)
+[**PagedActionResultsOfPayments**](../Models/PagedActionResultsOfPayments.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EditResponseOfPaymentT**](EditResponseOfPaymentT.md)
+[**EditResponseOfPaymentT**](../Models/EditResponseOfPaymentT.md)
 
 ### Authorization
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResultsOfPaymentT**](ActionResultsOfPaymentT.md)
+[**ActionResultsOfPaymentT**](../Models/ActionResultsOfPaymentT.md)
 
 ### Authorization
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PagedActionResultsOfPayments**](PagedActionResultsOfPayments.md)
+[**PagedActionResultsOfPayments**](../Models/PagedActionResultsOfPayments.md)
 
 ### Authorization
 
@@ -452,11 +452,11 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SaveRequestOfPaymentT**](SaveRequestOfPaymentT.md)|  | 
+ **body** | [**SaveRequestOfPaymentT**](../Models/SaveRequestOfPaymentT.md)|  | 
 
 ### Return type
 
-[**SynkSaveQueueResponseOfPaymentT**](SynkSaveQueueResponseOfPaymentT.md)
+[**SynkSaveQueueResponseOfPaymentT**](../Models/SynkSaveQueueResponseOfPaymentT.md)
 
 ### Authorization
 
@@ -512,12 +512,12 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SaveRequestOfPaymentT**](SaveRequestOfPaymentT.md)|  | 
+ **body** | [**SaveRequestOfPaymentT**](../Models/SaveRequestOfPaymentT.md)|  | 
  **id** | **int?**|  | 
 
 ### Return type
 
-[**SynkSaveQueueResponseOfPaymentT**](SynkSaveQueueResponseOfPaymentT.md)
+[**SynkSaveQueueResponseOfPaymentT**](../Models/SynkSaveQueueResponseOfPaymentT.md)
 
 ### Authorization
 
@@ -573,12 +573,12 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SaveRequestOfPaymentT**](SaveRequestOfPaymentT.md)|  | 
+ **body** | [**SaveRequestOfPaymentT**](../Models/SaveRequestOfPaymentT.md)|  | 
  **id** | **int?**|  | 
 
 ### Return type
 
-[**SynkSaveQueueResponseOfPaymentT**](SynkSaveQueueResponseOfPaymentT.md)
+[**SynkSaveQueueResponseOfPaymentT**](../Models/SynkSaveQueueResponseOfPaymentT.md)
 
 ### Authorization
 
@@ -634,12 +634,12 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActionRequestOfBoolean**](ActionRequestOfBoolean.md)|  | 
+ **body** | [**ActionRequestOfBoolean**](../Models/ActionRequestOfBoolean.md)|  | 
  **id** | **int?**|  | 
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -695,12 +695,12 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**StatusUpdateRequest**](StatusUpdateRequest.md)|  | 
+ **body** | [**StatusUpdateRequest**](../Models/StatusUpdateRequest.md)|  | 
  **id** | **int?**|  | 
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 

@@ -60,12 +60,12 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AddLinesRequest**](AddLinesRequest.md)|  | 
+ **body** | [**AddLinesRequest**](../Models/AddLinesRequest.md)|  | 
  **id** | **int?**|  | 
 
 ### Return type
 
-[**AddLinesResponseOfInvoiceT**](AddLinesResponseOfInvoiceT.md)
+[**AddLinesResponseOfInvoiceT**](../Models/AddLinesResponseOfInvoiceT.md)
 
 ### Authorization
 
@@ -121,12 +121,12 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AddLinesRequest**](AddLinesRequest.md)|  | 
+ **body** | [**AddLinesRequest**](../Models/AddLinesRequest.md)|  | 
  **id** | **int?**|  | 
 
 ### Return type
 
-[**AddLinesResponseOfInvoiceT**](AddLinesResponseOfInvoiceT.md)
+[**AddLinesResponseOfInvoiceT**](../Models/AddLinesResponseOfInvoiceT.md)
 
 ### Authorization
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -240,11 +240,11 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BusTransAttachmentT**](BusTransAttachmentT.md)|  | 
+ **body** | [**BusTransAttachmentT**](../Models/BusTransAttachmentT.md)|  | 
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PagedActionResultsOfBusTransSearchResultsT**](PagedActionResultsOfBusTransSearchResultsT.md)
+[**PagedActionResultsOfBusTransSearchResultsT**](../Models/PagedActionResultsOfBusTransSearchResultsT.md)
 
 ### Authorization
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TransactionEditResponseOfInvoiceT**](TransactionEditResponseOfInvoiceT.md)
+[**TransactionEditResponseOfInvoiceT**](../Models/TransactionEditResponseOfInvoiceT.md)
 
 ### Authorization
 
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResultsOfBusTransMessages**](ActionResultsOfBusTransMessages.md)
+[**ActionResultsOfBusTransMessages**](../Models/ActionResultsOfBusTransMessages.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TransactionSaveRequestOfInvoiceT**](TransactionSaveRequestOfInvoiceT.md)|  | 
+ **body** | [**TransactionSaveRequestOfInvoiceT**](../Models/TransactionSaveRequestOfInvoiceT.md)|  | 
 
 ### Return type
 
@@ -552,7 +552,7 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TransactionSaveRequestOfInvoiceT**](TransactionSaveRequestOfInvoiceT.md)|  | 
+ **body** | [**TransactionSaveRequestOfInvoiceT**](../Models/TransactionSaveRequestOfInvoiceT.md)|  | 
  **id** | **int?**|  | 
 
 ### Return type
@@ -612,7 +612,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<FileDetails>**](FileDetails.md)
+[**List<FileDetails>**](../Models/FileDetails.md)
 
 ### Authorization
 
@@ -668,12 +668,12 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BusTransMessageT**](BusTransMessageT.md)|  | 
+ **body** | [**BusTransMessageT**](../Models/BusTransMessageT.md)|  | 
  **id** | **int?**|  | 
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -729,12 +729,12 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateTransStatusRequest**](UpdateTransStatusRequest.md)|  | 
+ **body** | [**UpdateTransStatusRequest**](../Models/UpdateTransStatusRequest.md)|  | 
  **id** | **int?**|  | 
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 

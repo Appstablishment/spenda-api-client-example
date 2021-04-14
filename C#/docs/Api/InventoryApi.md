@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResultsOfBoolean**](ActionResultsOfBoolean.md)
+[**ActionResultsOfBoolean**](../Models/ActionResultsOfBoolean.md)
 
 ### Authorization
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -243,7 +243,7 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActionRequestOfInt32**](ActionRequestOfInt32.md)|  | 
+ **body** | [**ActionRequestOfInt32**](../Models/ActionRequestOfInt32.md)|  | 
 
 ### Return type
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InventoryEditResponse**](InventoryEditResponse.md)
+[**InventoryEditResponse**](../Models/InventoryEditResponse.md)
 
 ### Authorization
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResultsOfInventoryStockOnHandT**](ActionResultsOfInventoryStockOnHandT.md)
+[**ActionResultsOfInventoryStockOnHandT**](../Models/ActionResultsOfInventoryStockOnHandT.md)
 
 ### Authorization
 
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResultsOfMediaFiles**](ActionResultsOfMediaFiles.md)
+[**ActionResultsOfMediaFiles**](../Models/ActionResultsOfMediaFiles.md)
 
 ### Authorization
 
@@ -489,7 +489,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResultsOfInventoryItemT**](ActionResultsOfInventoryItemT.md)
+[**ActionResultsOfInventoryItemT**](../Models/ActionResultsOfInventoryItemT.md)
 
 ### Authorization
 
@@ -545,7 +545,7 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ActionRequestOfChildVariant**](ActionRequestOfChildVariant.md)|  | 
+ **body** | [**ActionRequestOfChildVariant**](../Models/ActionRequestOfChildVariant.md)|  | 
  **masterInventoryID** | **int?**|  | 
 
 ### Return type
@@ -605,7 +605,7 @@ namespace SDK.SpendaApi.Client
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InventorySaveRequest**](InventorySaveRequest.md)|  | 
+ **body** | [**InventorySaveRequest**](../Models/InventorySaveRequest.md)|  | 
 
 ### Return type
 
@@ -670,7 +670,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SynkSaveQueueResponse**](SynkSaveQueueResponse.md)
+[**SynkSaveQueueResponse**](../Models/SynkSaveQueueResponse.md)
 
 ### Authorization
 
@@ -731,7 +731,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResultsOfInventoryVariations**](ActionResultsOfInventoryVariations.md)
+[**ActionResultsOfInventoryVariations**](../Models/ActionResultsOfInventoryVariations.md)
 
 ### Authorization
 
@@ -842,7 +842,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PagedActionResultsOfInventoryItems**](PagedActionResultsOfInventoryItems.md)
+[**PagedActionResultsOfInventoryItems**](../Models/PagedActionResultsOfInventoryItems.md)
 
 ### Authorization
 
@@ -913,7 +913,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PagedActionResultsOfInventoryItems**](PagedActionResultsOfInventoryItems.md)
+[**PagedActionResultsOfInventoryItems**](../Models/PagedActionResultsOfInventoryItems.md)
 
 ### Authorization
 
@@ -972,7 +972,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -1033,7 +1033,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResults**](ActionResults.md)
+[**ActionResults**](../Models/ActionResults.md)
 
 ### Authorization
 
@@ -1092,7 +1092,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActionResultsOfMediaFiles**](ActionResultsOfMediaFiles.md)
+[**ActionResultsOfMediaFiles**](../Models/ActionResultsOfMediaFiles.md)
 
 ### Authorization
 
