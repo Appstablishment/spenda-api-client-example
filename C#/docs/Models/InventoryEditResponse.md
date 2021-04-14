@@ -1,4 +1,4 @@
-# IO.Swagger.Model.InventoryEditResponse
+# SDK.SpendaApi.Client.Model.InventoryEditResponse
 ## Properties
 
 Name | Type | Description | Notes

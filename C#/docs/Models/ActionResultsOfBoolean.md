@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ActionResultsOfBoolean
+# SDK.SpendaApi.Client.Model.ActionResultsOfBoolean
 ## Properties
 
 Name | Type | Description | Notes

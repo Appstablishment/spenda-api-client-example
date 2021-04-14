@@ -1,4 +1,4 @@
-# IO.Swagger.Model.InventorySaveRequest
+# SDK.SpendaApi.Client.Model.InventorySaveRequest
 ## Properties
 
 Name | Type | Description | Notes

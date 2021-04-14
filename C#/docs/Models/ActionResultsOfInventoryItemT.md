@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ActionResultsOfInventoryItemT
+# SDK.SpendaApi.Client.Model.ActionResultsOfInventoryItemT
 ## Properties
 
 Name | Type | Description | Notes

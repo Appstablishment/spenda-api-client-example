@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ActionResultsOfInventoryStockOnHandT
+# SDK.SpendaApi.Client.Model.ActionResultsOfInventoryStockOnHandT
 ## Properties
 
 Name | Type | Description | Notes

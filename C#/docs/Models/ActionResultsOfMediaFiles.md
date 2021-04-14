@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ActionResultsOfMediaFiles
+# SDK.SpendaApi.Client.Model.ActionResultsOfMediaFiles
 ## Properties
 
 Name | Type | Description | Notes

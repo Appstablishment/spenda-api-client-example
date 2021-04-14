@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ActionRequestOfInventoryVariations
+# SDK.SpendaApi.Client.Model.ActionRequestOfInventoryVariations
 ## Properties
 
 Name | Type | Description | Notes

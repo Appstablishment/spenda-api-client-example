@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ActionRequestOfInt32
+# SDK.SpendaApi.Client.Model.ActionRequestOfInt32
 ## Properties
 
 Name | Type | Description | Notes

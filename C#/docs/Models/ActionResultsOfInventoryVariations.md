@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ActionResultsOfInventoryVariations
+# SDK.SpendaApi.Client.Model.ActionResultsOfInventoryVariations
 ## Properties
 
 Name | Type | Description | Notes

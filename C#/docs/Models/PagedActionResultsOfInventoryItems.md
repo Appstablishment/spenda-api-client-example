@@ -1,4 +1,4 @@
-# IO.Swagger.Model.PagedActionResultsOfInventoryItems
+# SDK.SpendaApi.Client.Model.PagedActionResultsOfInventoryItems
 ## Properties
 
 Name | Type | Description | Notes

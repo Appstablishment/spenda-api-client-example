@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ActionRequestOfChildVariant
+# SDK.SpendaApi.Client.Model.ActionRequestOfChildVariant
 ## Properties
 
 Name | Type | Description | Notes
