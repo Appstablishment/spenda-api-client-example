@@ -4,6 +4,7 @@ using Swagger.Api;
 using Swagger.Client;
 using Swagger.Model;
 using SDK.SpendaApi.Examples;
+using System.Linq;
 
 namespace SDK.SpendaApi
 {
@@ -13,18 +14,44 @@ namespace SDK.SpendaApi
         {
             Console.WriteLine("Hello World!");
 
+            //TODO
             var apiClient = new ApiClient();
+            //Login(apiClient);
 
             apiClient.DefaultHeader.Add("Authorization", "Bearer QvnD0d6HPadCihauxwKlzccxo3tjWLDHooy5VgooJvE0IcfXR0rZqrLqlFJS8qIHl5cZxUB5D7ZSGPK9zzUf6jwWtzaM12dEHCP1xEHD2Cq72DZQPlGXZXKUDKg3dAmc32yttFhWM11ciIIez1i0K3JBDq5tdk59HA4pKz24URcCb2-1H9P27sRSgIh49sHKQniXMLzsIK3FSYHQB1ZqP3INYsfx2uu1F-gmcwqWDLgCi6nOwgSM7eFG6aIq_dubvFMHHsNoe7W9J-zBLev_PDMJen4VTFJGOE6cZ7p9bqPx4auEmr28vHRW8jBvSfNL-_qiOI5wcVEr9l0eHi6I37gl7M6-iX5zsOa8WKE6doXiRU7sZWAr_-05qxhG9uCiS63yfJvpo2yrhq4YEmy2gMT4J1-jUAV7RbXc6_iP8yvT1gBQ23iMwqd2TtfgKA6zzE6CE95kRMhQp4lHrIX9W2keQRCCGmGrFLthF19QMlXP6gStkMRAFJt0WJCOYNnZBobnu9HiIt_VfKPIJHOhLD6dx7A973KprALHo1Pnhtg3h4qTb_l1LApAqTJUfp-orJwmAUPuk-ESpGRB4CmVJl0BIKw");
 
-            GetAllCustomers(apiClient);
+            //GetAllCustomers(apiClient);
             //GetCustomerById(apiClient);
             //CreateCustomer(apiClient);
-            //UpdateCustomer(apiClient);
-            
+            UpdateCustomer(apiClient);
+            //GetAndUpdateCustomer(apiClient);
         }
 
+        #region Authentication
+        public static void Login(ApiClient apiClient)
+        {
+            var grantType = "password";
+            var username = "fabian.moreno+wooBug@appstab.co";
+            var password = "1qwerty";
+            var client_id = 1;
+            var contentType = "application/x-www-form-urlencoded";
+
+            apiClient.DefaultHeader.Add("grant_type", grantType);
+            apiClient.DefaultHeader.Add("username", username);
+            apiClient.DefaultHeader.Add("password", password);
+            apiClient.DefaultHeader.Add("client_id", client_id.ToString());
+
+            var accountClient = new AccountApi(apiClient);
+
+            accountClient.AuthorisationLogin(contentType, "");
+        }
+        #endregion
+
         #region Customers
+        /// <summary>
+        /// Retrieve all Operational Customers for the current Tenant
+        /// </summary>
+        /// <param name="apiClient"></param>
         public static void GetAllCustomers(ApiClient apiClient)
         {
             var customerClient = new Customer(apiClient);
@@ -36,6 +63,10 @@ namespace SDK.SpendaApi
             }
         }
 
+        /// <summary>
+        /// get an operational customer based on its ID
+        /// </summary>
+        /// <param name="apiClient"></param>
         public static void GetCustomerById(ApiClient apiClient)
         {
             var customerClient = new Customer(apiClient);            
@@ -47,6 +78,10 @@ namespace SDK.SpendaApi
 
         }
 
+        /// <summary>
+        /// Search Customer based on filters and retrieves the number of rows asked.
+        /// </summary>
+        /// <param name="apiClient"></param>
         public static void SearchCustomer(ApiClient apiClient)
         {
             var customerClient = new Customer(apiClient);
@@ -58,11 +93,15 @@ namespace SDK.SpendaApi
             }
         }
 
+        /// <summary>
+        /// Create a new operational customer. when its saved the API will return Customer's Id. 
+        /// RefNumber attribute can be used to stored the Customer ID from the third party system
+        /// </summary>
+        /// <param name="apiClient"></param>
         public static void CreateCustomer(ApiClient apiClient)
         {
             var customerClient = new Customer(apiClient);
-
-            var customer= customerClient.CreateCustomer();
+            var customer= customerClient.CreateCustomer(customerClient.getCustomerObject());
 
             var isSuccess = customer.IsSuccess.HasValue ? customer.IsSuccess.Value : false;
             if (isSuccess && customer._Object != null)
@@ -71,11 +110,40 @@ namespace SDK.SpendaApi
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="apiClient"></param>
         public static void UpdateCustomer(ApiClient apiClient)
         {
             var customerClient = new Customer(apiClient);
+            var customer = customerClient.UpdateCustomer(customerClient.getCustomerObject(180620, "CU-000080"));
 
-            var customer = customerClient.UpdateCustomer();
+            var isSuccess = customer.IsSuccess.HasValue ? customer.IsSuccess.Value : false;
+            if (isSuccess && customer._Object != null)
+            {
+                Console.WriteLine($"Customer Id:{customer._Object.ID} Customer RefNumber: { customer._Object.RefNumber}");
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="apiClient"></param>
+        public static void GetAndUpdateCustomer(ApiClient apiClient)
+        {
+            var customerClient = new Customer(apiClient);
+            var customers = customerClient.GetAllCustomers(false, true, 1, "Bruce", "ID");
+
+            if (customers != null && customers.Count > 0)
+            {
+                customers.FirstOrDefault().Name = "Tony";
+                customers.FirstOrDefault().CompanyName = "stark Industries";
+            }
+
+            var updateCustomer = new SaveRequestOfCustomerT { _Object = customers.FirstOrDefault() };
+            
+            var customer = customerClient.UpdateCustomer(updateCustomer);
 
             var isSuccess = customer.IsSuccess.HasValue ? customer.IsSuccess.Value : false;
             if (isSuccess && customer._Object != null)

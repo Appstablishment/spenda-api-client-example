@@ -96,7 +96,6 @@ namespace Swagger.Client
                 request.AddParameter("application/json", postBody, ParameterType.RequestBody);
 
             return (Object)RestClient.Execute(request);
-
         }
 
         /// <summary>

@@ -49,24 +49,28 @@ namespace SDK.SpendaApi.Examples
 
         }
 
-        public SynkSaveQueueResponseOfCustomerT CreateCustomer()
+        public SynkSaveQueueResponseOfCustomerT CreateCustomer(SaveRequestOfCustomerT newCustomer)
         {
-            var newCustomer = getCustomerObject();
             var customerClient = new CustomersApi(baseClient);
             var result = customerClient.CustomersPost(newCustomer);
 
             return result;
         }
 
-        public SynkSaveQueueResponseOfCustomerT UpdateCustomer()
+        public SynkSaveQueueResponseOfCustomerT UpdateCustomer(SaveRequestOfCustomerT newCustomer)
         {
-            var newCustomer = getCustomerObject(180620, "CU-000080");
             var customerClient = new CustomersApi(baseClient);
             var result = customerClient.CustomersPut(newCustomer, newCustomer._Object.ID);
 
             return result;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="refNumber"></param>
+        /// <returns></returns>
         public SaveRequestOfCustomerT getCustomerObject(int? Id = null, string refNumber = null)
         {
             var newCustomer = new SaveRequestOfCustomerT
