@@ -1,0 +1,50 @@
+{
+    "Object": {
+      "RefNumber": null,
+      "Name": "Fine Goods",
+      "Name2": null,
+      "ABN": null, 
+      "IsIndividual": false,
+      "Phone1": "0412001002",
+      "IndustryType": "Retail",
+      "Currency": "AUD",
+      "Status": "New",
+      "BillToCustomerID": null,
+      "IsActive": true,
+      "Locations": [
+        {
+          "IsDefaultLocation": true,
+          "Phone": "0412001002",
+          "EmailAddress": "john@finegoods.com.au",
+          "IsActive": true,
+          "UtcOffset": 600,
+          "TimeZoneName": "Australia/Perth",
+          "Addresses": [
+            {
+              "AddressType": 0,
+              "StreetAddress": "1 Main Street",
+              "City": "Perth",
+              "PostCode": "6000",
+              "State": "WA",
+              "Country": "Australia",
+              "IsDefaultDeliverTo": true,
+              "IsDefaultBilling": true,
+              "IsDefaultServiceTo": true,
+              "IsActive": true,
+              "Notes": null
+            }
+          ]
+        }
+      ],
+      "Contacts": [
+        {
+          "FirstName": "John",
+          "LastName": "Finegoods",
+          "EmailAddress": "john@finegoods.com.au",
+          "PhoneMobile": "0412001001",
+          "IsPrimaryContact": true,
+          "IsActive": true
+        }
+      ]
+    }
+  }
