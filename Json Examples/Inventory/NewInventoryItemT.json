@@ -5,7 +5,7 @@
          "IsShippable": true,
          "IsOrderable": true,
          "IsInCatalogue": false,
-         "MinMaxLevels": [
+         /*"MinMaxLevels": [
              {
                  "TenantID": null,
                  "WarehouseID": 986,
@@ -16,7 +16,7 @@
                  "DefaultReceiveLocationID": null,
                  "DefaultPickingLocationID": null
              }
-         ],
+         ],*/
          "RowNumber": null,
          "Version": null,
          "ID": 60492,
