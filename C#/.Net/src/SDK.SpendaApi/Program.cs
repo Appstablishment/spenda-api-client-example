@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using Swagger.Api;
 using Swagger.Client;
@@ -31,7 +31,8 @@ namespace SDK.SpendaApi
             // SearchInventory(apiClient);
             //GetAllInventoryById(apiClient);
             //CreateInventory(apiClient);
-            GetAndUpdateInventory(apiClient);
+            //GetAndUpdateInventory(apiClient);
+            UpdateInventory(apiClient);
         }
 
         #region Authentication
@@ -243,6 +244,22 @@ namespace SDK.SpendaApi
                 Console.WriteLine($"Inventory Id:{inventoryUpdate.Value.ID}");
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="apiClient"></param>
+        public static void UpdateInventory(ApiClient apiClient)
+        {
+            var inventoryClient = new Inventory(apiClient);
+            var inventory = inventoryClient.InventoryPut(inventoryClient.getInventoryObject(1052527));
+
+            var isSuccess = inventory.IsSuccess.HasValue ? inventory.IsSuccess.Value : false;
+            if (isSuccess && inventory.Value != null)
+            {
+                Console.WriteLine($"Inventory Id:{inventory.Value.ID}");
+            }
+        }
+        
         #endregion
     }
 }

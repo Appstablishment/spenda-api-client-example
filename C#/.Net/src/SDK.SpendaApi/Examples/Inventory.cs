@@ -52,13 +52,14 @@ namespace SDK.SpendaApi.Examples
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public InventorySaveRequest getInventoryObject(int? Id = null, string refNumber = null)
+        public InventorySaveRequest getInventoryObject(int? Id = null)
         {   
             var newInventory = new InventorySaveRequest
             {
                
                 _Object = new InventoryItemT
                 {           
+                            ID = Id,
                             IsShippable= true,
                             IsOrderable= true,
                             IsInCatalogue= false,
@@ -76,10 +77,10 @@ namespace SDK.SpendaApi.Examples
                             UoMDescription= "Each",
                             ShortDescription="SOAP PROD",
                             Description="Soap Product",
-                            StandardSellPriceEx=100,
+                            StandardSellPriceEx=500,
                             StandardSellPriceInc=90,
                             LastBuyPriceEx= null,
-                            RRP=100,
+                            RRP=500,
                             IsVariantMaster=false,
                             Type="Inventory",
                             IsPublished=false,
