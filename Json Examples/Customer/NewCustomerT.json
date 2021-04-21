@@ -11,6 +11,7 @@
       "Status": "New",
       "BillToCustomerID": null,
       "IsActive": true,
+      "CreatedWith": "{Your system Name}",
       "Locations": [
         {
           "IsDefaultLocation": true,

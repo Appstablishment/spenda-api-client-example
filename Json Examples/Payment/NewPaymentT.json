@@ -1,29 +1,22 @@
 {
-    "IsQueue": false,
     "Object": {
-      "AppliedDate": "2020-11-11T03:08:28.610",
-      "Method": "Cash",
-      "LinkedTrans": [],
-      "GUID": "67BB3650-D496-41D8-9F74-2F6AC070724A",
-      "ChangeGiven": "0",
-      "Attachments": [],
-      "TransRefNumber": "SO-000002",
-      "POSDeviceID": "73ACB628-CDAF-4DF2-8DFF-EE3577D1E866",
-      "Messages": [],
-      "TransactionType": "SalesOrder",
-      "CustomerName": "Spenda Sales N",
-      "CustomerID": 180134,
-      "PaymentLogs": [],
+      "RefNumber": "{Payment No}",
+      "DateTime": "2020-04-21T00:00:00.000",
+      "Method": "Eftpos/Cash/CreditCard/Mastercard/Visa/etc",
+      "CustomerID": {CustomerID},
+      "CustomerName": "{Customer Name}",
       "IsActive": true,
-      "AmountTendered": "1056.35",
-      "CreatedWith": "Synkd POS",
+      "CreatedWith": "{Your system Name}",
       "Status": "Paid",
-      "Amount": "1056.35",
+      "Amount": 1056.35,
       "RefBusTrans": [
         {
-          "ID": 14454
+          "ID": {SalesOrderID / InvoiceID}, 
+          "RefNumber": "{Sales Order / Invoice No}",
+          "TransType": "SalesOrder/Invoice",
+          "AppliedDate": "2020-04-21T00:00:00.000",
+          "AppliedAmount": 1056.35
         }
-      ],
-      "POSTerminalShiftID": 27
+      ]
     }
   }
