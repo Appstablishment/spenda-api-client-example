@@ -1,0 +1,19 @@
+{
+    "IsQueued": false,
+    "IsQueuePrompt": false,
+    "Value": {
+        "ID": 971087,
+        "DatType": 1,
+        "RefNumber": "CU-000056",
+        "GUIDstring": "e5f1091e-a24c-4d6e-92c0-36d22c4ceb30",
+        "GUID": "e5f1091e-a24c-4d6e-92c0-36d22c4ceb30",
+        "StatusString": "Ok",
+        "SyncStatus": "Ready",
+        "Messages": [],
+        "Codes": [],
+        "SyncLogUpdateErrorMessage": null,
+        "SyncLogUpdateErrorStackTrace": null
+    },
+    "IsSuccess": true,
+    "Messages": []
+}

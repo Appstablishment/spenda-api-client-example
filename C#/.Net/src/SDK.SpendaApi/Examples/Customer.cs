@@ -96,7 +96,19 @@ namespace SDK.SpendaApi.Examples
                             UtcOffset = 480,
                             IsDefaultLocation = true,
                             TimeZoneName = "Australia/Perth",
-                            Addresses = new List<AddressT>()
+                            Addresses = new List<AddressT>{
+                                new AddressT {
+                                    City = "Perth",
+                                    FullAddress = "123 fake Address",
+                                    State = "WA",
+                                    PostCode = "6004",
+                                    Country = "Australia",
+                                    IsDefaultBilling = true,
+                                    IsDefaultDeliverTo = true,
+                                    IsPostalAddress = false,
+                                    IsActive =true,
+                                }
+                            }
                         }
                     }
                 }
