@@ -23,8 +23,15 @@ namespace SDK.SpendaApi
             //GetAllCustomers(apiClient);
             //GetCustomerById(apiClient);
             //CreateCustomer(apiClient);
-            UpdateCustomer(apiClient);
+            //UpdateCustomer(apiClient);
             //GetAndUpdateCustomer(apiClient);
+
+             //===Inventory===//
+            // GetAllInventory(apiClient);
+            // SearchInventory(apiClient);
+            //GetAllInventoryById(apiClient);
+            //CreateInventory(apiClient);
+            GetAndUpdateInventory(apiClient);
         }
 
         #region Authentication
@@ -149,6 +156,91 @@ namespace SDK.SpendaApi
             if (isSuccess && customer._Object != null)
             {
                 Console.WriteLine($"Customer Id:{customer._Object.ID} Customer RefNumber: { customer._Object.RefNumber}");
+            }
+        }
+        #endregion
+
+        #region Inventory
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="apiClient"></param>
+           public static void GetAllInventory(ApiClient apiClient)
+        {
+            var inventoryClient = new Inventory(apiClient);
+            var inventory = inventoryClient.GetAllInventory();
+
+            foreach (var item in inventory)
+            {
+                Console.WriteLine($"Inventory Id:{item.ID}");
+            }
+        }
+         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="apiClient"></param>
+        public static void SearchInventory(ApiClient apiClient)
+        { 
+            var inventoryClient = new Inventory(apiClient);
+            var inventory = inventoryClient.GetAllInventory(null, null, null, null,null,null,null,null,null,null,null,null, null, "HB001");
+
+            foreach (var item in inventory)
+            {
+                Console.WriteLine($"Inventory Id:{item.ID}");
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="apiClient"></param>
+        public static void GetAllInventoryById(ApiClient apiClient)
+        {
+            var inventoryClient = new Inventory(apiClient);
+            // var inventory = inventoryClient.SearchInventory(null, null, null, null,null,null,null,null,null,null,null,null, null, null, null, null, null,1048989 );
+            var inventory = inventoryClient.InventoryGet(1048989);
+             if (inventory == null) return;
+
+             Console.WriteLine($"Inventory Id:{inventory.ID}");
+        }
+        /// <summary>
+        /// Create a new inventory then return Inventiory ID when its saved
+        /// </summary>
+        /// <param name="apiClient"></param>
+        public static void CreateInventory(ApiClient apiClient)
+        {
+            var inventoryClient = new Inventory(apiClient);
+            var inventory= inventoryClient.InventoryPost(inventoryClient.getInventoryObject());
+    
+            var isSuccess = inventory.IsSuccess.HasValue ? inventory.IsSuccess.Value : false;
+            if (isSuccess && inventory.Value != null)
+            {
+                Console.WriteLine($"Inventory Id:{inventory.Value.ID}");
+
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="apiClient"></param>
+        public static void GetAndUpdateInventory(ApiClient apiClient)
+        {
+            var inventoryClient = new Inventory(apiClient);
+            var inventory = inventoryClient.GetAllInventory(null, null, null, null,null,null,null,null,null,null,null,null, null, "IC1234");
+
+            if (inventory != null && inventory.Count > 0)
+            {
+                inventory.FirstOrDefault().ShortDescription = "SOAP";
+                inventory.FirstOrDefault().Description = "SOAP PRODUCT";
+            }
+
+            var updateInventory = new InventorySaveRequest { _Object = inventory.FirstOrDefault() };
+            
+            var inventoryUpdate = inventoryClient.InventoryPut(updateInventory);
+
+            var isSuccess = inventoryUpdate.IsSuccess.HasValue ? inventoryUpdate.IsSuccess.Value : false;
+            if (isSuccess && inventoryUpdate.Value != null)
+            {
+                Console.WriteLine($"Inventory Id:{inventoryUpdate.Value.ID}");
             }
         }
         #endregion
