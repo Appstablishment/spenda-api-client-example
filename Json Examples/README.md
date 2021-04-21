@@ -4,7 +4,7 @@
 ## Customers 
 <br/> POST /api/v3/Customers [New Customer Request](Customer/NewCustomerT.json) [New Customer Response](Customer/SynkSaveQueueResponseOfCustomerT.json)
 <br/> GET  /api/v3/Customers/{Id} [Customer Response](Customer/GetCustomerT.json)
-<br/> PUT  /api/v3/Customers?id={id} [Update Customer](Customer/NewCustomerT.json)
+<br/> PUT  /api/v3/Customers?id={id} [Update Customer](Customer/NewCustomerT.json) [Update Customer Response](Customer/SynkSaveQueueResponseOfCustomerT.json)
 
 ## Inventory
 <br/> POST /api/Inventory [New Inventory](Inventory/NewInventoryItemT.json)
