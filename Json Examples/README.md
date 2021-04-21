@@ -10,3 +10,19 @@ POST /api/v3/Customers
 
 ## Inventory
 
+POST /api/Inventory  
+[New Inventory](Inventory/NewInventoryItemtT.json)
+
+
+
+## Invoice
+
+POST /api/Invoice 
+[New Invoice](Invoice/NewInvoiceT.json)
+
+
+
+## Payment
+
+POST /api/Payment 
+[New Payment](Payment/NewPaymentT.json)
