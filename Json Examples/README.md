@@ -5,15 +5,16 @@
 
 POST /api/v3/Customers 
 [New Customer](Customer/NewCustomerT.json)
-
+PUT /api/v3/Customers?id={id}
+[Update Customer](Customer/NewCustomerT.json)
 
 
 ## Inventory
 
 POST /api/Inventory  
 [New Inventory](Inventory/NewInventoryItemT.json)
-
-
+PUT /api/Inventory/{id}
+[Update Inventory](Inventory/NewInventoryItemT.json)
 
 ## Invoice
 
