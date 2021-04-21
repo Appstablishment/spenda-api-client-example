@@ -11,7 +11,7 @@ POST /api/v3/Customers
 ## Inventory
 
 POST /api/Inventory  
-[New Inventory](Inventory/NewInventoryItemtT.json)
+[New Inventory](Inventory/NewInventoryItemT.json)
 
 
 
