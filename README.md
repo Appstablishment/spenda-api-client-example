@@ -32,7 +32,9 @@ Please go to the following [Registration Link](https://preprodasweb.azurewebsite
 
 When registering you can either choose to be an Individual User or a Company, fill the rest of the fields in the form and click register. An example is shown below
 
-![Synk'd Registration](Images/Synkd.PNG?style=centerme "Synk'd Registration")
+<p align="center">
+    <img src="Images/Synkd.PNG" title="Synk'd Registration">
+</p>
 
 <br />
 
@@ -47,17 +49,24 @@ Please find below an example of how to Authenticate using the Autorisation - Log
 ## Login Example
 
 1. Click in try it green button which is on the right.
-![Synk'd Registration](Images/Try_1.png?style=centerme "Synk'd Registration")
+
+<p align="center">
+    <img src="Images/Try_1.png" title="Try a Login request">
+</p>
 <br />
 
 2. When clicked, a new panel that contains the request’s  URL, parameters,  header and body will appear.
 
-![Synk'd Registration](Images/Parameters_2.png?style=centerme "Synk'd Registration")
+<p align="center">
+    <img src="Images/Parameters_2.png" title="header and body">
+</p>
 <br />
 
 3. In the body text area, developers must add their details as it is shown in the LoginBodyText tab.
 
-![Synk'd Registration](Images/BodyExample_3.png?style=centerme "Synk'd Registration")
+<p align="center">
+    <img src="Images/BodyExample_3.png" title="Body Example">
+</p>
 <br />
 
     **Remember to follow the Encoding rules:**
@@ -72,7 +81,9 @@ Please find below an example of how to Authenticate using the Autorisation - Log
 
 4. When adding all information needed, please click en send to test the request. If the authentication details are valid then the response will return a 200 HTTP response along with the token and the expiry date.  As is shown below.
 
-![Synk'd Registration](Images/HttpResponse_4.png?style=centerme "Synk'd Registration")
+<p align="center">
+    <img src="Images/HttpResponse_4.png" title="Response">
+</p>
 <br />
 
 5. Having a successful response from this method, we can store the token given and use it in another API method.
@@ -86,7 +97,6 @@ Please find below an example of how to Authenticate using the Autorisation - Log
 | Inventory          | [`POST`](Json%20Examples/Inventory/NewInventoryItemT.json "POST Request Example") |
 | Invoices           | `POST` `GET` `PUT` |
 | Payment            | `POST` `GET` `PUT` |                     
-
 <br />
 
 ## Resources
@@ -101,16 +111,3 @@ Please find below an example of how to Authenticate using the Autorisation - Log
 | Online Swagger Editor            | https://editor.swagger.io/ |
 | NSwag           | https://github.com/RicoSuter/NSwag  |
 | Open API - generator           | https://github.com/OpenAPITools/openapi-generator  |
-
-
-
-<p align="center">
-  <img width="460" height="300" src="http://www.fillmurray.com/460/300">
-</p>
-
-<style>
-img[src$="centerme"] {
-  display:block;
-  margin: 0 auto;
-}
-</style>

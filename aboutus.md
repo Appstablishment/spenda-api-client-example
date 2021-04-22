@@ -1,5 +1,5 @@
 # ![SPENDA](Images/bluewhale_t.PNG "Synk'd Registration") SPENDA 
-About us
+
 Spenda is a business solution designed by business people, not tech-heads.
 
 Sure we have a whole hive of incredible super-nerds writing code and making things work, but the functionality, the purpose behind what we do is designed by people like you.
