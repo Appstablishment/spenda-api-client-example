@@ -24,3 +24,5 @@
 `POST` ***/api/Payment*** [Request](Payment/NewPaymentT.json) [Response](Payment/SynkSaveQueueResponseOfPaymentT.json)
 
 `GET`  ***/api/Payment/{id}*** [Response](Payment/EditResponseOfPaymentT.json)
+
+[[Back to README]](../README.md)
