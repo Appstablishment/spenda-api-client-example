@@ -94,7 +94,7 @@ Please find below an example of how to Authenticate using the Autorisation - Log
 [Go to Examples](Json%20Examples/README.md "Go to Examples") 
 | **Operation Name** | **Methods**        |
 | -----------------  |:------------------:|
-| Customer           | [`POST`](Json%20Examples/Customer/NewCustomerT.json "POST Request Example")  [`GET`](Json%20Examples/Customer/SynkSaveQueueResponseOfCustomerT.json "GET Response Example")  [`PUT`](Json%20Examples/Customer/NewCustomerT.json "POST Request Example")  |
+| Customer           | [`POST`](Json%20Examples/Customer/NewCustomerT.json "POST Request Example")  [`GET`](Json%20Examples/Customer/SynkSaveQueueResponseOfCustomerT.json "GET Response Example")  [`PUT`](Json%20Examples/Customer/NewCustomerT.json "PUT Request Example")  |
 | Inventory          | [`POST`](Json%20Examples/Inventory/NewInventoryItemT.json "POST Request Example") `GET` `PUT` |
 | Invoices           | [`POST`](Json%20Examples/Invoice/NewInvoiceT.json "POST Request Example") `GET` `PUT` |
 | Payment            | [`POST`](Json%20Examples/Payment/NewPaymentT.json "POST Request Example") `GET` `PUT` |                     
