@@ -103,11 +103,11 @@ Please find below an example of how to Authenticate using the Autorisation - Log
 | NSwag           | https://github.com/RicoSuter/NSwag  |
 | Open API - generator           | https://github.com/OpenAPITools/openapi-generator  |
 
-At the command prompt, type `nano`.
 
 
 <style>
 img[src$="centerme"] {
   display:block;
   margin: 0 auto;
-}<style>
+}
+</style>

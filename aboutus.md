@@ -1,4 +1,4 @@
-# SPENDA
+# ![Synk'd Registration](Images/bluewhale_t.png?style=centerme "Synk'd Registration") SPENDA 
 
 About us
 Spenda is a business solution designed by business people, not tech-heads.
@@ -14,6 +14,7 @@ We know that running a successful business is your top priority and we exist 100
 We want to free you from dated and siloed systems and help your business embrace a new generation of technology that just works. You won’t need a degree to understand our systems. Everything is designed to be intuitive so you can simply pick it up and start using it.
 
 We offer one platform that seamlessly integrates data in real-time across your POS, inventory and warehousing, sales teams and mobile techs while automatically updating your financials. Need help migrating your existing data onto Spenda? We can do that too.
+
 
 <style>
 
