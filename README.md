@@ -47,8 +47,9 @@ Please find below an example of how to Authenticate using the Autorisation - Log
 ## Login Example
 
 1. Click in try it green button which is on the right.
-
-![Synk'd Registration](Images/Try_1.png?style=centerme "Synk'd Registration")
+<div align="center">
+   ![Synk'd Registration](Images/Try_1.png?style=centerme "Synk'd Registration")
+</div>
 <br />
 
 2. When clicked, a new panel that contains the request’s  URL, parameters,  header and body will appear.
