@@ -47,9 +47,7 @@ Please find below an example of how to Authenticate using the Autorisation - Log
 ## Login Example
 
 1. Click in try it green button which is on the right.
-<div align="center">
-   ![Synk'd Registration](Images/Try_1.png?style=centerme "Synk'd Registration")
-</div>
+![Synk'd Registration](Images/Try_1.png?style=centerme "Synk'd Registration")
 <br />
 
 2. When clicked, a new panel that contains the request’s  URL, parameters,  header and body will appear.
@@ -105,6 +103,10 @@ Please find below an example of how to Authenticate using the Autorisation - Log
 | Open API - generator           | https://github.com/OpenAPITools/openapi-generator  |
 
 
+
+<p align="center">
+  <img width="460" height="300" src="http://www.fillmurray.com/460/300">
+</p>
 
 <style>
 img[src$="centerme"] {
