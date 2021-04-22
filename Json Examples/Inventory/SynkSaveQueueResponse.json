@@ -1,0 +1,22 @@
+{
+    "IsQueued": false,
+    "IsQueuePrompt": false,
+    "Value": {
+        "ID": 1055915,
+        "DatType": 2,
+        "RefNumber": "Play Station 5",
+        "GUIDstring": "00000000-0000-0000-0000-000000000000",
+        "GUID": "00000000-0000-0000-0000-000000000000",
+        "Status": 1,
+        "StatusString": "Warning",
+        "SyncStatus": "Invalid",
+        "Messages": [
+            "Invalid Format for Inventory Class"
+        ],
+        "Codes": [],
+        "SyncLogUpdateErrorMessage": null,
+        "SyncLogUpdateErrorStackTrace": null
+    },
+    "IsSuccess": true,
+    "Messages": []
+}
