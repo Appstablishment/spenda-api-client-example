@@ -69,15 +69,15 @@ Please find below an example of how to Authenticate using the Autorisation - Log
 </p>
 <br />
 
-    **Remember to follow the Encoding rules:**
+    Remember to follow the Encoding rules:
 
-    - When adding a '+' symbol this must be replaced by '%2B'
+        When adding a '+' symbol this must be replaced by '%2B'
 
-    - When adding a '@' symbol this must be replaced by  '%40'
+        When adding a '@' symbol this must be replaced by  '%40'
 
-    **Example:**
+    Example:
 
-    `jim.citizen+spenda@email.net encoded => jim.citizen%2Bspenda%40email.net`
+        jim.citizen+spenda@email.net encoded => jim.citizen%2Bspenda%40email.net
 
 4. When adding all information needed, please click en send to test the request. If the authentication details are valid then the response will return a 200 HTTP response along with the token and the expiry date.  As is shown below.
 
