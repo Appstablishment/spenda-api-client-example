@@ -91,6 +91,7 @@ Please find below an example of how to Authenticate using the Autorisation - Log
 ---
 ## Operations
 
+[Go to Examples](Json%20Examples/README.md "Go to Examples") 
 | **Operation Name** | **Methods**        |
 | -----------------  |:------------------:|
 | Customer           | [`POST`](Json%20Examples/Customer/NewCustomerT.json "POST Request Example")  [`GET`](Json%20Examples/Customer/SynkSaveQueueResponseOfCustomerT.json "GET Response Example")  [`PUT`](Json%20Examples/Customer/NewCustomerT.json "POST Request Example")  |
