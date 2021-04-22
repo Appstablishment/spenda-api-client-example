@@ -18,9 +18,9 @@
 ## Invoice
 `POST` ***/api/Invoice*** [Request](Invoice/NewInvoiceT.json) [Response](Invoice/SynkSaveQueueResponse.json)
 
-`GET`  ***/api/Invoice/{id}*** [Response](Invoice/NewCustomerT.json)
+`GET`  ***/api/Invoice/{id}*** [Response](Invoice/TransactionEditResponseOfInvoiceT.json)
 
 ## Payment
-`POST` ***/api/Payment*** [Request](Payment/NewPaymentT.json) [Response](Payment/SynkSaveQueueResponse.json)
+`POST` ***/api/Payment*** [Request](Payment/NewPaymentT.json) [Response](Payment/SynkSaveQueueResponseOfPaymentT.json)
 
-`GET`  ***/api/Payment/{id}*** [Response](Payment/NewCustomerT.json)
+`GET`  ***/api/Payment/{id}*** [Response](Payment/EditResponseOfPaymentT.json)

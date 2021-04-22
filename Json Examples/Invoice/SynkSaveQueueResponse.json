@@ -1,0 +1,19 @@
+{
+    "IsQueued": false,
+    "IsQueuePrompt": false,
+    "Value": {
+        "ID": 488284,
+        "DatType": 51,
+        "RefNumber": "INV-09876543211",
+        "GUIDstring": "acf00418-7289-4766-a661-70a45a3d860e",
+        "GUID": "acf00418-7289-4766-a661-70a45a3d860e",
+        "StatusString": "Ok",
+        "SyncStatus": null,
+        "Messages": [],
+        "Codes": [],
+        "SyncLogUpdateErrorMessage": null,
+        "SyncLogUpdateErrorStackTrace": null
+    },
+    "IsSuccess": true,
+    "Messages": []
+}
