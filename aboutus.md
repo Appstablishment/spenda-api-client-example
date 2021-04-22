@@ -1,4 +1,4 @@
-# [![SPENDA](Images/bluewhale_t.PNG "Synk'd Registration")](https://spenda.co/) SPENDA 
+# [![SPENDA](Images/bluewhale_t.PNG "Spenda - A Fully Integrated Digital Payment")](https://spenda.co/) SPENDA 
 
 Spenda is a business solution designed by business people, not tech-heads.
 
