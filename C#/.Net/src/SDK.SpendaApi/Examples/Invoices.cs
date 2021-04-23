@@ -52,6 +52,7 @@ namespace SDK.SpendaApi.Examples
                     WarehouseID = inventory.MinMaxLevels[0].WarehouseID,
                     UoMDescription = "Each",
                     HasPriceBeenEdited = false,
+                    Quantity = 2,
                 };
 
                 lines.Add(line);

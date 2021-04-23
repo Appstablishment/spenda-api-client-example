@@ -13,7 +13,7 @@ namespace SDK.SpendaApi
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Creating Test!");
 
             //TODO
             var apiClient = new ApiClient();
