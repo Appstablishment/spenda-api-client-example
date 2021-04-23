@@ -47,6 +47,22 @@ namespace SDK.SpendaApi.Examples
 
             return result;
         }
+        public ActionResultsOfInventoryVariations InventoryVariantPost(ActionRequestOfInventoryVariations newInventoryVariant, int? masterID=null)
+        {
+            var inventoryClient = new InventoryApi(baseClient);
+            var result = inventoryClient.InventorySaveVariations(newInventoryVariant,1057336);
+            var generateVariant = inventoryClient.InventoryAutoCreateUnlinkedVariants(1057336);
+            Console.WriteLine($"generateVariant: {generateVariant}");
+            return result;
+        }
+        public SynkSaveQueueResponse InventoryVariantPut(InventorySaveRequest newInventory)
+        {
+            var inventoryClient = new InventoryApi(baseClient);
+            var result = inventoryClient.InventoryPut(newInventory, newInventory._Object.ID);
+
+            return result;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -90,6 +106,53 @@ namespace SDK.SpendaApi.Examples
             };
 
             return newInventory;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public ActionRequestOfInventoryVariations getVariantInventoryObject(int? Id = null)
+        {   
+            var newInventoryVariant = new ActionRequestOfInventoryVariations
+            {    
+                Value = new List<InventoryVariationT>
+                {           
+                    new InventoryVariationT{
+                        MasterInventoryID = Id,
+                        Name = "Size",
+                        SequenceNumber = 10,
+                        IsActive = true,
+                        Options = new List<InventoryVariationOptionT>
+                        {
+                            new InventoryVariationOptionT{
+                                VariationName = "10",
+                                Name = "10",
+                                AbbreviatedName = "10",
+                                IsActive = true,   
+                                SequenceNumber = 10,
+                            },
+                            new InventoryVariationOptionT{
+                                VariationName = "20",
+                                Name = "20",
+                                AbbreviatedName = "20",
+                                IsActive = true,   
+                                SequenceNumber = 20,
+                            },
+                            new InventoryVariationOptionT{
+                                VariationName = "30",
+                                Name = "30",
+                                AbbreviatedName = "30",
+                                IsActive = true,   
+                                SequenceNumber = 30,
+                            }
+                                    
+                        }
+                    }
+                }
+            };
+            return newInventoryVariant;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace SDK.SpendaApi
 
             apiClient.DefaultHeader.Add("Authorization", "Bearer jIw2LfBwdwScfT-RH6l3KVaeZ1xxerUiqvjXiCQ_TRV993ff6Vfher6hWx8M0nyC_XB5clBTfoWnPsRYqi2xCWAAdExbpOsL5ijq4qJRYRAeOCxQCDs5Jo-ktHsY3mYR_mDKqi33eAhf6p-FYlGISYES0ZGQ3Lr5YjfutOxiO8v2Dj2qPtJZ5q-H_4Pfe9f8ChJ2HAheqlhSO0LQw9NBBrJDhDMSzWkgiO2w41VfrQX9D1QTLu5FDLJ1hWB121YtAJxHcgQgO-oOvEhcLepIoXr0yj3R5nrZT9PoiQJsBH5raJibFptRFrj2yr3Z2PjqTVYln1SHrlDAuyzsxLAtaliXCHypXlIZtK-slu7FvrSeXhljDjFLvAMCh9A97-Y1B8TcJkDUFyhsMlniDJhOVpnuOAof8ItsakzY2G27a-lv_D4pZtxQPPsOAFcLvMVEfboCfmv_mwikv_KBunXAKklokAPyYAH1f6D7npcPdP6C26mIt607RY4Ha1hOxCvQ74JwTjfmZMrQskXRMtfkmkhqyj4PEJQevn4yUoRb_uqiy5Wsn2qMc69gU8J9yQI69nFSle__qz3vkDEXEwPWJ_aDVebEYKzSTLT-4bBmMD4Q1pX1");
 
-            TestCase(apiClient);
+           // TestCase(apiClient);
             //===Customer===//
             //GetAllCustomers(apiClient);
             //GetCustomerById(apiClient);
@@ -36,6 +36,7 @@ namespace SDK.SpendaApi
             //CreateInventory(apiClient);
             //GetAndUpdateInventory(apiClient);
             //UpdateInventory(apiClient);
+            CreateInventoryVariant(apiClient);
 
             //===Invoice===//
             //CreateInvoice(apiClient);
@@ -303,7 +304,23 @@ namespace SDK.SpendaApi
                 Console.WriteLine($"Inventory Id:{inventory.Value.ID}");
             }
         }
+         /// <summary>
+        /// Create a Variant for Master Inventory
+        /// </summary>
+        /// <param name="apiClient"></param>
+        public static void CreateInventoryVariant(ApiClient apiClient)
+        {
+            var variantClient = new Inventory(apiClient);
+            var masterID = 1057336;
+            var inventoryVariant= variantClient.InventoryVariantPost(variantClient.getVariantInventoryObject(masterID),masterID);
+            Console.WriteLine($"Inventory Variant Id:{inventoryVariant}");
+            var isSuccess = inventoryVariant.IsSuccess.HasValue ? inventoryVariant.IsSuccess.Value : false;
+            if (isSuccess && inventoryVariant.Value != null)
+            {
+                Console.WriteLine($"Inventory Variant Id:{inventoryVariant.Value}");
 
+            }
+        }
         #endregion
 
         #region Invoices
