@@ -63,7 +63,6 @@ namespace SDK.SpendaApi.Examples
                 IsQueue = true,
                 _Object = new InvoiceT
                 {
-                    RefNumber = "INV-" + customer.ID,
                     CustomerID = customer.ID,
                     Status = "Unfinalised",
                     DeliveryMethod = "Cash_and_Carry",
