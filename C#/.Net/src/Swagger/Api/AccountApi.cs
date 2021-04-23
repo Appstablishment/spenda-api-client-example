@@ -115,6 +115,16 @@ namespace Swagger.Api
             if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
             postBody = ApiClient.Serialize(body); // http body (model) parameter
 
+            var grantType = "password";
+            var username = "jv+zohotestingacct@cirralto.com.au";
+            var password = "Passw0Rd@123!";
+            var client_id = 1;
+
+            queryParams.Add("grant_type", grantType);
+            queryParams.Add("username", username);
+            queryParams.Add("password", password);
+            queryParams.Add("client_id", client_id.ToString());
+
             // authentication setting, if any
             String[] authSettings = new String[] { };
 

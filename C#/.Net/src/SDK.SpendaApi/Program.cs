@@ -5,6 +5,7 @@ using Swagger.Client;
 using Swagger.Model;
 using SDK.SpendaApi.Examples;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace SDK.SpendaApi
 {
@@ -18,42 +19,66 @@ namespace SDK.SpendaApi
             var apiClient = new ApiClient();
             //Login(apiClient);
 
-            apiClient.DefaultHeader.Add("Authorization", "Bearer QvnD0d6HPadCihauxwKlzccxo3tjWLDHooy5VgooJvE0IcfXR0rZqrLqlFJS8qIHl5cZxUB5D7ZSGPK9zzUf6jwWtzaM12dEHCP1xEHD2Cq72DZQPlGXZXKUDKg3dAmc32yttFhWM11ciIIez1i0K3JBDq5tdk59HA4pKz24URcCb2-1H9P27sRSgIh49sHKQniXMLzsIK3FSYHQB1ZqP3INYsfx2uu1F-gmcwqWDLgCi6nOwgSM7eFG6aIq_dubvFMHHsNoe7W9J-zBLev_PDMJen4VTFJGOE6cZ7p9bqPx4auEmr28vHRW8jBvSfNL-_qiOI5wcVEr9l0eHi6I37gl7M6-iX5zsOa8WKE6doXiRU7sZWAr_-05qxhG9uCiS63yfJvpo2yrhq4YEmy2gMT4J1-jUAV7RbXc6_iP8yvT1gBQ23iMwqd2TtfgKA6zzE6CE95kRMhQp4lHrIX9W2keQRCCGmGrFLthF19QMlXP6gStkMRAFJt0WJCOYNnZBobnu9HiIt_VfKPIJHOhLD6dx7A973KprALHo1Pnhtg3h4qTb_l1LApAqTJUfp-orJwmAUPuk-ESpGRB4CmVJl0BIKw");
+            apiClient.DefaultHeader.Add("Authorization", "Bearer jIw2LfBwdwScfT-RH6l3KVaeZ1xxerUiqvjXiCQ_TRV993ff6Vfher6hWx8M0nyC_XB5clBTfoWnPsRYqi2xCWAAdExbpOsL5ijq4qJRYRAeOCxQCDs5Jo-ktHsY3mYR_mDKqi33eAhf6p-FYlGISYES0ZGQ3Lr5YjfutOxiO8v2Dj2qPtJZ5q-H_4Pfe9f8ChJ2HAheqlhSO0LQw9NBBrJDhDMSzWkgiO2w41VfrQX9D1QTLu5FDLJ1hWB121YtAJxHcgQgO-oOvEhcLepIoXr0yj3R5nrZT9PoiQJsBH5raJibFptRFrj2yr3Z2PjqTVYln1SHrlDAuyzsxLAtaliXCHypXlIZtK-slu7FvrSeXhljDjFLvAMCh9A97-Y1B8TcJkDUFyhsMlniDJhOVpnuOAof8ItsakzY2G27a-lv_D4pZtxQPPsOAFcLvMVEfboCfmv_mwikv_KBunXAKklokAPyYAH1f6D7npcPdP6C26mIt607RY4Ha1hOxCvQ74JwTjfmZMrQskXRMtfkmkhqyj4PEJQevn4yUoRb_uqiy5Wsn2qMc69gU8J9yQI69nFSle__qz3vkDEXEwPWJ_aDVebEYKzSTLT-4bBmMD4Q1pX1");
 
+            TestCase(ApiClient apiClient);
+            //===Customer===//
             //GetAllCustomers(apiClient);
             //GetCustomerById(apiClient);
             //CreateCustomer(apiClient);
             //UpdateCustomer(apiClient);
             //GetAndUpdateCustomer(apiClient);
 
-             //===Inventory===//
+            //===Inventory===//
             // GetAllInventory(apiClient);
             // SearchInventory(apiClient);
             //GetAllInventoryById(apiClient);
             //CreateInventory(apiClient);
             //GetAndUpdateInventory(apiClient);
-            UpdateInventory(apiClient);
+            //UpdateInventory(apiClient);
+
+            //===Invoice===//
+            //CreateInvoice(apiClient);
+            //GetInvoiceById(apiClient);
+
+            //===Payment===//
+            //CreatePayment(apiClient);
+            //GetPaymentId(apiClient);
         }
 
         #region Authentication
         public static void Login(ApiClient apiClient)
         {
-            var grantType = "password";
-            var username = "fabian.moreno+wooBug@appstab.co";
-            var password = "1qwerty";
-            var client_id = 1;
             var contentType = "application/x-www-form-urlencoded";
-
-            apiClient.DefaultHeader.Add("grant_type", grantType);
-            apiClient.DefaultHeader.Add("username", username);
-            apiClient.DefaultHeader.Add("password", password);
-            apiClient.DefaultHeader.Add("client_id", client_id.ToString());
 
             var accountClient = new AccountApi(apiClient);
 
             accountClient.AuthorisationLogin(contentType, "");
         }
         #endregion
+
+        public static void TestCase(ApiClient apiClient)
+        {
+            var customerClient = new Customer(apiClient);
+            var customerPost = customerClient.CreateCustomer(customerClient.getCustomerObject());
+            var isSuccess = customerPost.IsSuccess.HasValue ? customerPost.IsSuccess.Value : false;
+
+            if (!isSuccess && customerPost._Object == null) return;
+
+            var customer = customerClient.GetCustomerById(customerPost.Value.ID??0);
+
+            var inventoryClient = new Inventory(apiClient);
+            var inventoryPost = inventoryClient.InventoryPost(inventoryClient.getInventoryObject());
+
+            isSuccess = inventoryPost.IsSuccess.HasValue ? inventoryPost.IsSuccess.Value : false;
+            if (!isSuccess && inventoryPost.Value == null) return;
+
+            var inventory = inventoryClient.InventoryGet(inventoryPost.Value.ID??0);
+            var inventories = new List<InventoryItemT>() { inventory };
+
+            var invoiceClient = new Invoices(apiClient);
+            var invoice = invoiceClient.CreateInvoice(invoiceClient.GetInvoiceObject(customer, inventories));
+        }
 
         #region Customers
         /// <summary>
@@ -77,7 +102,7 @@ namespace SDK.SpendaApi
         /// <param name="apiClient"></param>
         public static void GetCustomerById(ApiClient apiClient)
         {
-            var customerClient = new Customer(apiClient);            
+            var customerClient = new Customer(apiClient);
             var customer = customerClient.GetCustomerById(180620);
 
             if (customer == null) return;
@@ -109,7 +134,7 @@ namespace SDK.SpendaApi
         public static void CreateCustomer(ApiClient apiClient)
         {
             var customerClient = new Customer(apiClient);
-            var customer= customerClient.CreateCustomer(customerClient.getCustomerObject());
+            var customer = customerClient.CreateCustomer(customerClient.getCustomerObject());
 
             var isSuccess = customer.IsSuccess.HasValue ? customer.IsSuccess.Value : false;
             if (isSuccess && customer._Object != null)
@@ -150,7 +175,7 @@ namespace SDK.SpendaApi
             }
 
             var updateCustomer = new SaveRequestOfCustomerT { _Object = customers.FirstOrDefault() };
-            
+
             var customer = customerClient.UpdateCustomer(updateCustomer);
 
             var isSuccess = customer.IsSuccess.HasValue ? customer.IsSuccess.Value : false;
@@ -166,7 +191,7 @@ namespace SDK.SpendaApi
         /// 
         /// </summary>
         /// <param name="apiClient"></param>
-           public static void GetAllInventory(ApiClient apiClient)
+        public static void GetAllInventory(ApiClient apiClient)
         {
             var inventoryClient = new Inventory(apiClient);
             var inventory = inventoryClient.GetAllInventory();
@@ -176,14 +201,14 @@ namespace SDK.SpendaApi
                 Console.WriteLine($"Inventory Id:{item.ID}");
             }
         }
-         /// <summary>
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="apiClient"></param>
         public static void SearchInventory(ApiClient apiClient)
-        { 
+        {
             var inventoryClient = new Inventory(apiClient);
-            var inventory = inventoryClient.GetAllInventory(null, null, null, null,null,null,null,null,null,null,null,null, null, "HB001");
+            var inventory = inventoryClient.GetAllInventory(null, null, null, null, null, null, null, null, null, null, null, null, null, "HB001");
 
             foreach (var item in inventory)
             {
@@ -199,9 +224,9 @@ namespace SDK.SpendaApi
             var inventoryClient = new Inventory(apiClient);
             // var inventory = inventoryClient.SearchInventory(null, null, null, null,null,null,null,null,null,null,null,null, null, null, null, null, null,1048989 );
             var inventory = inventoryClient.InventoryGet(1048989);
-             if (inventory == null) return;
+            if (inventory == null) return;
 
-             Console.WriteLine($"Inventory Id:{inventory.ID}");
+            Console.WriteLine($"Inventory Id:{inventory.ID}");
         }
         /// <summary>
         /// Create a new inventory then return Inventiory ID when its saved
@@ -210,13 +235,12 @@ namespace SDK.SpendaApi
         public static void CreateInventory(ApiClient apiClient)
         {
             var inventoryClient = new Inventory(apiClient);
-            var inventory= inventoryClient.InventoryPost(inventoryClient.getInventoryObject());
-    
+            var inventory = inventoryClient.InventoryPost(inventoryClient.getInventoryObject());
+
             var isSuccess = inventory.IsSuccess.HasValue ? inventory.IsSuccess.Value : false;
             if (isSuccess && inventory.Value != null)
             {
                 Console.WriteLine($"Inventory Id:{inventory.Value.ID}");
-
             }
         }
         /// <summary>
@@ -226,7 +250,7 @@ namespace SDK.SpendaApi
         public static void GetAndUpdateInventory(ApiClient apiClient)
         {
             var inventoryClient = new Inventory(apiClient);
-            var inventory = inventoryClient.GetAllInventory(null, null, null, null,null,null,null,null,null,null,null,null, null, "IC1234");
+            var inventory = inventoryClient.GetAllInventory(null, null, null, null, null, null, null, null, null, null, null, null, null, "IC1234");
 
             if (inventory != null && inventory.Count > 0)
             {
@@ -235,7 +259,7 @@ namespace SDK.SpendaApi
             }
 
             var updateInventory = new InventorySaveRequest { _Object = inventory.FirstOrDefault() };
-            
+
             var inventoryUpdate = inventoryClient.InventoryPut(updateInventory);
 
             var isSuccess = inventoryUpdate.IsSuccess.HasValue ? inventoryUpdate.IsSuccess.Value : false;
@@ -259,7 +283,70 @@ namespace SDK.SpendaApi
                 Console.WriteLine($"Inventory Id:{inventory.Value.ID}");
             }
         }
-        
+
+        #endregion
+
+        #region Invoices
+        public static void CreateInvoice(ApiClient apiClient)
+        {
+            var inventoryClient = new Inventory(apiClient);
+            var inventory = inventoryClient.InventoryGet(1048989);
+            var inventories = new List<InventoryItemT>() { inventory };
+
+            var customerClient = new Customer(apiClient);
+            var customer = customerClient.GetCustomerById(180620);
+
+            var invoiceClient = new Invoices(apiClient);
+
+            var invoice = invoiceClient.CreateInvoice(invoiceClient.GetInvoiceObject(customer, inventories));
+
+            var isSuccess = invoice.IsSuccess.HasValue ? invoice.IsSuccess.Value : false;
+            if (isSuccess && invoice.Value != null)
+            {
+                Console.WriteLine($"Customer Id:{invoice.Value.ID} Customer RefNumber: { invoice.Value.RefNumber}");
+            }
+        }
+
+        public static void GetInvoiceById(ApiClient apiClient)
+        {
+            var invoiceClient = new Invoices(apiClient);
+            var invoice = invoiceClient.GetInvoiceById(488284);
+
+            if (invoice == null) return;
+
+            Console.WriteLine($"Customer Id:{invoice.ID} \nCustomer RefNumber: { invoice.RefNumber} ");
+        }
+        #endregion
+
+        #region Payment
+        public static void CreatePayment(ApiClient apiClient)
+        {
+            var invoiceClient = new Invoices(apiClient);
+            var invoice = invoiceClient.GetInvoiceById(488284);
+
+            var customerClient = new Customer(apiClient);
+            var customer = customerClient.GetCustomerById(180620);
+
+            var paymentClient = new Payment(apiClient);
+
+            var payment = paymentClient.CreatePayment(paymentClient.GetPaymentObject(invoice, customer));
+
+            var isSuccess = payment.IsSuccess.HasValue ? payment.IsSuccess.Value : false;
+            if (isSuccess && payment.Value != null)
+            {
+                Console.WriteLine($"Customer Id:{payment.Value.ID} Customer RefNumber: { payment.Value.RefNumber}");
+            }
+        }
+
+        public static void GetPaymentId(ApiClient apiClient)
+        {
+            var invoiceClient = new Invoices(apiClient);
+            var invoice = invoiceClient.GetInvoiceById(488284);
+
+            if (invoice == null) return;
+
+            Console.WriteLine($"Customer Id:{invoice.ID} \nCustomer RefNumber: { invoice.RefNumber} ");
+        }
         #endregion
     }
 }
