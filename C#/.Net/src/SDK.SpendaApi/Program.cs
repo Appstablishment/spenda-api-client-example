@@ -93,6 +93,11 @@ namespace SDK.SpendaApi
             
             if (!isSuccess && paymentPost.Value == null) return;
 
+            var payment = paymentClient.GetPaymentById(paymentPost.Value.ID??0);
+
+            if (payment == null) return;
+
+            Console.WriteLine($"Customer Id:{payment.ID} \nCustomer RefNumber: { payment.RefNumber} ");
         }
 
         #region Customers
