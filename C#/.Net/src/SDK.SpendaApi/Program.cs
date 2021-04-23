@@ -88,7 +88,11 @@ namespace SDK.SpendaApi
 
             var paymentClient = new Payment(apiClient);
 
-            var payment = paymentClient.CreatePayment(paymentClient.GetPaymentObject(invoice, customer));
+            var paymentPost = paymentClient.CreatePayment(paymentClient.GetPaymentObject(invoice, customer));
+            isSuccess = paymentPost.IsSuccess.HasValue ? paymentPost.IsSuccess.Value : false;
+            
+            if (!isSuccess && paymentPost.Value == null) return;
+
         }
 
         #region Customers
@@ -351,12 +355,12 @@ namespace SDK.SpendaApi
 
         public static void GetPaymentId(ApiClient apiClient)
         {
-            var invoiceClient = new Invoices(apiClient);
-            var invoice = invoiceClient.GetInvoiceById(488284);
+            var paymentClient = new Payment(apiClient);
+            var payment = paymentClient.GetPaymentById(488284);
 
-            if (invoice == null) return;
+            if (payment == null) return;
 
-            Console.WriteLine($"Customer Id:{invoice.ID} \nCustomer RefNumber: { invoice.RefNumber} ");
+            Console.WriteLine($"Customer Id:{payment.ID} \nCustomer RefNumber: { payment.RefNumber} ");
         }
         #endregion
     }
