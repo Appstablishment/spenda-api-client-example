@@ -36,7 +36,8 @@ namespace SDK.SpendaApi
             //CreateInventory(apiClient);
             //GetAndUpdateInventory(apiClient);
             //UpdateInventory(apiClient);
-            CreateInventoryVariant(apiClient);
+            //CreateInventoryVariant(apiClient);
+            UpdateInventoryVariant(apiClient);
 
             //===Invoice===//
             //CreateInvoice(apiClient);
@@ -261,7 +262,7 @@ namespace SDK.SpendaApi
             var isSuccess = inventory.IsSuccess.HasValue ? inventory.IsSuccess.Value : false;
             if (isSuccess && inventory.Value != null)
             {
-                Console.WriteLine($"Inventory Id:{inventory.Value.ID}");
+                Console.WriteLine($"Inventory Id:{inventory.Value.ID} Inventory RefNumber: { inventory.Value.RefNumber}");
             }
         }
         /// <summary>
@@ -286,7 +287,7 @@ namespace SDK.SpendaApi
             var isSuccess = inventoryUpdate.IsSuccess.HasValue ? inventoryUpdate.IsSuccess.Value : false;
             if (isSuccess && inventoryUpdate.Value != null)
             {
-                Console.WriteLine($"Inventory Id:{inventoryUpdate.Value.ID}");
+                Console.WriteLine($"Inventory Id:{inventoryUpdate.Value.ID} Inventory RefNumber: { inventoryUpdate.Value.RefNumber}");
             }
         }
         /// <summary>
@@ -301,7 +302,7 @@ namespace SDK.SpendaApi
             var isSuccess = inventory.IsSuccess.HasValue ? inventory.IsSuccess.Value : false;
             if (isSuccess && inventory.Value != null)
             {
-                Console.WriteLine($"Inventory Id:{inventory.Value.ID}");
+                Console.WriteLine($"Inventory Id:{inventory.Value.ID} Inventory RefNumber: { inventory.Value.RefNumber}");
             }
         }
          /// <summary>
@@ -319,6 +320,21 @@ namespace SDK.SpendaApi
             {
                 Console.WriteLine($"Inventory Variant Id:{inventoryVariant.Value}");
 
+            }
+        }
+         /// <summary>
+        /// Update a Inventory Variant for Master Inventory
+        /// </summary>
+        /// <param name="apiClient"></param>
+        public static void UpdateInventoryVariant(ApiClient apiClient)
+        {
+            var inventoryClient = new Inventory(apiClient);
+            var inventory = inventoryClient.InventoryPut(inventoryClient.getInventoryWiwthInventoryObject(1048995));
+
+            var isSuccess = inventory.IsSuccess.HasValue ? inventory.IsSuccess.Value : false;
+            if (isSuccess && inventory.Value != null)
+            {
+                Console.WriteLine($"Inventory Id:{inventory.Value.ID} Inventory RefNumber: { inventory.Value.RefNumber}");
             }
         }
         #endregion
