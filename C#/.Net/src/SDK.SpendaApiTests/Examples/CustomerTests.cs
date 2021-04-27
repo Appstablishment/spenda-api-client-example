@@ -127,8 +127,7 @@ namespace SDK.SpendaApi.Examples.Tests
         {
             var customerId = 971609;
             var refNumber = "CU-000004";
-            var url = "/api/v3/Customers/{id}";
-            url = url.Replace("{id}", customerId.ToString());
+            var url = $"/api/v3/Customers?id={customerId}";
 
             LoginAndGetToken();
             var request = new RestRequest(url, Method.PUT);
