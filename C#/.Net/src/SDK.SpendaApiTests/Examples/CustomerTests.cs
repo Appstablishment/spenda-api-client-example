@@ -154,6 +154,7 @@ namespace SDK.SpendaApi.Examples.Tests
         [TestMethod()]
         public void getCustomerObjectTest()
         {
+            //not implemented 
             Assert.Fail();
         }
 
