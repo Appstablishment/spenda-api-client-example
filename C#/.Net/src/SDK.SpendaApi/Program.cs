@@ -69,6 +69,8 @@ namespace SDK.SpendaApi
 
             var customer = customerClient.GetCustomerById(customerPost.Value.ID??0);
 
+            Console.WriteLine($"Customer Id:{customer.ID} \nCustomer RefNumber: { customer.RefNumber} ");
+
             var inventoryClient = new Inventory(apiClient);
             var inventoryPost = inventoryClient.InventoryPost(inventoryClient.getInventoryObject());
             isSuccess = inventoryPost.IsSuccess.HasValue ? inventoryPost.IsSuccess.Value : false;

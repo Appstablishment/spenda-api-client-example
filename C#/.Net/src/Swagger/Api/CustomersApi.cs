@@ -1115,7 +1115,7 @@ namespace Swagger.Api
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling CustomersPut");
 
-            var path = "/api/v3/Customers";
+            var path = "/api/v3/Customers/" + id.ToString();
             path = path.Replace("{format}", "json");
 
             var queryParams = new Dictionary<String, String>();
@@ -1124,7 +1124,7 @@ namespace Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
-            if (id != null) queryParams.Add("id", ApiClient.ParameterToString(id)); // query parameter
+            //if (id != null) queryParams.Add("id", ApiClient.ParameterToString(id)); // query parameter
             postBody = ApiClient.Serialize(body); // http body (model) parameter
 
             // authentication setting, if any

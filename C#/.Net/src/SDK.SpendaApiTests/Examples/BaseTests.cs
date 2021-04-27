@@ -55,7 +55,6 @@ namespace SDK.SpendaApi.Examples.Tests
             }
 
             //Trace.WriteLine(response.Content);
-
         }
 
         public void AddHeaders(ref RestRequest request)
@@ -63,7 +62,6 @@ namespace SDK.SpendaApi.Examples.Tests
             request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
             request.AddHeader("Api-Environment", environment);
             request.AddHeader("Authorization", $"bearer {Token}");
-
         }
 
     }
