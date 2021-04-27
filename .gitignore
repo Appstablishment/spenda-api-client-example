@@ -331,3 +331,4 @@ ASALocalRun/
 C#/.Net/src/.vs/SpendaSDK/v16/.suo
 *.cache
 C#/.Net/src/SDK.SpendaApi/obj/Debug/net5.0/SDK.SpendaApi.csprojAssemblyReference.cache
+*.cache
