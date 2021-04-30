@@ -2,6 +2,9 @@
 using System.Diagnostics;
 using Spenda.SDK.Models;
 using Newtonsoft.Json;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Spenda.SDK.Tests
 {
@@ -100,6 +103,13 @@ namespace Spenda.SDK.Tests
             var obj = JsonConvert.DeserializeObject<T>(res.Content);
 
             return obj;
+        }
+
+        public void AssertSuccess(List<string> messages, bool? isSuccess)
+        {
+            var msg = messages?.FirstOrDefault();
+            Trace.WriteLine($"AssertSuccess ({isSuccess}): {msg}");
+            Assert.IsTrue(isSuccess ?? false, msg);
         }
     }
 }

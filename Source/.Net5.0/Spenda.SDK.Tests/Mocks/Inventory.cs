@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Spenda.SDK.Tests.Mocks
 {
-    public class Inventory
+    public static class Inventory
     {
-        public InventorySaveRequest getInventoryObject(int? Id = null)
+        public static InventorySaveRequest getInventoryObject(int? Id = null)
         {
             var newInventory = new InventorySaveRequest
             {
@@ -44,7 +44,7 @@ namespace Spenda.SDK.Tests.Mocks
 
             return newInventory;
         }
-        public ActionRequestOfInventoryVariations getVariantInventoryObject(int? Id = null)
+        public static ActionRequestOfInventoryVariations getVariantInventoryObject(int? Id = null)
         {
             var newInventoryVariant = new ActionRequestOfInventoryVariations
             {
@@ -85,7 +85,7 @@ namespace Spenda.SDK.Tests.Mocks
             };
             return newInventoryVariant;
         }
-        public InventorySaveRequest getInventoryWiwthInventoryObject(int? Id = null)
+        public static InventorySaveRequest getInventoryWiwthInventoryObject(int? Id = null)
         {
             var newInventory = new InventorySaveRequest
             {

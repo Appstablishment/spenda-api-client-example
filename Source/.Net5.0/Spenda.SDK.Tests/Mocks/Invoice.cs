@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Spenda.SDK.Tests.Mocks
 {
-    public class Invoice
+    public static class Invoice
     {
-        public TransactionSaveRequestOfInvoiceT GetInvoiceObject(CustomerT customer, List<InventoryItemT> inventories)
+        public static TransactionSaveRequestOfInvoiceT GetInvoiceObject(CustomerT customer, List<InventoryItemT> inventories)
         {
             if (inventories == null) return null;
 

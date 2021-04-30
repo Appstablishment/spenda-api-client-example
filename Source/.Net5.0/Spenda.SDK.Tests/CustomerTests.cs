@@ -24,7 +24,7 @@ namespace Spenda.SDK.Tests
 
             var obj = Get<PagedActionResultsOfCustomers>(request);
 
-            AssertSuccess(obj);
+            AssertSuccess(obj.Messages, obj.IsSuccess);
             foreach (var customer in obj.Value)
             {
                 Trace.WriteLine($"Customer Name: {customer.Name} {customer.Name2}, Customer Id: {customer.ID}");
@@ -43,7 +43,7 @@ namespace Spenda.SDK.Tests
 
             var obj = Get<PagedActionResultsOfCustomers>(request);
 
-            AssertSuccess(obj);
+            AssertSuccess(obj.Messages, obj.IsSuccess);
             foreach (var customer in obj.Value)
             {
                 Trace.WriteLine($"Customer Name: {customer.Name} {customer.Name2}, Customer Id: {customer.ID}");
@@ -64,7 +64,7 @@ namespace Spenda.SDK.Tests
 
             var obj = Get<EditResponseOfCustomerT>(request);
 
-            AssertSuccess(obj);
+            AssertSuccess(obj.Messages, obj.IsSuccess);
             Trace.WriteLine($"Customer Name: {obj.Value.Name} {obj.Value.Name2}, Customer Id: {obj.Value.ID}");
         }
 
@@ -78,7 +78,7 @@ namespace Spenda.SDK.Tests
 
             var obj = Post<SynkSaveQueueResponseOfCustomerT>(request);
 
-            AssertSuccess(obj);
+            AssertSuccess(obj.Messages, obj.IsSuccess);
             Trace.WriteLine($"Customer Ref Number: {obj.Value.RefNumber}, Customer Id: {obj.Value.ID}");
         }
 
@@ -94,29 +94,8 @@ namespace Spenda.SDK.Tests
 
             var obj = Put<SynkSaveQueueResponseOfCustomerT>(request);
 
-            AssertSuccess(obj);
+            AssertSuccess(obj.Messages, obj.IsSuccess);
             Trace.WriteLine($"Customer Ref Number: {obj.Value.RefNumber}, Customer Id: {obj.Value.ID}");
-        }
-
-        public void AssertSuccess(PagedActionResultsOfCustomers response)
-        {
-            var msg = response.Messages?.FirstOrDefault();
-            Trace.WriteLine($"AssertSuccess ({response.IsSuccess}): {msg}");
-            Assert.IsTrue(response.IsSuccess ?? false, msg);
-        }
-
-        public void AssertSuccess(EditResponseOfCustomerT response)
-        {
-            var msg = response.Messages?.FirstOrDefault();
-            Trace.WriteLine($"\nAssertSuccess ({response.IsSuccess}): {msg}");
-            Assert.IsTrue(response.IsSuccess ?? false, msg);
-        }
-
-        public void AssertSuccess(SynkSaveQueueResponseOfCustomerT response)
-        {
-            var msg = response.Messages?.FirstOrDefault();
-            Trace.WriteLine($"\nAssertSuccess ({response.IsSuccess}): {msg}");
-            Assert.IsTrue(response.IsSuccess ?? false, msg);
         }
     }
 }

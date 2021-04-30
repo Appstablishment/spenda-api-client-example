@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Spenda.SDK.Tests.Mocks
 {
-    public class Payment
+    public static class Payment
     {
-        public SaveRequestOfPaymentT GetPaymentObject(InvoiceT invoice, CustomerT customer)
+        public static SaveRequestOfPaymentT GetPaymentObject(InvoiceT invoice, CustomerT customer)
         {
             var RefBusTrans = new List<RefBusTranT>();
             RefBusTrans.Add(new RefBusTranT
@@ -22,7 +22,7 @@ namespace Spenda.SDK.Tests.Mocks
             {
                 _Object = new PaymentT
                 {
-                    RefNumber = "PY-" + customer.ID,
+                    RefNumber = "PY-123456",
                     DateTime = DateTime.Now,
                     Method = "Eftpos",
                     CustomerID = customer.ID,
