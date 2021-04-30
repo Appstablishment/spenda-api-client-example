@@ -19,10 +19,7 @@ namespace Spenda.SDK.Tests
         [TestMethod()]
         public void GetAllCustomersTest()
         {
-            LoginAndGetToken();
-
             var request = new RestRequest("/api/v3/Customers");
-
             request.AddParameter("filter.maxResults", 10);
 
             var obj = Get<PagedActionResultsOfCustomers>(request);
