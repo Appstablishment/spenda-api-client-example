@@ -63,9 +63,7 @@ namespace Spenda.SDK.Tests
         public T Get<T>(RestRequest req)
         {
             if (string.IsNullOrEmpty(Token))
-            {
                 LoginAndGetToken();
-            }
 
             req.Method = Method.GET;
             AddHeaders(ref req);
@@ -79,9 +77,7 @@ namespace Spenda.SDK.Tests
         public T Post<T>(RestRequest req)
         {
             if (string.IsNullOrEmpty(Token))
-            {
                 LoginAndGetToken();
-            }
 
             req.Method = Method.POST;
             AddHeaders(ref req);
@@ -95,9 +91,7 @@ namespace Spenda.SDK.Tests
         public T Put<T>(RestRequest req)
         {
             if (string.IsNullOrEmpty(Token))
-            {
                 LoginAndGetToken();
-            }
 
             req.Method = Method.PUT;
             AddHeaders(ref req);

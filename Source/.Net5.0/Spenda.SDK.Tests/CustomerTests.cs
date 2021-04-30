@@ -29,87 +29,57 @@ namespace Spenda.SDK.Tests
             {
                 Trace.WriteLine($"Customer Name: {customer.Name} {customer.Name2}, Customer Id: {customer.ID}");
             }
-
         }
 
         [TestMethod()]
         public void GetCustomerSearchByNameRefNumberTest()
         {
-            LoginAndGetToken();
-
-            var request = new RestRequest("/api/v3/Customers", Method.GET);
-            AddHeaders(ref request);
-
+            var request = new RestRequest("/api/v3/Customers");
             //request.AddParameter("filter.customerClassID", 10);
             request.AddParameter("filter.search", "Bruce");
             request.AddParameter("filter.isExactMatch", false);
             request.AddParameter("filter.sortAsc", true);
             request.AddParameter("filter.maxResults", 10);
 
-            var response = _restClient.Execute<PagedActionResultsOfCustomers>(request);
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            var obj = Get<PagedActionResultsOfCustomers>(request);
+
+            AssertSuccess(obj);
+            foreach (var customer in obj.Value)
             {
-                var obj = JsonConvert.DeserializeObject<PagedActionResultsOfCustomers>(response.Content);
-                AssertSuccess(obj);
-                foreach (var customer in obj.Value)
-                {
-                    Trace.WriteLine($"Customer Name: {customer.Name} {customer.Name2}, Customer Id: {customer.ID}");
-                }
+                Trace.WriteLine($"Customer Name: {customer.Name} {customer.Name2}, Customer Id: {customer.ID}");
             }
         }
 
         [TestMethod()]
         public void GetCustomerByIdTest()
         {
-            LoginAndGetToken();
-
             var customerId = 971609;
             var url = "/api/v3/Customers/{id}";
             url = url.Replace("{id}", customerId.ToString());
 
-            var request = new RestRequest(url, Method.GET);
-            AddHeaders(ref request);
+            var request = new RestRequest(url);
+            //request.AddParameter("req.iD", 971609);
+            //request.AddParameter("req.gUID", 971609);
+            //request.AddParameter("req.tenantID", 971609);
 
-            request.AddParameter("req.iD", 971609);
-            request.AddParameter("req.gUID", 971609);
-            request.AddParameter("req.tenantID", 971609);
+            var obj = Get<EditResponseOfCustomerT>(request);
 
-            var response = _restClient.Execute<EditResponseOfCustomerT>(request);
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                var customer = JsonConvert.DeserializeObject<EditResponseOfCustomerT>(response.Content);
-                AssertSuccess(customer);
-                Trace.WriteLine($"Customer Name: {customer.Value.Name} {customer.Value.Name2}, Customer Id: {customer.Value.ID}");
-            }
-            else
-            {
-                Assert.Fail();
-            }
+            AssertSuccess(obj);
+            Trace.WriteLine($"Customer Name: {obj.Value.Name} {obj.Value.Name2}, Customer Id: {obj.Value.ID}");
         }
 
         [TestMethod()]
         public void CreateCustomerTest()
         {
-            LoginAndGetToken();
-            var request = new RestRequest("/api/v3/Customers", Method.POST);
-            AddHeaders(ref request);
-
             var body = JsonConvert.SerializeObject(Mocks.Customer.GetCustomerObject());
 
+            var request = new RestRequest("/api/v3/Customers");
             request.AddParameter("application/json", body, ParameterType.RequestBody);
 
-            var response = _restClient.Execute<SynkSaveQueueResponseOfCustomerT>(request);
+            var obj = Post<SynkSaveQueueResponseOfCustomerT>(request);
 
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                var customer = JsonConvert.DeserializeObject<SynkSaveQueueResponseOfCustomerT>(response.Content);
-                AssertSuccess(customer);
-                Trace.WriteLine($"Customer Ref Number: {customer.Value.RefNumber}, Customer Id: {customer.Value.ID}");
-            }
-            else
-            {
-                Assert.Fail();
-            }
+            AssertSuccess(obj);
+            Trace.WriteLine($"Customer Ref Number: {obj.Value.RefNumber}, Customer Id: {obj.Value.ID}");
         }
 
         [TestMethod()]
@@ -117,35 +87,15 @@ namespace Spenda.SDK.Tests
         {
             var customerId = 971609;
             var refNumber = "CU-000004";
-            var url = $"/api/v3/Customers?id={customerId}";
-
-            LoginAndGetToken();
-            var request = new RestRequest(url, Method.PUT);
-            AddHeaders(ref request);
-
             var body = JsonConvert.SerializeObject(Mocks.Customer.GetCustomerObject(customerId, refNumber));
 
+            var request = new RestRequest($"/api/v3/Customers?id={customerId}");
             request.AddParameter("application/json", body, ParameterType.RequestBody);
 
-            var response = _restClient.Execute<SynkSaveQueueResponseOfCustomerT>(request);
+            var obj = Put<SynkSaveQueueResponseOfCustomerT>(request);
 
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                var customer = JsonConvert.DeserializeObject<SynkSaveQueueResponseOfCustomerT>(response.Content);
-                AssertSuccess(customer);
-                Trace.WriteLine($"Customer Ref Number: {customer.Value.RefNumber}, Customer Id: {customer.Value.ID}");
-            }
-            else
-            {
-                Assert.Fail();
-            }
-        }
-
-        [TestMethod()]
-        public void getCustomerObjectTest()
-        {
-            //not implemented 
-            Assert.Fail();
+            AssertSuccess(obj);
+            Trace.WriteLine($"Customer Ref Number: {obj.Value.RefNumber}, Customer Id: {obj.Value.ID}");
         }
 
         public void AssertSuccess(PagedActionResultsOfCustomers response)
