@@ -20,27 +20,25 @@ namespace Spenda.SDK.Tests
         public void GetAllCustomersTest()
         {
             LoginAndGetToken();
-            var request = new RestRequest("/api/v3/Customers", Method.GET);
-            AddHeaders(ref request);
+
+            var request = new RestRequest("/api/v3/Customers");
 
             request.AddParameter("filter.maxResults", 10);
 
-            var response = _restClient.Execute<PagedActionResultsOfCustomers>(request);
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            var obj = Get<PagedActionResultsOfCustomers>(request);
+
+            AssertSuccess(obj);
+            foreach (var customer in obj.Value)
             {
-                var obj = JsonConvert.DeserializeObject<PagedActionResultsOfCustomers>(response.Content);
-                AssertSuccess(obj);
-                foreach (var customer in obj.Value)
-                {
-                    Trace.WriteLine($"Customer Name: {customer.Name} {customer.Name2}, Customer Id: {customer.ID}");
-                }
+                Trace.WriteLine($"Customer Name: {customer.Name} {customer.Name2}, Customer Id: {customer.ID}");
             }
+
         }
 
         [TestMethod()]
         public void GetCustomerSearchByNameRefNumberTest()
         {
-            LoginAndGetToken();          
+            LoginAndGetToken();
 
             var request = new RestRequest("/api/v3/Customers", Method.GET);
             AddHeaders(ref request);

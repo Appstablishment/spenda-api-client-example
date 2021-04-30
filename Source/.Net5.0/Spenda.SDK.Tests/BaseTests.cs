@@ -1,6 +1,7 @@
 ﻿using RestSharp;
 using System.Diagnostics;
 using Spenda.SDK.Models;
+using Newtonsoft.Json;
 
 namespace Spenda.SDK.Tests
 {
@@ -59,5 +60,52 @@ namespace Spenda.SDK.Tests
             request.AddHeader("Authorization", $"bearer {Token}");
         }
 
+        public T Get<T>(RestRequest req)
+        {
+            if (string.IsNullOrEmpty(Token))
+            {
+                LoginAndGetToken();
+            }
+
+            req.Method = Method.GET;
+            AddHeaders(ref req);
+
+            var res = _restClient.Execute(req);
+            var obj = JsonConvert.DeserializeObject<T>(res.Content);
+
+            return obj;
+        }
+
+        public T Post<T>(RestRequest req)
+        {
+            if (string.IsNullOrEmpty(Token))
+            {
+                LoginAndGetToken();
+            }
+
+            req.Method = Method.POST;
+            AddHeaders(ref req);
+
+            var res = _restClient.Execute(req);
+            var obj = JsonConvert.DeserializeObject<T>(res.Content);
+
+            return obj;
+        }
+
+        public T Put<T>(RestRequest req)
+        {
+            if (string.IsNullOrEmpty(Token))
+            {
+                LoginAndGetToken();
+            }
+
+            req.Method = Method.PUT;
+            AddHeaders(ref req);
+
+            var res = _restClient.Execute(req);
+            var obj = JsonConvert.DeserializeObject<T>(res.Content);
+
+            return obj;
+        }
     }
 }
