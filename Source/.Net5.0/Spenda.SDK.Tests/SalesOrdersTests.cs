@@ -42,10 +42,7 @@ namespace Spenda.SDK.Tests
         [TestMethod()]
         public void GetSalesOrderByIdTest()
         {
-            var salesOrderId = 971609;
-            var url = "/api/SalesOrders/{id}";
-            url = url.Replace("{id}", salesOrderId.ToString());
-
+            var url = $"/api/SalesOrders/{142092}";
             var request = new RestRequest(url);
 
             var obj = Get<TransactionEditResponseOfSalesOrderT>(request);
@@ -89,12 +86,18 @@ namespace Spenda.SDK.Tests
         [TestMethod()]
         public void CreateSalesOrdersTest()
         {
-            var inventories = new List<InventoryItemT>();
-            var customer = new CustomerT();
+            var url = $"/api/v3/Customers/{971605}";
+            var request = new RestRequest(url);
+            var customer = Get<EditResponseOfCustomerT>(request);
 
-            var body = JsonConvert.SerializeObject(Mocks.SalesOrders.GetSalesOrdersObject(inventories, customer));
+            url = $"/api/Inventory/";
+            request = new RestRequest(url);
+            request.AddParameter("filter.maxResults", 3);
+            var inventories = Get<PagedActionResultsOfInventoryItems>(request);
 
-            var request = new RestRequest("/api/SalesOrders");
+            var body = JsonConvert.SerializeObject(Mocks.SalesOrders.GetSalesOrdersObject(inventories.Value, customer.Value));
+
+            request = new RestRequest("/api/SalesOrders");
             request.AddParameter("application/json", body, ParameterType.RequestBody);
 
             var obj = Post<SynkSaveQueueResponse>(request);

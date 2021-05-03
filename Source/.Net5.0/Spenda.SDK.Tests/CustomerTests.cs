@@ -53,10 +53,7 @@ namespace Spenda.SDK.Tests
         [TestMethod()]
         public void GetCustomerByIdTest()
         {
-            var customerId = 971609;
-            var url = "/api/v3/Customers/{id}";
-            url = url.Replace("{id}", customerId.ToString());
-
+            var url = $"/api/v3/Customers/{971609}";
             var request = new RestRequest(url);
             //request.AddParameter("req.iD", 971609);
             //request.AddParameter("req.gUID", 971609);

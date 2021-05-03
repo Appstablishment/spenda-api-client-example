@@ -28,6 +28,8 @@
 ## Sales Orders
 `POST` ***/api/SalesOrders*** [Request](SalesOrders/SalesOrderT.json) [Response](SalesOrders/PagedActionResultsOfBusTransSearchResultsT.json)
 
+`POST` ***/api/SalesOrders*** [Request](SalesOrders/SalesOrderT.json) [Response](SalesOrders/PagedActionResultsOfBusTransSearchResultsT.json)
+
 `GET`  ***/api/SalesOrders/{id}*** [Response](SalesOrders/TransactionEditResponseOfSalesOrderT.json)
 
 [[Back to README]](../README.md)
