@@ -36,11 +36,7 @@ namespace Spenda.SDK.Tests
         [TestMethod()]
         public void GetInvoiceByIdTest()
         {
-            var invoiceid = 488284;
-            var url = "/api/Invoice/{id}";
-            url = url.Replace("{id}", invoiceid.ToString());
-
-            var request = new RestRequest(url);
+            var request = new RestRequest($"/api/Invoice/{488284}");
             var obj = Get<TransactionEditResponseOfInvoiceT>(request);
 
             AssertSuccess(obj.Messages, obj.IsSuccess);

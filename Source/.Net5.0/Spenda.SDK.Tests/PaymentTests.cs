@@ -34,11 +34,7 @@ namespace Spenda.SDK.Tests
         [TestMethod()]
         public void GetPaymentByIdTest()
         {
-            var paymentId = 488284;
-            var url = "/api/Payment/{id}";
-            url = url.Replace("{id}", paymentId.ToString());
-
-            var request = new RestRequest(url);
+            var request = new RestRequest($"/api/Payment/{488284}");
             //request.AddParameter("req.iD", 971609);
             //request.AddParameter("req.gUID", 971609);
             //request.AddParameter("req.isGetExtraInfo", false);
@@ -53,8 +49,7 @@ namespace Spenda.SDK.Tests
         [TestMethod()]
         public void CreatePaymentTest()
         {
-            var url = $"/api/v3/Customers";
-            var request = new RestRequest(url);
+            var request = new RestRequest($"/api/v3/Customers");
             request.AddParameter("filter.maxResults", 20);
             var customer = Get<PagedActionResultsOfCustomers>(request);
 
