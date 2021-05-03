@@ -1,0 +1,40 @@
+{
+    "Object": {
+        "DeliveryMethod": "{Deliver/Cash_and_Carry}",
+        "BillPostCode": "",
+        "CustomerID": {CustomerID},
+        "LineCount": 1,
+        "ShipPostCode": "",
+        "Discount": 0,        
+        "CustomerName": "{Customer Name}",        
+        "CreatedWith": "{Your system Name}",
+        "Status": "{Open/Closed}",                
+        "DiscountMode": "None",        
+        "Lines": [
+            {
+                "Code": "{PartNo/Code}",                
+                "UoM": "EA",
+                "SequenceNumber": 10,
+                "DeliveryMethod": "{Deliver/Cash_and_Carry}",                
+                "InventoryID": {InventoryId},                
+                "TaxRate": "10",                                
+                "UoMDescription": "Each",                
+                "PriceType": "Standard",
+                "Description": "{Description}",
+                "ShortDescription": "{Name/ShortDescription}",                
+                "IsActive": true,
+                "PriceDescription": "StandardSellPriceEx",
+                "IsAmendedByOtherParty": false,
+                "Quantity": "7"
+            }
+        ],
+        "IsActive": true,
+        "BillState": "",
+        "ShipState": "",
+        "IsLinkedToOtherParty": false,
+        "CreatedDateTime_utc": "2020-03-10T06:43:03.8977241Z",
+        "IsMessagesSendable": false,
+        "WasSentWhenLinked": false
+    }
+
+}

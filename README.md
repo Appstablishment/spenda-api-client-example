@@ -97,7 +97,8 @@ Please find below an example of how to Authenticate using the Autorisation - Log
 | Customer           | [`POST`](Json%20Examples/Customer/NewCustomerT.json "POST Request Example")  [`GET`](Json%20Examples/Customer/SynkSaveQueueResponseOfCustomerT.json "GET Response Example")  [`PUT`](Json%20Examples/Customer/NewCustomerT.json "PUT Request Example")  |
 | Inventory          | [`POST`](Json%20Examples/Inventory/NewInventoryItemT.json "POST Request Example") [`GET`](Json%20Examples/Inventory/InventoryEditResponse.json "GET Response Example") [`PUT`](Json%20Examples/Inventory/UpdateInventoryItemT.json "PUT Request Example") |
 | Invoices           | [`POST`](Json%20Examples/Invoice/NewInvoiceT.json "POST Request Example") [`GET`](Json%20Examples/Invoice/TransactionEditResponseOfInvoiceT.json "GET Response Example") |
-| Payment            | [`POST`](Json%20Examples/Payment/NewPaymentT.json "POST Request Example") [`GET`](Json%20Examples/Payment/EditResponseOfPaymentT.json "GET Response Example") |                     
+| Payment            | [`POST`](Json%20Examples/Payment/NewPaymentT.json "POST Request Example") [`GET`](Json%20Examples/Payment/EditResponseOfPaymentT.json "GET Response Example") |          
+| Sales Orders            | [`POST`](Json%20Examples/SalesOrders/SalesOrderT.json "POST Request Example") [`GET`](Json%20Examples/SalesOrders/PagedActionResultsOfBusTransSearchResultsT.json "GET Response Example") |              
 <br />
 
 ## Resources

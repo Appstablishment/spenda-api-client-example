@@ -25,4 +25,9 @@
 
 `GET`  ***/api/Payment/{id}*** [Response](Payment/EditResponseOfPaymentT.json)
 
+## Sales Orders
+`POST` ***/api/SalesOrders*** [Request](SalesOrders/SalesOrderT.json) [Response](SalesOrders/PagedActionResultsOfBusTransSearchResultsT.json)
+
+`GET`  ***/api/SalesOrders/{id}*** [Response](SalesOrders/TransactionEditResponseOfSalesOrderT.json)
+
 [[Back to README]](../README.md)

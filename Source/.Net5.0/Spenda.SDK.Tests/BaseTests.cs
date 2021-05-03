@@ -105,6 +105,20 @@ namespace Spenda.SDK.Tests
             return obj;
         }
 
+        public T Delete<T>(RestRequest req)
+        {
+            if (string.IsNullOrEmpty(Token))
+                LoginAndGetToken();
+
+            req.Method = Method.DELETE;
+            AddHeaders(ref req);
+
+            var res = _restClient.Execute(req);
+            var obj = JsonConvert.DeserializeObject<T>(res.Content);
+
+            return obj;
+        }
+
         public void AssertSuccess(List<string> messages, bool? isSuccess)
         {
             var msg = messages?.FirstOrDefault();
