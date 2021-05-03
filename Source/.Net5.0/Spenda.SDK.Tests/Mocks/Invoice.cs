@@ -35,7 +35,7 @@ namespace Spenda.SDK.Tests.Mocks
                 _Object = new InvoiceT
                 {
                     CustomerID = customer.ID,
-                    Status = "Unfinalised",
+                    Status = "Finalised",
                     DeliveryMethod = "Cash_and_Carry",
                     CreatedWith = "Zoho",
                     BillingAddress = customer.Locations[0].Addresses[0],
