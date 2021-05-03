@@ -14,12 +14,12 @@ namespace Spenda.SDK.Tests.Mocks
                     Contacts = new List<ContactT> {
                         new ContactT {
                             IsPrimaryContact = true,
-                            FirstName = "Bruce",
-                            LastName = "Wayne",
+                            FirstName = "Steve",
+                            LastName = "Rogers ",
                             IsActive = true
                         }
                     },
-                    CompanyName = "Wayne Industries",
+                    CompanyName = "Avengers Tower",
                     IsActive = true,
                     IsIndividual = false,
                     ID = Id,
@@ -33,7 +33,7 @@ namespace Spenda.SDK.Tests.Mocks
                             Addresses = new List<AddressT>{
                                 new AddressT {
                                     City = "Perth",
-                                    FullAddress = "123 fake Address",
+                                    FullAddress = "189 Adelaide Terrace",
                                     State = "WA",
                                     PostCode = "6004",
                                     Country = "Australia",

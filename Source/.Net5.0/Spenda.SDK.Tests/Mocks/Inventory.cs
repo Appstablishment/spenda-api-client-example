@@ -15,9 +15,9 @@ namespace Spenda.SDK.Tests.Mocks
                     IsShippable = true,
                     IsOrderable = true,
                     IsInCatalogue = false,
-                    InventoryCode = "IC1234",
-                    Barcode = "BC1234",
-                    SKU = "SKU1234",
+                    InventoryCode = "IC27GL63T123",
+                    Barcode = "BC27GL63T123",
+                    SKU = "SKU27GL63T123",
                     IsActive = true,
                     IsAssetItem = false,
                     IsSold = false,
@@ -27,8 +27,8 @@ namespace Spenda.SDK.Tests.Mocks
                     IsPurchased = false,
                     UoM = "EA",
                     UoMDescription = "Each",
-                    ShortDescription = "SOAP PROD",
-                    Description = "Soap Product",
+                    ShortDescription = "LG 27GL63T 27inch",
+                    Description = "LG 27GL63T 27inch 144Hz Full HD IPS Gaming Monitor",
                     StandardSellPriceEx = 500,
                     StandardSellPriceInc = 90,
                     LastBuyPriceEx = null,
@@ -38,7 +38,7 @@ namespace Spenda.SDK.Tests.Mocks
                     IsPublished = false,
                     IsApproved = false,
                     MinSalesQty = 1.0000000000,
-                    CreatedWith = "Zoho"
+                    CreatedWith = "SDK"
                 }
             };
 
@@ -85,7 +85,7 @@ namespace Spenda.SDK.Tests.Mocks
             };
             return newInventoryVariant;
         }
-        public static InventorySaveRequest getInventoryWiwthInventoryObject(int? Id = null)
+        public static InventorySaveRequest getInventoryWithVariationObject(int? Id = null)
         {
             var newInventory = new InventorySaveRequest
             {

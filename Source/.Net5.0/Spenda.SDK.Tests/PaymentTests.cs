@@ -2,12 +2,7 @@
 using Newtonsoft.Json;
 using RestSharp;
 using Spenda.SDK.Models;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Spenda.SDK.Tests
 {
@@ -58,23 +53,33 @@ namespace Spenda.SDK.Tests
         [TestMethod()]
         public void CreatePaymentTest()
         {
-            var url = $"/api/v3/Customers/{971609}";
+            var url = $"/api/v3/Customers";
             var request = new RestRequest(url);
-            var customer = Get<EditResponseOfCustomerT>(request);
+            request.AddParameter("filter.maxResults", 20);
+            var customer = Get<PagedActionResultsOfCustomers>(request);
 
-            url = $"/api/Invoice/{971609}";
-            request = new RestRequest(url);
-            var invoice = Get<TransactionEditResponseOfInvoiceT>(request);            
+            Assert.AreNotEqual(customer.Value.Count, 0);
 
-            var body = JsonConvert.SerializeObject(Mocks.Payment.GetPaymentObject(invoice.Value, customer.Value));
-            url = "/api/Payment/";
-            request = new RestRequest(url);
+            var randomCustomer = pickAny<CustomerT>(customer.Value, 1);
+
+            request = new RestRequest("/api/Invoice");
+            request.AddParameter("filter.maxResults", 20);
+            request.AddParameter("filter.statusStrings", "open");
+            var invoice = Get<PagedActionResultsOfBusTransSearchResultsT>(request);
+
+            Assert.AreNotEqual(invoice.Value.Count, 0);
+
+            var randomInvoices = pickAny<BusTransSearchResultT>(invoice.Value, 3);
+
+            var body = JsonConvert.SerializeObject(Mocks.Payment.GetPaymentObject(randomInvoices, randomCustomer[0]));
+
+            request = new RestRequest("/api/Payment/");
+            request.AddParameter("application/json", body, ParameterType.RequestBody);
 
             var obj = Post<SynkSaveQueueResponseOfPaymentT>(request);
 
             AssertSuccess(obj.Messages, obj.IsSuccess);
             Trace.WriteLine($"Payment Id: {obj.Value.ID}  Payment RefNumber: {obj.Value.RefNumber}");
         }
-
     }
 }

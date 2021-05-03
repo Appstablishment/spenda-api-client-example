@@ -3,11 +3,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using Spenda.SDK.Models;
 using System.Diagnostics;
-using System.Linq;
-using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Spenda.SDK.Tests
@@ -24,7 +20,7 @@ namespace Spenda.SDK.Tests
         [TestMethod()]
         public void GetAllInvoiceTest()
         {
-           var request = new RestRequest("/api/Invoice");
+            var request = new RestRequest("/api/Invoice");
             request.AddParameter("filter.maxResults", 10);
 
             var obj = Get<PagedActionResultsOfBusTransSearchResultsT>(request);
@@ -33,12 +29,12 @@ namespace Spenda.SDK.Tests
 
             foreach (var invoice in obj.Value)
             {
-                Trace.WriteLine($"Invoice Id: {invoice.ID} , Invoice refNumber: {invoice.RefNumber}");
+                Trace.WriteLine($"Invoice Id: {invoice.ID} , Invoice refNumber: {invoice.RefNumber},  {invoice.Status}");
             }
         }
 
-         [TestMethod()]
-         public void GetInvoiceByIdTest()
+        [TestMethod()]
+        public void GetInvoiceByIdTest()
         {
             var invoiceid = 488284;
             var url = "/api/Invoice/{id}";
@@ -54,26 +50,33 @@ namespace Spenda.SDK.Tests
         [TestMethod()]
         public void CreateInvoiceTest()
         {
-            var url = $"/api/v3/Customers/{971605}";
+            var url = $"/api/v3/Customers";
             var request = new RestRequest(url);
-            var customer = Get<EditResponseOfCustomerT>(request);
+            request.AddParameter("filter.maxResults", 20);
+            var customer = Get<PagedActionResultsOfCustomers>(request);
 
-            url = $"/api/Inventory/{1057343}";
-            request = new RestRequest(url);
-            var inventory = Get<InventoryEditResponse>(request);  
-            var inventories = new List<InventoryItemT>() { inventory.Value };          
+            Assert.AreNotEqual(customer.Value.Count, 0);
 
-            var body = JsonConvert.SerializeObject(Mocks.Invoice.GetInvoiceObject(customer.Value, inventories));
-             url = "/api/Invoice/";
+            var randomCustomer = pickAny<CustomerT>(customer.Value, 1);
+
+            url = $"/api/Inventory/";
             request = new RestRequest(url);
+            request.AddParameter("filter.maxResults", 10);
+            var inventories = Get<PagedActionResultsOfInventoryItems>(request);
+
+            Assert.AreNotEqual(inventories.Value.Count, 0);
+
+            var randomInventories = pickAny<InventoryItemT>(inventories.Value, 3);
+
+            var body = JsonConvert.SerializeObject(Mocks.Invoice.GetInvoiceObject(randomCustomer[0], randomInventories));
+            
+            request = new RestRequest("/api/Invoice/");
+            request.AddParameter("application/json", body, ParameterType.RequestBody);
 
             var obj = Post<SynkSaveQueueResponse>(request);
 
             AssertSuccess(obj.Messages, obj.IsSuccess);
             Trace.WriteLine($"Invoice Id: {obj.Value.ID}");
-
         }
-
     }
-    
 }

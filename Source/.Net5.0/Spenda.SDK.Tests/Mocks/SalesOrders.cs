@@ -11,32 +11,6 @@ namespace Spenda.SDK.Tests.Mocks
     {
         public static TransactionSaveRequestOfSalesOrderT GetSalesOrdersObject(List<InventoryItemT> inventories, CustomerT customer)
         {
-            var seq = 1;
-            var lines = new List<BusTransLineT>();
-
-            foreach (var inventory in inventories)
-            {
-                var line = new BusTransLineT()
-                {
-                    Code = inventory.Barcode,
-                    UoM = "EA",
-                    SequenceNumber = seq,
-                    DeliveryMethod = "Cash_and_Carry",
-                    InventoryID = inventory.ID,
-                    TaxRate = 10,
-                    UoMDescription = "Each",
-                    PriceType = "Standard",
-                    Description = inventory.Description,
-                    ShortDescription = inventory.ShortDescription,
-                    IsActive = true,
-                    PriceDescription = "StandardSellPriceEx",
-                    IsAmendedByOtherParty = false,
-                    Quantity = 2
-                };
-                lines.Add(line);
-                seq++;
-            }
-
             var newSalesOrder = new TransactionSaveRequestOfSalesOrderT
             {
                 _Object = new SalesOrderT
@@ -48,10 +22,10 @@ namespace Spenda.SDK.Tests.Mocks
                     ShipPostCode = "",
                     Discount = 0,
                     CustomerName = customer.Name?.Trim() + customer.Name2?.Trim(),
-                    CreatedWith = "Zoho",
+                    CreatedWith = "SDK",
                     Status = "Open",
                     DiscountMode = "None",
-                    Lines = lines,
+                    Lines = AddLines(inventories),
                     IsActive = true,
                     BillState = "",
                     ShipState = "",
@@ -63,6 +37,56 @@ namespace Spenda.SDK.Tests.Mocks
             };
 
             return newSalesOrder;
+        }
+
+        public static AddLinesRequest addLinesRequest(BusTransSearchResultT saleOrder, List<InventoryItemT> inventories, CustomerT customer)
+        {
+            var newLine = new AddLinesRequest
+            {
+                ID = saleOrder.ID,
+                CustomerID = customer.ID,
+                Lines = AddLines(inventories),
+                DiscountMode = "None",
+                Discount = 0
+            };
+
+            return newLine;
+        }
+
+        private static List<BusTransLineT> AddLines(List<InventoryItemT> inventories)
+        {
+            var seq = 1;
+            var lines = new List<BusTransLineT>();
+
+            foreach (var inventory in inventories)
+            {
+                var line = new BusTransLineT()
+                {
+                    Code = inventory.InventoryCode,
+                    IsRejected = false,
+                    UoM = "EA",
+                    SequenceNumber = seq,
+                    DeliveryMethod = "Cash_and_Carry",
+                    InventoryID = inventory.ID,
+                    IsCreatedByOtherParty = false,
+                    TaxRate = 10,
+                    UoMDescription = "Each",
+                    HasPriceBeenEdited = false,
+                    PriceType = "Standard",
+                    Description = inventory.Description,
+                    ShortDescription = inventory.ShortDescription,
+                    IsActive = true,
+                    StandardSellPriceEx = inventory.StandardSellPriceEx,
+                    StandardSellPriceInc = inventory.StandardSellPriceInc,
+                    PriceDescription = "StandardSellPriceEx",
+                    IsAmendedByOtherParty = false,
+                    Quantity = 2
+                };
+                lines.Add(line);
+                seq++;
+            }
+
+            return lines;
         }
     }
 }

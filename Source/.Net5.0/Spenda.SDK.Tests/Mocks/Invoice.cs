@@ -20,7 +20,7 @@ namespace Spenda.SDK.Tests.Mocks
                     Code = inventory.InventoryCode,
                     UoM = "EA",
                     DeliveryMethod = "Cash_and_Carry",
-                    WarehouseID = inventory.MinMaxLevels[0].WarehouseID,
+                    WarehouseID = 147990,
                     UoMDescription = "Each",
                     HasPriceBeenEdited = false,
                     Quantity = 2,

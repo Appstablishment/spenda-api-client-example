@@ -2,12 +2,8 @@
 using Newtonsoft.Json;
 using RestSharp;
 using Spenda.SDK.Models;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Spenda.SDK.Tests
 {
@@ -86,24 +82,71 @@ namespace Spenda.SDK.Tests
         [TestMethod()]
         public void CreateSalesOrdersTest()
         {
-            var url = $"/api/v3/Customers/{971605}";
+            var url = $"/api/v3/Customers";
             var request = new RestRequest(url);
-            var customer = Get<EditResponseOfCustomerT>(request);
+            request.AddParameter("filter.maxResults", 10);
+            var customer = Get<PagedActionResultsOfCustomers>(request);
+
+            Assert.AreNotEqual(customer.Value.Count, 0);
+
+            var randomCustomer = pickAny<CustomerT>(customer.Value, 1);
 
             url = $"/api/Inventory/";
             request = new RestRequest(url);
-            request.AddParameter("filter.maxResults", 3);
+            request.AddParameter("filter.maxResults", 10);
             var inventories = Get<PagedActionResultsOfInventoryItems>(request);
 
-            var body = JsonConvert.SerializeObject(Mocks.SalesOrders.GetSalesOrdersObject(inventories.Value, customer.Value));
+            Assert.AreNotEqual(inventories.Value.Count, 0);
+
+            var randomInventories = pickAny<InventoryItemT>(inventories.Value, 3);
+            
+            var body = JsonConvert.SerializeObject(Mocks.SalesOrders.GetSalesOrdersObject(randomInventories, randomCustomer.FirstOrDefault()));
 
             request = new RestRequest("/api/SalesOrders");
             request.AddParameter("application/json", body, ParameterType.RequestBody);
 
             var obj = Post<SynkSaveQueueResponse>(request);
-            
+
             AssertSuccess(obj.Messages, obj.IsSuccess);
             Trace.WriteLine($"Sales Order Id: {obj.Value.ID}, Sales Order RefNumber: {obj.Value.RefNumber}");
+        }
+
+        [TestMethod()]
+        public void AddLineToSalesOrdersTest()
+        {
+            var request = new RestRequest($"/api/v3/Customers");
+            request.AddParameter("filter.maxResults", 20);
+            var customer = Get<PagedActionResultsOfCustomers>(request);
+
+            Assert.AreNotEqual(customer.Value.Count, 0);
+
+            var randomCustomer = pickAny<CustomerT>(customer.Value, 1);
+
+            request = new RestRequest($"/api/Inventory/");
+            request.AddParameter("filter.maxResults", 20);
+            var inventories = Get<PagedActionResultsOfInventoryItems>(request);
+
+            Assert.AreNotEqual(inventories.Value.Count, 0);
+
+            var randomInventories = pickAny<InventoryItemT>(inventories.Value, 3);
+
+            request = new RestRequest("/api/SalesOrders");
+            request.AddParameter("filter.maxResults", 10);
+            var salesOrders = Get<PagedActionResultsOfBusTransSearchResultsT>(request);
+
+            Assert.AreNotEqual(salesOrders.Value.Count, 0);
+
+            var randomSalesOrder = pickAny<BusTransSearchResultT>(salesOrders.Value, 1);
+
+            var body = JsonConvert.SerializeObject(Mocks.SalesOrders.addLinesRequest(randomSalesOrder[0], randomInventories, randomCustomer.FirstOrDefault()));
+
+            request = new RestRequest($"/api/SalesOrders/{randomSalesOrder[0].ID}/lines");
+            request.AddParameter("application/json", body, ParameterType.RequestBody);
+
+            var obj = Post<AddLinesResponseOfSalesOrderT>(request);
+
+            AssertSuccess(obj.Messages, obj.IsSuccess);
+            Trace.WriteLine($"Sales Order Id: {obj.Transaction.ID}, Sales Order RefNumber: {obj.Transaction.RefNumber}");
         }
     }
 }

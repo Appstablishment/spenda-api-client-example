@@ -28,7 +28,7 @@
 ## Sales Orders
 `POST` ***/api/SalesOrders*** [Request](SalesOrders/SalesOrderT.json) [Response](SalesOrders/PagedActionResultsOfBusTransSearchResultsT.json)
 
-`POST` ***/api/SalesOrders*** [Request](SalesOrders/SalesOrderT.json) [Response](SalesOrders/PagedActionResultsOfBusTransSearchResultsT.json)
+`POST` ***/api/SalesOrders/{id}/lines*** [Request](SalesOrders/AddLinesRequest.json) [Response](SalesOrders/AddLinesResponseOfSalesOrderT.json)
 
 `GET`  ***/api/SalesOrders/{id}*** [Response](SalesOrders/TransactionEditResponseOfSalesOrderT.json)
 

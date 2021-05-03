@@ -1,12 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using RestSharp;
 using Spenda.SDK.Models;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Spenda.SDK.Tests
 {
@@ -44,6 +40,20 @@ namespace Spenda.SDK.Tests
 
             AssertSuccess(obj.Messages, obj.IsSuccess);
             Trace.WriteLine($"Inventory Id: {obj.Value.ID}, Inventory Short Description: {obj.Value.ShortDescription}");
+        }
+
+        [TestMethod()]
+        public void CreateInventoryTest()
+        {
+            var body = JsonConvert.SerializeObject(Mocks.Inventory.getInventoryObject());
+
+            var request = new RestRequest("/api/Inventory");
+            request.AddParameter("application/json", body, ParameterType.RequestBody);
+
+            var obj = Post<SynkSaveQueueResponse>(request);
+
+            AssertSuccess(obj.Messages, obj.IsSuccess);
+            Trace.WriteLine($"Inventory Id: {obj.Value.ID}, Inventory RefNumber: {obj.Value.RefNumber}");
         }
     }
 }

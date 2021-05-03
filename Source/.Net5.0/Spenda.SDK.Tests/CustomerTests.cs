@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 using RestSharp;
 using Spenda.SDK.Models;
 using System.Diagnostics;
-using System.Linq;
 
 namespace Spenda.SDK.Tests
 {

@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Spenda.SDK.Tests
 {
@@ -124,6 +125,18 @@ namespace Spenda.SDK.Tests
             var msg = messages?.FirstOrDefault();
             Trace.WriteLine($"AssertSuccess ({isSuccess}): {msg}");
             Assert.IsTrue(isSuccess ?? false, msg);
+        }
+
+        public List<T> pickAny<T>(List<T> obj, int count)
+        {
+            var newList = new List<T>();
+            for (int i = 0; i < count; i++)
+            {
+                var rnd = new Random();
+                var any = rnd.Next(0, obj.Count());
+                newList.Add((T)obj[any]);
+            }
+            return newList;
         }
     }
 }
