@@ -134,7 +134,7 @@ namespace Spenda.SDK.Tests
             {
                 var rnd = new Random();
                 var any = rnd.Next(0, obj.Count());
-                newList.Add((T)obj[any]);
+                newList.Add(obj[any]);
             }
             return newList;
         }
