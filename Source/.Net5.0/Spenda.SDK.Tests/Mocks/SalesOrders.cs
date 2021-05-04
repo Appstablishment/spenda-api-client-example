@@ -9,7 +9,7 @@ namespace Spenda.SDK.Tests.Mocks
 {
     public static class SalesOrders
     {
-        public static TransactionSaveRequestOfSalesOrderT GetSalesOrdersObject(List<InventoryItemT> inventories, CustomerT customer)
+        public static TransactionSaveRequestOfSalesOrderT Get(List<InventoryItemT> inventories, CustomerT customer)
         {
             var newSalesOrder = new TransactionSaveRequestOfSalesOrderT
             {
@@ -39,12 +39,12 @@ namespace Spenda.SDK.Tests.Mocks
             return newSalesOrder;
         }
 
-        public static AddLinesRequest addLinesRequest(BusTransSearchResultT saleOrder, List<InventoryItemT> inventories, CustomerT customer)
+        public static AddLinesRequest addLinesRequest(int customerId, SalesOrderT saleOrder, List<InventoryItemT> inventories)
         {
             var newLine = new AddLinesRequest
             {
                 ID = saleOrder.ID,
-                CustomerID = customer.ID,
+                CustomerID = customerId,
                 Lines = AddLines(inventories),
                 DiscountMode = "None",
                 Discount = 0
