@@ -127,14 +127,21 @@ namespace Spenda.SDK.Tests
             Assert.IsTrue(isSuccess ?? false, msg);
         }
 
-        public List<T> pickAny<T>(List<T> obj, int count)
+        public T PickOne<T>(List<T> list)
+        {
+            var rnd = new Random();
+            var any = rnd.Next(0, list.Count());
+            return list[any];
+        }
+
+        public List<T> PickAny<T>(List<T> list, int count)
         {
             var newList = new List<T>();
             for (int i = 0; i < count; i++)
             {
                 var rnd = new Random();
-                var any = rnd.Next(0, obj.Count());
-                newList.Add(obj[any]);
+                var any = rnd.Next(0, list.Count());
+                newList.Add(list[any]);
             }
             return newList;
         }

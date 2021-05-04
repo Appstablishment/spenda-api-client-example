@@ -55,7 +55,7 @@ namespace Spenda.SDK.Tests
 
             Assert.AreNotEqual(customer.Value.Count, 0);
 
-            var randomCustomer = pickAny<CustomerT>(customer.Value, 1);
+            var randomCustomer = PickAny<CustomerT>(customer.Value, 1);
 
             request = new RestRequest("/api/Invoice");
             request.AddParameter("filter.maxResults", 20);
@@ -64,7 +64,7 @@ namespace Spenda.SDK.Tests
 
             Assert.AreNotEqual(invoice.Value.Count, 0);
 
-            var randomInvoices = pickAny<BusTransSearchResultT>(invoice.Value, 3);
+            var randomInvoices = PickAny<BusTransSearchResultT>(invoice.Value, 3);
 
             var body = JsonConvert.SerializeObject(Mocks.Payment.GetPaymentObject(randomInvoices, randomCustomer[0]));
 

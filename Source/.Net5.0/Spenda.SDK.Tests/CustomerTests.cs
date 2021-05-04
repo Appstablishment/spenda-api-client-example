@@ -2,80 +2,174 @@
 using Newtonsoft.Json;
 using RestSharp;
 using Spenda.SDK.Models;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Spenda.SDK.Tests
 {
     [TestClass()]
     public class CustomerTests : BaseTests
     {
-        [TestMethod()]
-        public void CustomerTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void GetAllCustomersTest()
-        {
-            var request = new RestRequest("/api/v3/Customers");
-            request.AddParameter("filter.maxResults", 10);
-
-            var obj = Get<PagedActionResultsOfCustomers>(request);
-
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            foreach (var customer in obj.Value)
-            {
-                Trace.WriteLine($"Customer Name: {customer.Name} {customer.Name2}, Customer Id: {customer.ID}");
-            }
-        }
-
-        [TestMethod()]
-        public void GetCustomerSearchByNameRefNumberTest()
+        /// <summary>
+        /// Call the 
+        /// <api>
+        /// GET /api/v3/Customers 
+        /// </api>
+        /// API to search all of the Operational Customers.
+        /// </summary>
+        /// <param name="isAccountCustomers"> true : Account Customers, false : Operational Customers </param>
+        /// <param name="maxNoOfRecords"> Total number of records to return. </param>
+        /// <param name="searchString"> Search string </param>
+        /// <returns></returns>
+        public List<CustomerT> SearchCustomers(bool isAccountCustomers, 
+                                               int maxNoOfRecords = 10, 
+                                               string searchString = null, 
+                                               bool isExactMatch = false)
         {
             var request = new RestRequest("/api/v3/Customers");
-            //request.AddParameter("filter.customerClassID", 10);
-            request.AddParameter("filter.search", "Bruce");
-            request.AddParameter("filter.isExactMatch", false);
+
+            //Required parameters
+            request.AddParameter("filter.maxResults", maxNoOfRecords);
+            request.AddParameter("filter.IsShowAccountCustomersOnly", isAccountCustomers);
+
+            //Optional parameters
+            request.AddParameter("filter.search", searchString); // For this example we're assuming the search string is the Business Name
+            request.AddParameter("filter.isExactMatch", isExactMatch);
+            
+            request.AddParameter("filter.sortField", "Name"); // Options include : Name, RefNumber, Phone1, ABN, CreatedDateTime, and ModifiedDateTime
             request.AddParameter("filter.sortAsc", true);
-            request.AddParameter("filter.maxResults", 10);
 
-            var obj = Get<PagedActionResultsOfCustomers>(request);
+            var response = Get<PagedActionResultsOfCustomers>(request);
 
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            foreach (var customer in obj.Value)
+            AssertSuccess(response.Messages, response.IsSuccess);
+
+            return response.Value;
+        }
+
+        /// <summary>
+        /// Get a collection of Operational Customers
+        /// </summary>
+        [TestMethod()]
+        public void GetOperationalCustomers_Test()
+        {
+            var customers = SearchCustomers(isAccountCustomers: false);
+
+            //loop through to display the records
+            foreach (var customer in customers)
+            {
+                Trace.WriteLine($"Customer Name: {customer.Name} {customer.Name2}, Customer Id: {customer.ID}");
+            }
+        }
+
+        /// <summary>
+        /// Get a collection of Account Customers
+        /// </summary>
+        [TestMethod()]
+        public void GetAccountCustomers_Test()
+        {
+            var customers = SearchCustomers(isAccountCustomers: true);
+
+            //loop through to display the records
+            foreach (var customer in customers)
             {
                 Trace.WriteLine($"Customer Name: {customer.Name} {customer.Name2}, Customer Id: {customer.ID}");
             }
         }
 
         [TestMethod()]
-        public void GetCustomerByIdTest()
+        [DataRow("Bruce")]
+        [DataRow("John")]
+        [DataRow("Bill")]
+        public void SearchOperationalCustomersByName_Test(string name)
         {
-            var url = $"/api/v3/Customers/{971609}";
-            var request = new RestRequest(url);
-            //request.AddParameter("req.iD", 971609);
-            //request.AddParameter("req.gUID", 971609);
-            //request.AddParameter("req.tenantID", 971609);
+            var customers = SearchCustomers(isAccountCustomers: false, maxNoOfRecords: 10, searchString: name);
 
-            var obj = Get<EditResponseOfCustomerT>(request);
+            foreach (var customer in customers)
+            {
+                Trace.WriteLine($"Customer Name: {customer.Name} {customer.Name2}, Customer Id: {customer.ID}");
+            }
+        }
 
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            Trace.WriteLine($"Customer Name: {obj.Value.Name} {obj.Value.Name2}, Customer Id: {obj.Value.ID}");
+        /// <summary>
+        /// Call the 
+        /// <api>
+        /// GET /api/v3/Customers/{id}
+        /// </api>
+        /// API to get a specific Customer.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public CustomerT GetCustomerByID(int id)
+        {
+            var request = new RestRequest($"/api/v3/Customers/{id}");
+
+            var response = Get<EditResponseOfCustomerT>(request);
+
+            AssertSuccess(response.Messages, response.IsSuccess);
+
+            CustomerT customer = response.Value;
+
+            Assert.IsNotNull(customer);
+
+            Trace.WriteLine($"Customer Name: {customer.Name} {customer.Name2}, Customer Id: {customer.ID}");
+
+            return customer;
+        }
+
+        /// <summary>
+        /// Perform a search by name and use the ID to get a selected customer.
+        /// </summary>
+        [TestMethod()]
+        [DataRow("Bruce")]
+        public void GetAnOperationalCustomerByID_Test(string searchString)
+        {
+            // Get all customers first just so that we can get a valid ID
+            var customers = SearchCustomers(isAccountCustomers: false, 10, searchString);
+
+            if (!(customers?.Any() ?? false)) Assert.Fail("Customers found");
+
+            //select the top customer ID
+            var customerID = customers.FirstOrDefault()?.ID;
+
+            Assert.IsNotNull(customerID);
+
+            // Get the customer by ID
+            var customer = GetCustomerByID(customerID.Value);
+
+            Assert.IsNotNull(customer);
         }
 
         [TestMethod()]
-        public void CreateCustomerTest()
+        public void CreateNewOperationalCustomer_Test()
         {
-            var body = JsonConvert.SerializeObject(Mocks.Customer.GetCustomerObject());
+            var newCustomer = Mocks.Customer.Get();
 
-            var request = new RestRequest("/api/v3/Customers");
-            request.AddParameter("application/json", body, ParameterType.RequestBody);
+            var searchString = newCustomer.Object.Name;
 
-            var obj = Post<SynkSaveQueueResponseOfCustomerT>(request);
+            Assert.IsNotNull(searchString);
 
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            Trace.WriteLine($"Customer Ref Number: {obj.Value.RefNumber}, Customer Id: {obj.Value.ID}");
+            // Search for existing customer record
+            var customers = SearchCustomers(isAccountCustomers: false, 10, searchString, isExactMatch: true);
+
+            if (customers?.Any() ?? false)
+            {
+                Assert.Fail($"Customer {searchString} already found");
+                // Update ?
+            }
+            else
+            {
+                var body = JsonConvert.SerializeObject(newCustomer);
+
+                var request = new RestRequest("/api/v3/Customers");
+                request.AddParameter("application/json", body, ParameterType.RequestBody);
+
+                var obj = Post<SynkSaveQueueResponseOfCustomerT>(request);
+
+                AssertSuccess(obj.Messages, obj.IsSuccess);
+                Trace.WriteLine($"Customer Ref Number: {obj.Value.RefNumber}, Customer Id: {obj.Value.ID}");
+            }
+            
         }
 
         [TestMethod()]
@@ -83,7 +177,7 @@ namespace Spenda.SDK.Tests
         {
             var customerId = 971609;
             var refNumber = "CU-000004";
-            var body = JsonConvert.SerializeObject(Mocks.Customer.GetCustomerObject(customerId, refNumber));
+            var body = JsonConvert.SerializeObject(Mocks.Customer.Get(customerId, refNumber));
 
             var request = new RestRequest($"/api/v3/Customers?id={customerId}");
             request.AddParameter("application/json", body, ParameterType.RequestBody);

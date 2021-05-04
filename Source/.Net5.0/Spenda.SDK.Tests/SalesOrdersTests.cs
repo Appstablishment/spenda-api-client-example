@@ -89,7 +89,7 @@ namespace Spenda.SDK.Tests
 
             Assert.AreNotEqual(customer.Value.Count, 0);
 
-            var randomCustomer = pickAny<CustomerT>(customer.Value, 1);
+            var randomCustomer = PickAny<CustomerT>(customer.Value, 1);
 
             url = $"/api/Inventory/";
             request = new RestRequest(url);
@@ -98,7 +98,7 @@ namespace Spenda.SDK.Tests
 
             Assert.AreNotEqual(inventories.Value.Count, 0);
 
-            var randomInventories = pickAny<InventoryItemT>(inventories.Value, 3);
+            var randomInventories = PickAny<InventoryItemT>(inventories.Value, 3);
             
             var body = JsonConvert.SerializeObject(Mocks.SalesOrders.GetSalesOrdersObject(randomInventories, randomCustomer.FirstOrDefault()));
 
@@ -120,7 +120,7 @@ namespace Spenda.SDK.Tests
 
             Assert.AreNotEqual(customer.Value.Count, 0);
 
-            var randomCustomer = pickAny<CustomerT>(customer.Value, 1);
+            var randomCustomer = PickAny<CustomerT>(customer.Value, 1);
 
             request = new RestRequest($"/api/Inventory/");
             request.AddParameter("filter.maxResults", 20);
@@ -128,7 +128,7 @@ namespace Spenda.SDK.Tests
 
             Assert.AreNotEqual(inventories.Value.Count, 0);
 
-            var randomInventories = pickAny<InventoryItemT>(inventories.Value, 3);
+            var randomInventories = PickAny<InventoryItemT>(inventories.Value, 3);
 
             request = new RestRequest("/api/SalesOrders");
             request.AddParameter("filter.maxResults", 10);
@@ -136,7 +136,7 @@ namespace Spenda.SDK.Tests
 
             Assert.AreNotEqual(salesOrders.Value.Count, 0);
 
-            var randomSalesOrder = pickAny<BusTransSearchResultT>(salesOrders.Value, 1);
+            var randomSalesOrder = PickAny<BusTransSearchResultT>(salesOrders.Value, 1);
 
             var body = JsonConvert.SerializeObject(Mocks.SalesOrders.addLinesRequest(randomSalesOrder[0], randomInventories, randomCustomer.FirstOrDefault()));
 

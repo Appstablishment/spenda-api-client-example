@@ -5,11 +5,11 @@ namespace Spenda.SDK.Tests.Mocks
 {
     public static class Customer
     {
-        public static SaveRequestOfCustomerT GetCustomerObject(int? Id = null, string refNumber = null)
+        public static SaveRequestOfCustomerT Get(int? Id = null, string refNumber = null)
         {
             var newCustomer = new SaveRequestOfCustomerT
             {
-                _Object = new CustomerT
+                Object = new CustomerT
                 {
                     Contacts = new List<ContactT> {
                         new ContactT {
@@ -19,7 +19,7 @@ namespace Spenda.SDK.Tests.Mocks
                             IsActive = true
                         }
                     },
-                    CompanyName = "Avengers Tower",
+                    Name = "Avengers Tower",
                     IsActive = true,
                     IsIndividual = false,
                     ID = Id,
