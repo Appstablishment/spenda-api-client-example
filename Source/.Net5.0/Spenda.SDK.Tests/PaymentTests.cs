@@ -10,12 +10,6 @@ namespace Spenda.SDK.Tests
     public class PaymentTests : BaseTests
     {
         [TestMethod()]
-        public void PaymentTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void GetAllPaymentsTests()
         {
             var request = new RestRequest("/api/Payment");

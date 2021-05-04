@@ -5,11 +5,11 @@ namespace Spenda.SDK.Tests.Mocks
 {
     public static class Inventory
     {
-        public static InventorySaveRequest getInventoryObject(int? Id = null)
+        public static InventorySaveRequest Get(int? Id = null)
         {
             var newInventory = new InventorySaveRequest
             {
-                _Object = new InventoryItemT
+                Object = new InventoryItemT
                 {
                     ID = Id,
                     IsShippable = true,
@@ -89,7 +89,7 @@ namespace Spenda.SDK.Tests.Mocks
         {
             var newInventory = new InventorySaveRequest
             {
-                _Object = new InventoryItemT
+                Object = new InventoryItemT
                 {
                     ID = Id,
                     IsShippable = true,

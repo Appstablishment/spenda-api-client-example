@@ -2,6 +2,8 @@
 using Newtonsoft.Json;
 using RestSharp;
 using Spenda.SDK.Models;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
@@ -10,143 +12,209 @@ namespace Spenda.SDK.Tests
     [TestClass()]
     public class SalesOrdersTests : BaseTests
     {
-        [TestMethod()]
-        public void SalesOrdersTest()
+        /// <summary>
+        /// Call the 
+        /// <api>
+        /// GET /api/SalesOrders 
+        /// </api>
+        /// API to search all of the Sales Order.
+        /// </summary>
+        /// <param name="maxNoOfRecords"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="status"></param>
+        /// <param name="supplierID"></param>
+        /// <returns></returns>
+        public List<BusTransSearchResultT> SearchSalesOrders(int maxNoOfRecords = 10,
+                                                            DateTime? startDate = null,
+                                                            DateTime? endDate = null,
+                                                            string status = null,
+                                                            int? supplierID = null)
         {
-            Assert.Fail();
+            var request = new RestRequest("/api/SalesOrders");
+
+            //Required parameters
+            request.AddParameter("filter.maxResults", maxNoOfRecords);
+
+            //Optional parameters
+            request.AddParameter("filter.startDate", startDate);
+            request.AddParameter("filter.endDate", endDate);
+            request.AddParameter("filter.supplierID", supplierID);
+            request.AddParameter("filter.statusStrings", status);
+
+            request.AddParameter("filter.sortField", "RefNumber"); // Options include : RefNumber, TransDate, Status, CreatedDateTime, and ModifiedDateTime
+
+            var response = Get<PagedActionResultsOfBusTransSearchResultsT>(request);
+
+            AssertSuccess(response.Messages, response.IsSuccess);
+
+            return response.Value;
         }
 
         [TestMethod()]
-        public void GetAllSalesOrdersTest()
+        public void GetLastSalesOrders_Test()
         {
-            var request = new RestRequest("/api/SalesOrders");
-            request.AddParameter("filter.maxResults", 10);
-            //request.AddParameter("filter.businessID", 94894);
-            //request.AddParameter("filter.customerID", 54854);
-            //request.AddParameter("filter.supplierID", 98494);
-            //request.AddParameter("filter.deliveryMethods", "");
+            var salesOrders = SearchSalesOrders(10);
 
-            var obj = Get<PagedActionResultsOfBusTransSearchResultsT>(request);
-
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            foreach (var salesOrder in obj.Value)
+            //loop through to display the records
+            foreach (var salesOrder in salesOrders)
             {
                 Trace.WriteLine($"Sales Order  Id: {salesOrder.ID}, Sales Order RefNumber: {salesOrder.RefNumber}");
             }
         }
 
-        [TestMethod()]
-        public void GetSalesOrderByIdTest()
+        public SalesOrderT GetSalesOrderByID(int id)
         {
-            var url = $"/api/SalesOrders/{142092}";
-            var request = new RestRequest(url);
+            var request = new RestRequest($"/api/SalesOrders/{id}");
 
-            var obj = Get<TransactionEditResponseOfSalesOrderT>(request);
+            var response = Get<TransactionEditResponseOfSalesOrderT>(request);
 
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            Trace.WriteLine($"Sales Order Id: {obj.Value.ID}, Sales Order RefNumber: {obj.Value.RefSalesOrderRefNumber}");
+            AssertSuccess(response.Messages, response.IsSuccess);
+
+            SalesOrderT salesOrder = response.Value;
+
+            Assert.IsNotNull(salesOrder);
+
+            Trace.WriteLine($"Sales Order Id: {salesOrder.ID}, Sales Order RefNumber: {salesOrder.RefSalesOrderRefNumber}");
+
+            return salesOrder;
         }
 
         [TestMethod()]
-        public void GetSalesOrderMessagestest()
+        public void GetSalesOrderById_Test()
         {
-            var salesOrderId = 971609;
-            var url = "/api/SalesOrders/{id}/messages";
-            url = url.Replace("{id}", salesOrderId.ToString());
+            //select any Sales Order
+            var salesOrders = SearchSalesOrders(10);
 
-            var request = new RestRequest(url);
+            if (!(salesOrders?.Any() ?? false)) Assert.Fail("Sales Orders found");
 
-            var obj = Get<ActionResultsOfBusTransMessages>(request);
+            //select the any Sales Order ID
+            var salesOrderID = PickOne<BusTransSearchResultT>(salesOrders).ID;
 
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            foreach (var salesOrder in obj.Value)
+            // Get the Sales Order by ID
+            var salesOrder = GetSalesOrderByID(salesOrderID.Value);
+
+            Assert.IsNotNull(salesOrder);
+        }
+
+        public List<BusTransMessageT> GetAllMessagesBySalesOrderByID(int id)
+        {
+            var request = new RestRequest($"/api/SalesOrders/{id}/messages");
+
+            var response = Get<ActionResultsOfBusTransMessages>(request);
+
+            AssertSuccess(response.Messages, response.IsSuccess);
+
+            return response.Value;
+        }
+
+        [TestMethod()]
+        public void GetSalesOrderMessages_Test()
+        {
+            //select any Sales Order
+            var salesOrders = SearchSalesOrders(10);
+
+            if (!(salesOrders?.Any() ?? false)) Assert.Fail("Sales Orders found");
+
+            //select the any Sales Order ID
+            var salesOrderID = PickOne<BusTransSearchResultT>(salesOrders).ID;
+
+            //select the sales order messages by sales order Id
+            var salesOrdersMessages = GetAllMessagesBySalesOrderByID(salesOrderID.Value);
+
+            foreach (var salesOrdersMessage in salesOrdersMessages)
             {
-                Trace.WriteLine($"Sales Order  Id: {salesOrder.ID}, Sales Order Message: {salesOrder.Message}");
+                Trace.WriteLine($"Sales Order  Id: {salesOrdersMessage.ID}, Sales Order Message: {salesOrdersMessage.Message}");
             }
         }
 
-        [TestMethod()]
-        public void DeleteSalesOrderById()
+        public ActionResults DeleteSalesOrderByID(int id)
         {
-            var salesOrderId = 971609;
-            var url = "/api/SalesOrders/{id}/messages";
-            url = url.Replace("{id}", salesOrderId.ToString());
+            var request = new RestRequest($"/api/SalesOrders/{id}");
 
-            var request = new RestRequest(url);
+            var response = Delete<ActionResults>(request);
 
-            var obj = Delete<ActionResults>(request);
+            AssertSuccess(response.Messages, response.IsSuccess);
 
-            AssertSuccess(obj.Messages, obj.IsSuccess);
+            return response;
         }
 
         [TestMethod()]
-        public void CreateSalesOrdersTest()
+        public void DeleteSalesOrderById_Test()
         {
-            var url = $"/api/v3/Customers";
-            var request = new RestRequest(url);
-            request.AddParameter("filter.maxResults", 10);
-            var customer = Get<PagedActionResultsOfCustomers>(request);
+            //select any Sales Order
+            var salesOrders = SearchSalesOrders(10);
 
-            Assert.AreNotEqual(customer.Value.Count, 0);
+            if (!(salesOrders?.Any() ?? false)) Assert.Fail("Sales Orders found");
 
-            var randomCustomer = PickAny<CustomerT>(customer.Value, 1);
+            //select the any Sales Order ID
+            var salesOrderID = PickOne<BusTransSearchResultT>(salesOrders).ID;
 
-            url = $"/api/Inventory/";
-            request = new RestRequest(url);
-            request.AddParameter("filter.maxResults", 10);
-            var inventories = Get<PagedActionResultsOfInventoryItems>(request);
+            var salesOrder = DeleteSalesOrderByID(salesOrderID.Value);
 
-            Assert.AreNotEqual(inventories.Value.Count, 0);
+            Assert.IsNotNull(salesOrder);
+        }
 
-            var randomInventories = PickAny<InventoryItemT>(inventories.Value, 3);
-            
-            var body = JsonConvert.SerializeObject(Mocks.SalesOrders.GetSalesOrdersObject(randomInventories, randomCustomer.FirstOrDefault()));
+        public SynkValidation CreateNewSalesOrder(List<InventoryItemT> randomInventories, CustomerT randomCustomer)
+        {
+            var body = JsonConvert.SerializeObject(Mocks.SalesOrders.GetSalesOrdersObject(randomInventories, randomCustomer));
 
-            request = new RestRequest("/api/SalesOrders");
+            var request = new RestRequest("/api/SalesOrders");
             request.AddParameter("application/json", body, ParameterType.RequestBody);
 
-            var obj = Post<SynkSaveQueueResponse>(request);
+            var response = Post<SynkSaveQueueResponse>(request);
 
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            Trace.WriteLine($"Sales Order Id: {obj.Value.ID}, Sales Order RefNumber: {obj.Value.RefNumber}");
+            AssertSuccess(response.Messages, response.IsSuccess);
+            return response.Value;
         }
 
         [TestMethod()]
-        public void AddLineToSalesOrdersTest()
+        public void CreateSalesOrders_Test()
         {
-            var request = new RestRequest($"/api/v3/Customers");
-            request.AddParameter("filter.maxResults", 20);
-            var customer = Get<PagedActionResultsOfCustomers>(request);
+            var customerTest = new CustomerTests();
+            var customer = customerTest.SearchCustomers(true, 10);
+            var randomCustomer = PickOne<CustomerT>(customer);
 
-            Assert.AreNotEqual(customer.Value.Count, 0);
+            var inventoryTest = new InventoryTests();
+            var inventories = inventoryTest.SearchInventories();
+            var randomInventories = PickAny<InventoryItemT>(inventories, 3);
 
-            var randomCustomer = PickAny<CustomerT>(customer.Value, 1);
+            var salesOrder = CreateNewSalesOrder(randomInventories, randomCustomer);
 
-            request = new RestRequest($"/api/Inventory/");
-            request.AddParameter("filter.maxResults", 20);
-            var inventories = Get<PagedActionResultsOfInventoryItems>(request);
+            Trace.WriteLine($"Sales Order Id: {salesOrder.ID}, Sales Order RefNumber: {salesOrder.RefNumber}");
+        }
 
-            Assert.AreNotEqual(inventories.Value.Count, 0);
+        public SalesOrderT AddLinesToExistingSalesOrder(BusTransSearchResultT randomSalesOrder, List<InventoryItemT> randomInventories, CustomerT randomCustomer)
+        {
+            var body = JsonConvert.SerializeObject(Mocks.SalesOrders.addLinesRequest(randomSalesOrder, randomInventories, randomCustomer));
 
-            var randomInventories = PickAny<InventoryItemT>(inventories.Value, 3);
-
-            request = new RestRequest("/api/SalesOrders");
-            request.AddParameter("filter.maxResults", 10);
-            var salesOrders = Get<PagedActionResultsOfBusTransSearchResultsT>(request);
-
-            Assert.AreNotEqual(salesOrders.Value.Count, 0);
-
-            var randomSalesOrder = PickAny<BusTransSearchResultT>(salesOrders.Value, 1);
-
-            var body = JsonConvert.SerializeObject(Mocks.SalesOrders.addLinesRequest(randomSalesOrder[0], randomInventories, randomCustomer.FirstOrDefault()));
-
-            request = new RestRequest($"/api/SalesOrders/{randomSalesOrder[0].ID}/lines");
+            var request = new RestRequest($"/api/SalesOrders/{randomSalesOrder.ID}/lines");
             request.AddParameter("application/json", body, ParameterType.RequestBody);
 
-            var obj = Post<AddLinesResponseOfSalesOrderT>(request);
+            var response = Post<AddLinesResponseOfSalesOrderT>(request);
 
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            Trace.WriteLine($"Sales Order Id: {obj.Transaction.ID}, Sales Order RefNumber: {obj.Transaction.RefNumber}");
+            AssertSuccess(response.Messages, response.IsSuccess);
+
+            return response.Transaction;
+        }
+
+        [TestMethod()]
+        public void AddLineToSalesOrders_Test()
+        {
+            var customerTest = new CustomerTests();
+            var customer = customerTest.SearchCustomers(true, 10);
+            var randomCustomer = PickOne<CustomerT>(customer);
+
+            var inventoryTest = new InventoryTests();
+            var inventories = inventoryTest.SearchInventories();
+            var randomInventories = PickAny<InventoryItemT>(inventories, 3);
+
+            var salesOrders = SearchSalesOrders(10);
+            var randomSalesOrder = PickOne<BusTransSearchResultT>(salesOrders);
+
+            var updatedSalesOrder = AddLinesToExistingSalesOrder(randomSalesOrder, randomInventories, randomCustomer);
+
+            Trace.WriteLine($"Sales Order Id: {updatedSalesOrder.ID}, Sales Order RefNumber: {updatedSalesOrder.RefNumber}");
         }
     }
 }

@@ -31,7 +31,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Object", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Object")]
-    public InventoryItemT _Object { get; set; }
+    public InventoryItemT Object { get; set; }
 
     /// <summary>
     /// Gets or Sets IsQueue
