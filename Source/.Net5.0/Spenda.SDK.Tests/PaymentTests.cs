@@ -2,73 +2,166 @@
 using Newtonsoft.Json;
 using RestSharp;
 using Spenda.SDK.Models;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Spenda.SDK.Tests
 {
     [TestClass()]
     public class PaymentTests : BaseTests
     {
+        /// <summary>
+        /// Call the 
+        /// <api>
+        /// GET /api/Payment 
+        /// </api>
+        /// API to search all of the Sales Order.
+        /// </summary>
+        /// <param name="maxNoOfRecords"></param>
+        /// <param name="transactionTypeDatTypeID"></param>
+        /// <param name="includeLogs"></param>
+        /// <returns></returns>
+        public List<PaymentT> SearchPayments(int maxNoOfRecords = 10,
+                                             int? transactionTypeDatTypeID = null,
+                                             bool? includeLogs = null)
+        {
+            var request = new RestRequest("/api/Payment");
+
+            //Required parameters
+            request.AddParameter("filter.maxResults", maxNoOfRecords);
+
+            //Optional parameters
+            request.AddParameter("filter.transactionTypeDatTypeID", transactionTypeDatTypeID);
+            request.AddParameter("filter.includeLogs", includeLogs);
+
+            var response = Get<PagedActionResultsOfPayments>(request);
+
+            AssertSuccess(response.Messages, response.IsSuccess);
+
+            return response.Value;
+        }
+
         [TestMethod()]
         public void GetAllPaymentsTests()
         {
-            var request = new RestRequest("/api/Payment");
-            request.AddParameter("filter.maxResults", 10);
+            var payments = SearchPayments();
 
-            var obj = Get<PagedActionResultsOfPayments>(request);
-
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-
-            foreach (var payment in obj.Value)
+            foreach (var payment in payments)
             {
                 Trace.WriteLine($"Payment Id: {payment.ID} , Payment refNumber: {payment.RefNumber}");
             }
         }
 
+        /// <summary>
+        /// Call the 
+        /// <api>
+        /// GET /api/Payment/{id}
+        /// </api>
+        /// API to get a specific payment.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public PaymentT GetPaymentByID(int id)
+        {
+            var request = new RestRequest($"/api/Payment/{id}");
+            
+            var response = Get<EditResponseOfPaymentT>(request);
+
+            AssertSuccess(response.Messages, response.IsSuccess);
+
+            PaymentT payment = response.Value;
+
+            Assert.IsNotNull(payment);
+
+            Trace.WriteLine($"Payment Id: {payment.ID}, Payment RefNumber: {payment.RefNumber}");
+
+            return payment;
+        }
+
+        /// <summary>
+        /// Get a payment by its ID
+        /// </summary>
         [TestMethod()]
         public void GetPaymentByIdTest()
         {
-            var request = new RestRequest($"/api/Payment/{488284}");
-            //request.AddParameter("req.iD", 971609);
-            //request.AddParameter("req.gUID", 971609);
-            //request.AddParameter("req.isGetExtraInfo", false);
-            //request.AddParameter("req.tenantID", 971609);
+            //select any payments
+            var payments = SearchPayments();
 
-            var obj = Get<EditResponseOfPaymentT>(request);
+            if (!(payments?.Any() ?? false)) Assert.Fail("Payments found");
 
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            Trace.WriteLine($"Payment Id: {obj.Value.ID}  Payment RefNumber: {obj.Value.RefNumber}");
+            //select the any payment ID
+            var paymentID = PickOne<PaymentT>(payments).ID;
+
+            // Get the payment by ID
+            var payment = GetPaymentByID(paymentID.Value);
+
+            Assert.IsNotNull(payment);
         }
 
-        [TestMethod()]
-        public void CreatePaymentTest()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <param name="invoices"></param>
+        /// <param name="salesOrder"></param>
+        /// <returns></returns>
+        public SynkValidation CreateNewPayment(CustomerT customer, InvoiceT invoices = null, BusTransSearchResultT salesOrder = null)
         {
-            var request = new RestRequest($"/api/v3/Customers");
-            request.AddParameter("filter.maxResults", 20);
-            var customer = Get<PagedActionResultsOfCustomers>(request);
+            var newPayment = Mocks.Payment.Get(customer, invoices, salesOrder);
+            var body = JsonConvert.SerializeObject(newPayment);
 
-            Assert.AreNotEqual(customer.Value.Count, 0);
-
-            var randomCustomer = PickAny<CustomerT>(customer.Value, 1);
-
-            request = new RestRequest("/api/Invoice");
-            request.AddParameter("filter.maxResults", 20);
-            request.AddParameter("filter.statusStrings", "open");
-            var invoice = Get<PagedActionResultsOfBusTransSearchResultsT>(request);
-
-            Assert.AreNotEqual(invoice.Value.Count, 0);
-
-            var randomInvoices = PickAny<BusTransSearchResultT>(invoice.Value, 3);
-
-            var body = JsonConvert.SerializeObject(Mocks.Payment.GetPaymentObject(randomInvoices, randomCustomer[0]));
-
-            request = new RestRequest("/api/Payment/");
+            var request = new RestRequest("/api/Payment/");
             request.AddParameter("application/json", body, ParameterType.RequestBody);
 
-            var obj = Post<SynkSaveQueueResponseOfPaymentT>(request);
+            var response = Post<SynkSaveQueueResponseOfPaymentT>(request);
 
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            Trace.WriteLine($"Payment Id: {obj.Value.ID}  Payment RefNumber: {obj.Value.RefNumber}");
+            AssertSuccess(response.Messages, response.IsSuccess);
+            return response.Value;
+        }
+
+        /// <summary>
+        /// Post a new payment getting a random operational customer and a random sale order
+        /// </summary>
+        [TestMethod()]
+        public void CreateSalesOrdersPayment_Test()
+        {
+            // Get a collection of customers and pick one randomly
+            var customerTest = new CustomerTests();
+            var customer = customerTest.SearchCustomers(true, 10);
+            var randomCustomer = PickOne<CustomerT>(customer);
+
+            // Get a collection of customers and pick one randomly
+            var salesOrderTest = new SalesOrdersTests();
+            var salesOrder = salesOrderTest.SearchSalesOrders();
+            var randomSalesOrder = PickOne<BusTransSearchResultT>(salesOrder);
+
+            //post new sale order based on inventories and customer
+            var payment = CreateNewPayment(randomCustomer, null, randomSalesOrder);
+
+            Trace.WriteLine($"Payment Id: {payment.ID}, Payment RefNumber: {payment.RefNumber}");
+        }
+
+        /// <summary>
+        /// Post a new payment getting a random operational customer and a random sale order
+        /// </summary>
+        [TestMethod()]
+        public void CreateInvoicePayment_Test()
+        {
+            // Get a collection of customers and pick one randomly
+            var customerTest = new CustomerTests();
+            var customer = customerTest.SearchCustomers(true, 10);
+            var randomCustomer = PickOne<CustomerT>(customer);
+
+            // Get a collection of customers and pick one randomly
+            var salesOrderTest = new SalesOrdersTests();
+            var salesOrder = salesOrderTest.SearchSalesOrders();
+            var randomSalesOrder = PickOne<BusTransSearchResultT>(salesOrder);
+
+            //post new sale order based on inventories and customer
+            var payment = CreateNewPayment(randomCustomer, null, randomSalesOrder);
+
+            Trace.WriteLine($"Payment Id: {payment.ID}, Payment RefNumber: {payment.RefNumber}");
         }
     }
 }

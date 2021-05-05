@@ -17,7 +17,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Object", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Object")]
-    public PaymentT _Object { get; set; }
+    public PaymentT Object { get; set; }
 
     /// <summary>
     /// Gets or Sets IsQueue
@@ -62,7 +62,7 @@ namespace Spenda.SDK.Models {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class SaveRequestOfPaymentT {\n");
-      sb.Append("  _Object: ").Append(_Object).Append("\n");
+      sb.Append("  Object: ").Append(Object).Append("\n");
       sb.Append("  IsQueue: ").Append(IsQueue).Append("\n");
       sb.Append("  IsSaveAutoQueue: ").Append(IsSaveAutoQueue).Append("\n");
       sb.Append("  TenantID: ").Append(TenantID).Append("\n");

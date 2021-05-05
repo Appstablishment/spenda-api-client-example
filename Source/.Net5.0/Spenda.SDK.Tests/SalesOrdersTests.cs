@@ -93,7 +93,7 @@ namespace Spenda.SDK.Tests
         }
 
         /// <summary>
-        /// Get a collection of Operational Customers
+        /// Get a Sales Order by its ID
         /// </summary>
         [TestMethod()]
         public void GetSalesOrderById_Test()

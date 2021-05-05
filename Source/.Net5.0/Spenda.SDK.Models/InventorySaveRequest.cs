@@ -78,7 +78,7 @@ namespace Spenda.SDK.Models {
       sb.Append("class InventorySaveRequest {\n");
       sb.Append("  LinkedSupplierID: ").Append(LinkedSupplierID).Append("\n");
       sb.Append("  SuppliersDetails: ").Append(SuppliersDetails).Append("\n");
-      sb.Append("  _Object: ").Append(_Object).Append("\n");
+      sb.Append("  _Object: ").Append(Object).Append("\n");
       sb.Append("  IsQueue: ").Append(IsQueue).Append("\n");
       sb.Append("  IsSaveAutoQueue: ").Append(IsSaveAutoQueue).Append("\n");
       sb.Append("  TenantID: ").Append(TenantID).Append("\n");

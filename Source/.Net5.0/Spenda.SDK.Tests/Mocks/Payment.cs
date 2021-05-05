@@ -7,7 +7,7 @@ namespace Spenda.SDK.Tests.Mocks
 {
     public static class Payment
     {
-        public static SaveRequestOfPaymentT GetPaymentObject(InvoiceT invoice, CustomerT customer)
+        public static SaveRequestOfPaymentT Get(CustomerT customer, InvoiceT invoice, BusTransSearchResultT salesOrder)
         {
             var RefBusTrans = new List<RefBusTranT>();
             RefBusTrans.Add(new RefBusTranT
@@ -21,7 +21,7 @@ namespace Spenda.SDK.Tests.Mocks
 
             var newInvoice = new SaveRequestOfPaymentT
             {
-                _Object = new PaymentT
+                Object = new PaymentT
                 {
                     RefNumber = "PY-123456",
                     DateTime = DateTime.Now,
@@ -57,7 +57,7 @@ namespace Spenda.SDK.Tests.Mocks
 
             var newInvoice = new SaveRequestOfPaymentT
             {
-                _Object = new PaymentT
+                Object = new PaymentT
                 {
                     RefNumber = "PY-123456",
                     DateTime = DateTime.Now,

@@ -26,7 +26,7 @@ namespace Spenda.SDK.Tests
         /// <param name="IsApprovedForPOS"></param>
         /// <param name="isExactMatch"></param>
         /// <returns></returns>
-        public List<InvoiceT> SearchInvoices(string searchString=null,
+        public List<BusTransSearchResultT> SearchInvoices(string searchString=null,
                                           DateTime? startDate=null,
                                           DateTime? endDate=null,
                                           bool isExactMatch=false,
@@ -49,11 +49,6 @@ namespace Spenda.SDK.Tests
             return response.Value;
         }
         
-        [TestMethod()]
-        public void InvoiceTest()
-        {
-            Assert.Fail();
-        }
         /// <summary>
         /// Call the 
         /// <api>
@@ -79,6 +74,7 @@ namespace Spenda.SDK.Tests
                 Trace.WriteLine($"Invoice Id: {invoice.ID} , Invoice refNumber: {invoice.RefNumber},  {invoice.Status}");
             }
         }
+
         /// <summary>
         /// Call the 
         /// <api>
@@ -87,8 +83,7 @@ namespace Spenda.SDK.Tests
         /// API to get a specific Invoice.
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
-        
+        /// <returns></returns>        
         [TestMethod()]
         public void GetInvoiceByIdTest()
         {
