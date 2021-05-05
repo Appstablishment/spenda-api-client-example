@@ -6,7 +6,7 @@ namespace Spenda.SDK.Tests.Mocks
 {
     public static class Invoice
     {
-        public static TransactionSaveRequestOfInvoiceT GetInvoiceObject(CustomerT customer, List<InventoryItemT> inventories)
+        public static TransactionSaveRequestOfInvoiceT Get(CustomerT customer, List<InventoryItemT> inventories)
         {
             if (inventories == null) return null;
 

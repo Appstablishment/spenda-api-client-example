@@ -127,7 +127,7 @@ namespace Spenda.SDK.Tests
             // Get all customers first just so that we can get a valid ID
             var customers = SearchCustomers(isAccountCustomers: false, 10, searchString);
 
-            if (!(customers?.Any() ?? false)) Assert.Fail("Customers found");
+            if (!(customers?.Any() ?? false)) Assert.Fail("Not Customers found");
 
             //select the top customer ID
             var customerID = customers.FirstOrDefault()?.ID;
@@ -140,6 +140,9 @@ namespace Spenda.SDK.Tests
             Assert.IsNotNull(customer);
         }
 
+        /// <summary>
+        /// Post a newoperational customer 
+        /// </summary>
         [TestMethod()]
         public void CreateNewOperationalCustomer_Test()
         {
@@ -172,20 +175,49 @@ namespace Spenda.SDK.Tests
             
         }
 
-        [TestMethod()]
-        public void UpdateCustomerTest()
+        /// <summary>
+        /// Call the 
+        /// <api>
+        /// POST /api/v3/Customers?id={id}
+        /// </api>
+        /// API to post a Sale Order.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="refNumber"></param>
+        /// <returns></returns>
+        public SynkValidation UpdateCustomer(int id, string refNumber)
         {
-            var customerId = 971609;
-            var refNumber = "CU-000004";
-            var body = JsonConvert.SerializeObject(Mocks.Customer.Get(customerId, refNumber));
+            var body = JsonConvert.SerializeObject(Mocks.Customer.Get(id, refNumber));
 
-            var request = new RestRequest($"/api/v3/Customers?id={customerId}");
+            var request = new RestRequest($"/api/v3/Customers?id={id}");
             request.AddParameter("application/json", body, ParameterType.RequestBody);
 
-            var obj = Put<SynkSaveQueueResponseOfCustomerT>(request);
+            var response = Put<SynkSaveQueueResponseOfCustomerT>(request);
 
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            Trace.WriteLine($"Customer Ref Number: {obj.Value.RefNumber}, Customer Id: {obj.Value.ID}");
+            AssertSuccess(response.Messages, response.IsSuccess);
+
+            SynkValidation customer = response.Value;
+
+            Assert.IsNotNull(customer);
+
+            Trace.WriteLine($"Customer Id: {customer.ID}, Customer BSID: {customer.BSID}");
+
+            return customer;
+        }
+
+        /// <summary>
+        /// Put and existind operational customer to update its details
+        /// </summary>
+        [TestMethod()]
+        public void UpdateCustomer_Test()
+        {
+            // Search for existing customer record
+            var customers = SearchCustomers(isAccountCustomers: false, 10, null, isExactMatch: true);
+            var randomCustomer = PickOne<CustomerT>(customers);
+
+            var updatedCustomer = UpdateCustomer(randomCustomer.CustomerID.Value, randomCustomer.RefNumber);
+
+            Trace.WriteLine($"Customer Ref Number: {updatedCustomer.RefNumber}, Customer Id: {updatedCustomer.ID}");
         }
     }
 }

@@ -42,6 +42,9 @@ namespace Spenda.SDK.Tests
             return response.Value;
         }
 
+        /// <summary>
+        /// Get a collection of payments
+        /// </summary>
         [TestMethod()]
         public void GetAllPaymentsTests()
         {
@@ -88,7 +91,7 @@ namespace Spenda.SDK.Tests
             //select any payments
             var payments = SearchPayments();
 
-            if (!(payments?.Any() ?? false)) Assert.Fail("Payments found");
+            if (!(payments?.Any() ?? false)) Assert.Fail("Not Payments found");
 
             //select the any payment ID
             var paymentID = PickOne<PaymentT>(payments).ID;

@@ -68,7 +68,7 @@ namespace Spenda.SDK.Tests
             // Get all customers first just so that we can get a valid ID
             var inventories = SearchInventories();
 
-            if (!(inventories?.Any() ?? false)) Assert.Fail("Inventories found");
+            if (!(inventories?.Any() ?? false)) Assert.Fail("Not Inventories found");
 
             //select the top inventory ID
             var inventoryID = inventories.FirstOrDefault()?.ID;

@@ -41,6 +41,9 @@ namespace Spenda.SDK.Tests
             //Optional parameters
             request.AddParameter("filter.searchString", searchString); 
             request.AddParameter("filter.isExactMatch", isExactMatch);
+            request.AddParameter("filter.startDate", startDate);
+            request.AddParameter("filter.endDate", endDate);
+            request.AddParameter("filter.isApprovedForPOS", IsApprovedForPOS);
 
             var response = Get<PagedActionResultsOfBusTransSearchResultsT>(request);
 
@@ -57,19 +60,12 @@ namespace Spenda.SDK.Tests
         /// API to get all of the Invoices.
         /// </summary>
         [TestMethod()]
-        public void GetAllInvoiceTest()
+        public void GetAllInvoice_Test()
         {
-            var request = new RestRequest("/api/Invoice");
-
-            //Added filter.maxResults to get 10 records only
-            request.AddParameter("filter.maxResults", 10);
-
-            var obj = Get<PagedActionResultsOfBusTransSearchResultsT>(request);
-
-            AssertSuccess(obj.Messages, obj.IsSuccess);
+            var invoices = SearchInvoices();
 
             //loop through to display the records
-            foreach (var invoice in obj.Value)
+            foreach (var invoice in invoices)
             {
                 Trace.WriteLine($"Invoice Id: {invoice.ID} , Invoice refNumber: {invoice.RefNumber},  {invoice.Status}");
             }
@@ -83,24 +79,40 @@ namespace Spenda.SDK.Tests
         /// API to get a specific Invoice.
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>        
-        [TestMethod()]
-        public void GetInvoiceByIdTest()
+        /// <returns></returns>
+        public InvoiceT GetInvoiceByID(int id)
         {
-            // Get all customers first just so that we can get a valid ID
+            var request = new RestRequest($"/api/Invoice/{id}");
+            var response = Get<TransactionEditResponseOfInvoiceT>(request);
+
+            AssertSuccess(response.Messages, response.IsSuccess);
+
+            InvoiceT invoice = response.Value;
+
+            Assert.IsNotNull(invoice);
+
+            Trace.WriteLine($"Invoice Id: {invoice.ID}  Invoice RefNumber: {invoice.RefNumber}");
+            return invoice;
+        }
+
+        /// <summary>
+        /// Get a invoice by its ID
+        /// </summary>  
+        [TestMethod()]
+        public void GetInvoiceById_Test()
+        {
+            // Get a collection of invoices so that we can get a valid ID
             var invoices = SearchInvoices();
-            if (!(invoices?.Any() ?? false)) Assert.Fail("invoices found");
+            
+            if (!(invoices?.Any() ?? false)) Assert.Fail("Not invoices found");
 
             //select the top invoice ID
-            var id = invoices.FirstOrDefault()?.ID;
+            var invoiceId = invoices.FirstOrDefault()?.ID;
 
-            Assert.IsNotNull(id);
+            // Get the Sales Order by ID
+            var invoice = GetInvoiceByID(invoiceId.Value);
 
-            var request = new RestRequest($"/api/Invoice/{id}");
-            var obj = Get<TransactionEditResponseOfInvoiceT>(request);
-
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            Trace.WriteLine($"Invoice Id: {obj.Value.ID}  Invoice RefNumber: {obj.Value.RefNumber}");
+            Assert.IsNotNull(invoice);
         }
 
         /// <summary>
@@ -110,37 +122,43 @@ namespace Spenda.SDK.Tests
         /// </api>
         /// API to Create an Invoice.
         /// </summary>
+        /// <param name="inventories"></param> A collection of inventory items
+        /// <param name="customer"></param> a customer item
         /// <returns></returns>
-        [TestMethod()]
-        public void CreateInvoiceTest()
+        public SynkValidation CreateNewInvoice(CustomerT customer, List<InventoryItemT> inventoryItems)
         {
-            var url = $"/api/v3/Customers";
-            var request = new RestRequest(url);
-            request.AddParameter("filter.maxResults", 20);
-            var customer = Get<PagedActionResultsOfCustomers>(request);
+            var newInvoice = Mocks.Invoice.Get(customer, inventoryItems);
+            var body = JsonConvert.SerializeObject(newInvoice);
 
-            Assert.AreNotEqual(customer.Value.Count, 0);
-
-            var randomCustomer = PickAny<CustomerT>(customer.Value, 1);
-
-            url = $"/api/Inventory/";
-            request = new RestRequest(url);
-            request.AddParameter("filter.maxResults", 10);
-            var inventories = Get<PagedActionResultsOfInventoryItems>(request);
-
-            Assert.AreNotEqual(inventories.Value.Count, 0);
-
-            var randomInventories = PickAny<InventoryItemT>(inventories.Value, 3);
-
-            var body = JsonConvert.SerializeObject(Mocks.Invoice.GetInvoiceObject(randomCustomer[0], randomInventories));
-            
-            request = new RestRequest("/api/Invoice/");
+            var request = new RestRequest("/api/Invoice/");
             request.AddParameter("application/json", body, ParameterType.RequestBody);
 
-            var obj = Post<SynkSaveQueueResponse>(request);
+            var response = Post<SynkSaveQueueResponse>(request);
 
-            AssertSuccess(obj.Messages, obj.IsSuccess);
-            Trace.WriteLine($"Invoice Id: {obj.Value.ID}");
+            AssertSuccess(response.Messages, response.IsSuccess);
+            return response.Value;
+        }
+
+        /// <summary>
+        /// Post a new invoice getting a random operational customer and a random collection of inventories
+        /// </summary>
+        [TestMethod()]
+        public void CreateInvoice_Test()
+        {
+            // Get a collection of customers and pick one randomly
+            var customerTest = new CustomerTests();
+            var customer = customerTest.SearchCustomers(true, 10);
+            var randomCustomer = PickOne<CustomerT>(customer);
+
+            // Get a collection of inventories and pick any randomly
+            var inventoryTest = new InventoryTests();
+            var inventories = inventoryTest.SearchInventories();
+            var randomInventories = PickAny<InventoryItemT>(inventories, 3);
+
+            //post new invoice based on inventories and customer
+            var invoice = CreateNewInvoice(randomCustomer, randomInventories);
+
+            Trace.WriteLine($"Invoice Id: {invoice.ID}");
         }
     }
 }
