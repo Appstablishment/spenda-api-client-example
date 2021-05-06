@@ -112,6 +112,9 @@ namespace Spenda.SDK.Tests
         public SynkValidation CreateNewPayment(CustomerT customer, InvoiceT invoices = null, BusTransSearchResultT salesOrder = null)
         {
             var newPayment = Mocks.Payment.Get(customer, invoices, salesOrder);
+
+            if (newPayment == null) Assert.Fail("New Payments could not be created");
+
             var body = JsonConvert.SerializeObject(newPayment);
 
             var request = new RestRequest("/api/Payment/");
