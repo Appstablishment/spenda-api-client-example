@@ -62,7 +62,7 @@ namespace Spenda.SDK.Tests
             //loop through to display the records
             foreach (var salesOrder in salesOrders)
             {
-                Trace.WriteLine($"Sales Order  Id: {salesOrder.ID}, Sales Order RefNumber: {salesOrder.RefNumber}");
+                Trace.WriteLine($"Sales Order  Id: {salesOrder.ID}, Sales Order RefNumber: {salesOrder.RefNumber}, Sales Order Status: {salesOrder.Status}");
             }
         }
 
