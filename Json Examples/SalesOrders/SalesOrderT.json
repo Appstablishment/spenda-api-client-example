@@ -23,6 +23,8 @@
                 "Description": "{Description}",
                 "ShortDescription": "{Name/ShortDescription}",                
                 "IsActive": true,
+                "StandardSellPriceEx": {inventory.StandardSellPriceEx},
+                "StandardSellPriceInc": {inventory.StandardSellPriceInc},
                 "PriceDescription": "StandardSellPriceEx",
                 "IsAmendedByOtherParty": false,
                 "Quantity": "7"
