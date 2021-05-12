@@ -9,7 +9,7 @@
       "CreatedWith": "{Your system Name}",
       "Status": "Paid",
       "Amount": 1056.35,
-      "TransactionTypeDatTypeID":  21,
+      "TransactionTypeDatTypeID": {TransactionTypeDatTypeID}, //Invoice:51, SalesOrder:21
       "RefBusTrans": [
         {
           "ID": {SalesOrderID / InvoiceID}, 

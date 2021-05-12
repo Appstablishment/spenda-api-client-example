@@ -13,12 +13,12 @@ namespace Spenda.SDK.Tests.Mocks
                 return GetPaymentInvoice(customer, invoice);
 
             if (invoice == null && salesOrder != null)
-                return GetSalesOrderInvoice(customer, salesOrder);
+                return GetPaymentSalesOrder(customer, salesOrder);
 
             return null;
         }
 
-        public static SaveRequestOfPaymentT GetSalesOrderInvoice(CustomerT customer, BusTransSearchResultT salesOrder)
+        public static SaveRequestOfPaymentT GetPaymentSalesOrder(CustomerT customer, BusTransSearchResultT salesOrder)
         {
             var RefBusTrans = new List<RefBusTranT>();
 
@@ -78,7 +78,8 @@ namespace Spenda.SDK.Tests.Mocks
                     CreatedWith = "SDK",
                     Status = "Paid",
                     Amount = invoice.TotalInc,
-                    RefBusTrans = RefBusTrans
+                    RefBusTrans = RefBusTrans,
+                    TransactionTypeDatTypeID = 51
                 }
             };
 

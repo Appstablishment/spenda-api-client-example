@@ -12,13 +12,10 @@ namespace Spenda.SDK.Tests
     public class BaseTests
     {
         private const string baseUrl = "https://spenda-api.synkd.net";
-        //private const string subscriptionKey = "5aaec5a06ae3404097357667f6429589"; //TODO: change this to a demo user account
-        private const string subscriptionKey = "e7b474f407ea4b46b5f04549041ac53e"; //TODO: change this to a demo user account
+        private const string subscriptionKey = "5aaec5a06ae3404097357667f6429589"; //TODO: change this to a demo user account
         private const string environment = "preprod";
-        //private const string username = "shane.nall+sdk@appstab.co";
-        //private const string password = "1qwerty";
-        private const string username = "devops@mintworxs.com";
-        private const string password = "Mint@2020";
+        private const string username = "shane.nall+sdk@appstab.co";
+        private const string password = "1qwerty";
         private const int websiteID = 1;
 
         protected RestClient _restClient;
