@@ -44,7 +44,8 @@ namespace Spenda.SDK.Tests.Mocks
                     CreatedWith = "SDK",
                     Status = "Paid",
                     Amount = salesOrder.TotalInc,
-                    RefBusTrans = RefBusTrans
+                    RefBusTrans = RefBusTrans,
+                    TransactionTypeDatTypeID = 21
                 }
             };
 
