@@ -44,6 +44,96 @@ namespace Spenda.SDK.Tests.Mocks
 
             return newInventory;
         }
+
+        public static InventorySaveRequest GetInventoryWithCreatedCategories(int? Id = null)
+        {
+            var newInventory = new InventorySaveRequest
+            {
+                Object = new InventoryItemT
+                {
+                    ID = Id,
+                    IsShippable = true,
+                    IsOrderable = true,
+                    IsInCatalogue = false,
+                    InventoryCode = "IC42GL63T123",
+                    Barcode = "BC42GL63T123",
+                    SKU = "SKU42GL63T123",
+                    IsActive = true,
+                    IsAssetItem = false,
+                    IsSold = false,
+                    IsOrderTaxExempt = false,
+                    IsPhysical = true,
+                    IsSOHTracked = false,
+                    IsPurchased = false,
+                    UoM = "EA",
+                    UoMDescription = "Each",
+                    ShortDescription = "LG 42GL63T 27inch",
+                    Description = "LG 42GL63T 32inch 144Hz Full HD IPS Gaming Monitor",
+                    StandardSellPriceEx = 500,
+                    StandardSellPriceInc = 90,
+                    LastBuyPriceEx = null,
+                    RRP = 500,
+                    IsVariantMaster = false,
+                    Type = "Inventory",
+                    IsPublished = false,
+                    IsApproved = false,
+                    MinSalesQty = 1.0000000000,
+                    CreatedWith = "SDK",
+                    Categories = new List<CategoryT>()
+                    {
+                       new CategoryT(){ ID = 34311, Description = "cate 1"},
+                       new CategoryT(){ ID = 34312, Description = "cate 2"},
+                    }
+                }
+            };
+
+            return newInventory;
+        }
+
+        public static InventorySaveRequest GetInventoryWithNonCreatedCategories(int? Id = null)
+        {
+            var newInventory = new InventorySaveRequest
+            {
+                Object = new InventoryItemT
+                {
+                    ID = Id,
+                    IsShippable = true,
+                    IsOrderable = true,
+                    IsInCatalogue = false,
+                    InventoryCode = "IC52GL63T123",
+                    Barcode = "BC52GL63T123",
+                    SKU = "SKU52GL63T123",
+                    IsActive = true,
+                    IsAssetItem = false,
+                    IsSold = false,
+                    IsOrderTaxExempt = false,
+                    IsPhysical = true,
+                    IsSOHTracked = false,
+                    IsPurchased = false,
+                    UoM = "EA",
+                    UoMDescription = "Each",
+                    ShortDescription = "LG 52GL63T 27inch",
+                    Description = "LG 52GL63T 32inch 144Hz Full HD IPS Gaming Monitor",
+                    StandardSellPriceEx = 500,
+                    StandardSellPriceInc = 90,
+                    LastBuyPriceEx = null,
+                    RRP = 500,
+                    IsVariantMaster = false,
+                    Type = "Inventory",
+                    IsPublished = false,
+                    IsApproved = false,
+                    MinSalesQty = 1.0000000000,
+                    CreatedWith = "SDK",
+                    Categories = new List<CategoryT>()
+                    {
+                       new CategoryT(){ Description = "cate 4"},
+                    }
+                }
+            };
+
+            return newInventory;
+        }
+
         public static ActionRequestOfInventoryVariations getVariantInventoryObject(int? Id = null)
         {
             var newInventoryVariant = new ActionRequestOfInventoryVariations
@@ -85,6 +175,7 @@ namespace Spenda.SDK.Tests.Mocks
             };
             return newInventoryVariant;
         }
+
         public static InventorySaveRequest getInventoryWithVariationObject(int? Id = null)
         {
             var newInventory = new InventorySaveRequest
