@@ -45,21 +45,21 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="StandardSellPriceEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "StandardSellPriceEx")]
-    public double? StandardSellPriceEx { get; set; }
+    public decimal? StandardSellPriceEx { get; set; }
 
     /// <summary>
     /// Gets or Sets StandardSellPriceInc
     /// </summary>
     [DataMember(Name="StandardSellPriceInc", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "StandardSellPriceInc")]
-    public double? StandardSellPriceInc { get; set; }
+    public decimal? StandardSellPriceInc { get; set; }
 
     /// <summary>
     /// Gets or Sets CostPriceEx
     /// </summary>
     [DataMember(Name="CostPriceEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "CostPriceEx")]
-    public double? CostPriceEx { get; set; }
+    public decimal? CostPriceEx { get; set; }
 
     /// <summary>
     /// Gets or Sets VariationOptions

@@ -45,7 +45,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="StandardSellPriceIncDelta", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "StandardSellPriceIncDelta")]
-    public double? StandardSellPriceIncDelta { get; set; }
+    public decimal? StandardSellPriceIncDelta { get; set; }
 
     /// <summary>
     /// Gets or Sets VariationOptionID
@@ -101,7 +101,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="StandardSellPriceExDelta", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "StandardSellPriceExDelta")]
-    public double? StandardSellPriceExDelta { get; set; }
+    public decimal? StandardSellPriceExDelta { get; set; }
 
     /// <summary>
     /// Gets or Sets MediaFileID

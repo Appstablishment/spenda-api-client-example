@@ -24,14 +24,14 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="DiscountPercentage", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "DiscountPercentage")]
-    public double? DiscountPercentage { get; set; }
+    public decimal? DiscountPercentage { get; set; }
 
     /// <summary>
     /// Gets or Sets Price
     /// </summary>
     [DataMember(Name="Price", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Price")]
-    public double? Price { get; set; }
+    public decimal? Price { get; set; }
 
 
     /// <summary>

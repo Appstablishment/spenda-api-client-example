@@ -59,7 +59,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="TotalInc", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalInc")]
-    public double? TotalInc { get; set; }
+    public decimal? TotalInc { get; set; }
 
     /// <summary>
     /// Gets or Sets ID
@@ -87,7 +87,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Amount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Amount")]
-    public double? Amount { get; set; }
+    public decimal? Amount { get; set; }
 
     /// <summary>
     /// Gets or Sets TransTypeID
@@ -122,21 +122,21 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="AppliedAmount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "AppliedAmount")]
-    public double? AppliedAmount { get; set; }
+    public decimal? AppliedAmount { get; set; }
 
     /// <summary>
     /// Gets or Sets Balance
     /// </summary>
     [DataMember(Name="Balance", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Balance")]
-    public double? Balance { get; set; }
+    public decimal? Balance { get; set; }
 
     /// <summary>
     /// Gets or Sets MerchantSurcharge
     /// </summary>
     [DataMember(Name="MerchantSurcharge", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "MerchantSurcharge")]
-    public double? MerchantSurcharge { get; set; }
+    public decimal? MerchantSurcharge { get; set; }
 
     /// <summary>
     /// Gets or Sets MerchantSurchargeLineID

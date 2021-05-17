@@ -17,7 +17,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="TotalQuantity", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalQuantity")]
-    public double? TotalQuantity { get; set; }
+    public decimal? TotalQuantity { get; set; }
 
     /// <summary>
     /// Gets or Sets OtherPartyInvoiceRefNumber
@@ -171,21 +171,21 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="TotalEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalEx")]
-    public double? TotalEx { get; set; }
+    public decimal? TotalEx { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalInc
     /// </summary>
     [DataMember(Name="TotalInc", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalInc")]
-    public double? TotalInc { get; set; }
+    public decimal? TotalInc { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalTax
     /// </summary>
     [DataMember(Name="TotalTax", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalTax")]
-    public double? TotalTax { get; set; }
+    public decimal? TotalTax { get; set; }
 
     /// <summary>
     /// Gets or Sets LineCount

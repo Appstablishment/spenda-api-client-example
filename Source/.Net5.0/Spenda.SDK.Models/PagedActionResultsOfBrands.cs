@@ -101,21 +101,21 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="SumTotalEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "SumTotalEx")]
-    public double? SumTotalEx { get; set; }
+    public decimal? SumTotalEx { get; set; }
 
     /// <summary>
     /// Gets or Sets SumTotalTax
     /// </summary>
     [DataMember(Name="SumTotalTax", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "SumTotalTax")]
-    public double? SumTotalTax { get; set; }
+    public decimal? SumTotalTax { get; set; }
 
     /// <summary>
     /// Gets or Sets SumTotalBalance
     /// </summary>
     [DataMember(Name="SumTotalBalance", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "SumTotalBalance")]
-    public double? SumTotalBalance { get; set; }
+    public decimal? SumTotalBalance { get; set; }
 
     /// <summary>
     /// Gets or Sets CountOpen

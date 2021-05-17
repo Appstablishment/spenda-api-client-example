@@ -73,7 +73,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="AvailableCredit", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "AvailableCredit")]
-    public double? AvailableCredit { get; set; }
+    public decimal? AvailableCredit { get; set; }
 
     /// <summary>
     /// Gets or Sets LastInvoice
@@ -122,14 +122,14 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="BillToCustomerCreditLimit", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "BillToCustomerCreditLimit")]
-    public double? BillToCustomerCreditLimit { get; set; }
+    public decimal? BillToCustomerCreditLimit { get; set; }
 
     /// <summary>
     /// Gets or Sets BillToCustomerAccountBalance
     /// </summary>
     [DataMember(Name="BillToCustomerAccountBalance", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "BillToCustomerAccountBalance")]
-    public double? BillToCustomerAccountBalance { get; set; }
+    public decimal? BillToCustomerAccountBalance { get; set; }
 
     /// <summary>
     /// Gets or Sets OperationalCustomerIDs
@@ -143,7 +143,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="OverdueInvoicesAmount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "OverdueInvoicesAmount")]
-    public double? OverdueInvoicesAmount { get; set; }
+    public decimal? OverdueInvoicesAmount { get; set; }
 
     /// <summary>
     /// Gets or Sets RowNumber
@@ -157,7 +157,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Version", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Version")]
-    public double? Version { get; set; }
+    public decimal? Version { get; set; }
 
     /// <summary>
     /// Gets or Sets CompanyName
@@ -612,14 +612,14 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="PointsBalance", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "PointsBalance")]
-    public double? PointsBalance { get; set; }
+    public decimal? PointsBalance { get; set; }
 
     /// <summary>
     /// Gets or Sets AccountBalance
     /// </summary>
     [DataMember(Name="AccountBalance", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "AccountBalance")]
-    public double? AccountBalance { get; set; }
+    public decimal? AccountBalance { get; set; }
 
     /// <summary>
     /// Gets or Sets IsAutoAddClaimRequests
@@ -633,7 +633,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="CreditLimit", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "CreditLimit")]
-    public double? CreditLimit { get; set; }
+    public decimal? CreditLimit { get; set; }
 
     /// <summary>
     /// Gets or Sets BillToCustomerID

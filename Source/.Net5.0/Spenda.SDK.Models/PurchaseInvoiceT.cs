@@ -94,14 +94,14 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Version", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Version")]
-    public double? Version { get; set; }
+    public decimal? Version { get; set; }
 
     /// <summary>
     /// Gets or Sets AccountBalance
     /// </summary>
     [DataMember(Name="AccountBalance", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "AccountBalance")]
-    public double? AccountBalance { get; set; }
+    public decimal? AccountBalance { get; set; }
 
     /// <summary>
     /// Gets or Sets AccountBalanceString
@@ -115,7 +115,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="AvailableCredit", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "AvailableCredit")]
-    public double? AvailableCredit { get; set; }
+    public decimal? AvailableCredit { get; set; }
 
     /// <summary>
     /// Gets or Sets AvailableCreditString
@@ -241,7 +241,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="TotalOwing", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalOwing")]
-    public double? TotalOwing { get; set; }
+    public decimal? TotalOwing { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalOwingString
@@ -381,7 +381,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="QuantityCount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "QuantityCount")]
-    public double? QuantityCount { get; set; }
+    public decimal? QuantityCount { get; set; }
 
     /// <summary>
     /// Gets or Sets AttachmentCount
@@ -437,21 +437,21 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="OriginalTotalEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "OriginalTotalEx")]
-    public double? OriginalTotalEx { get; set; }
+    public decimal? OriginalTotalEx { get; set; }
 
     /// <summary>
     /// Gets or Sets OriginalTotalInc
     /// </summary>
     [DataMember(Name="OriginalTotalInc", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "OriginalTotalInc")]
-    public double? OriginalTotalInc { get; set; }
+    public decimal? OriginalTotalInc { get; set; }
 
     /// <summary>
     /// Gets or Sets OriginalTotalTax
     /// </summary>
     [DataMember(Name="OriginalTotalTax", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "OriginalTotalTax")]
-    public double? OriginalTotalTax { get; set; }
+    public decimal? OriginalTotalTax { get; set; }
 
     /// <summary>
     /// Gets or Sets IsMoreLinesToGet
@@ -479,7 +479,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="TotalPaid", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalPaid")]
-    public double? TotalPaid { get; set; }
+    public decimal? TotalPaid { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalPaidString
@@ -507,7 +507,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="ExpectedTotalEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "ExpectedTotalEx")]
-    public double? ExpectedTotalEx { get; set; }
+    public decimal? ExpectedTotalEx { get; set; }
 
     /// <summary>
     /// Gets or Sets SupplierName
@@ -528,7 +528,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="ExpectedTotalTax", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "ExpectedTotalTax")]
-    public double? ExpectedTotalTax { get; set; }
+    public decimal? ExpectedTotalTax { get; set; }
 
     /// <summary>
     /// Gets or Sets SupplierBSID
@@ -549,7 +549,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="ExpectedTotalInc", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "ExpectedTotalInc")]
-    public double? ExpectedTotalInc { get; set; }
+    public decimal? ExpectedTotalInc { get; set; }
 
     /// <summary>
     /// Gets or Sets SupplierRefNumber
@@ -822,35 +822,35 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="TotalEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalEx")]
-    public double? TotalEx { get; set; }
+    public decimal? TotalEx { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalInc
     /// </summary>
     [DataMember(Name="TotalInc", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalInc")]
-    public double? TotalInc { get; set; }
+    public decimal? TotalInc { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalTax
     /// </summary>
     [DataMember(Name="TotalTax", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalTax")]
-    public double? TotalTax { get; set; }
+    public decimal? TotalTax { get; set; }
 
     /// <summary>
     /// Gets or Sets Balance
     /// </summary>
     [DataMember(Name="Balance", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Balance")]
-    public double? Balance { get; set; }
+    public decimal? Balance { get; set; }
 
     /// <summary>
     /// Gets or Sets Discount
     /// </summary>
     [DataMember(Name="Discount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Discount")]
-    public double? Discount { get; set; }
+    public decimal? Discount { get; set; }
 
     /// <summary>
     /// Gets or Sets DiscountMode
@@ -976,7 +976,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="ExchangeRate", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "ExchangeRate")]
-    public double? ExchangeRate { get; set; }
+    public decimal? ExchangeRate { get; set; }
 
     /// <summary>
     /// Gets or Sets Currency
@@ -1025,7 +1025,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="CashPaymentRounding", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "CashPaymentRounding")]
-    public double? CashPaymentRounding { get; set; }
+    public decimal? CashPaymentRounding { get; set; }
 
     /// <summary>
     /// Gets or Sets Messages

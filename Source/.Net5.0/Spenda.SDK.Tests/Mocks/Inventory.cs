@@ -37,7 +37,7 @@ namespace Spenda.SDK.Tests.Mocks
                     Type = "Inventory",
                     IsPublished = false,
                     IsApproved = false,
-                    MinSalesQty = 1.0000000000,
+                    MinSalesQty = 1.0000000000m,
                     CreatedWith = "SDK"
                 }
             };
@@ -77,7 +77,7 @@ namespace Spenda.SDK.Tests.Mocks
                     Type = "Inventory",
                     IsPublished = false,
                     IsApproved = false,
-                    MinSalesQty = 1.0000000000,
+                    MinSalesQty = 1.0000000000m,
                     CreatedWith = "SDK",
                     Categories = new List<CategoryT>()
                     {
@@ -122,7 +122,7 @@ namespace Spenda.SDK.Tests.Mocks
                     Type = "Inventory",
                     IsPublished = false,
                     IsApproved = false,
-                    MinSalesQty = 1.0000000000,
+                    MinSalesQty = 1.0000000000m,
                     CreatedWith = "SDK",
                     Categories = new List<CategoryT>()
                     {
@@ -208,7 +208,7 @@ namespace Spenda.SDK.Tests.Mocks
                     Type = "Inventory",
                     IsPublished = false,
                     IsApproved = false,
-                    MinSalesQty = 1.0000000000,
+                    MinSalesQty = 1.0000000000m,
                     CreatedWith = "Zoho",
                     Variations = new List<InventoryVariationT>{
                         new InventoryVariationT{

@@ -17,28 +17,28 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="DiscountPercent", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "DiscountPercent")]
-    public double? DiscountPercent { get; set; }
+    public decimal? DiscountPercent { get; set; }
 
     /// <summary>
     /// Gets or Sets CostPlusPercent
     /// </summary>
     [DataMember(Name="CostPlusPercent", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "CostPlusPercent")]
-    public double? CostPlusPercent { get; set; }
+    public decimal? CostPlusPercent { get; set; }
 
     /// <summary>
     /// Gets or Sets GrossProfitValue
     /// </summary>
     [DataMember(Name="GrossProfitValue", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "GrossProfitValue")]
-    public double? GrossProfitValue { get; set; }
+    public decimal? GrossProfitValue { get; set; }
 
     /// <summary>
     /// Gets or Sets GrossProfitPercent
     /// </summary>
     [DataMember(Name="GrossProfitPercent", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "GrossProfitPercent")]
-    public double? GrossProfitPercent { get; set; }
+    public decimal? GrossProfitPercent { get; set; }
 
     /// <summary>
     /// Gets or Sets RoundingFactor
@@ -66,7 +66,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Price", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Price")]
-    public double? Price { get; set; }
+    public decimal? Price { get; set; }
 
     /// <summary>
     /// Gets or Sets PricingModeString

@@ -31,49 +31,49 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Quantity", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Quantity")]
-    public double? Quantity { get; set; }
+    public decimal? Quantity { get; set; }
 
     /// <summary>
     /// Gets or Sets SellPriceEx
     /// </summary>
     [DataMember(Name="SellPriceEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "SellPriceEx")]
-    public double? SellPriceEx { get; set; }
+    public decimal? SellPriceEx { get; set; }
 
     /// <summary>
     /// Gets or Sets SellPriceInc
     /// </summary>
     [DataMember(Name="SellPriceInc", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "SellPriceInc")]
-    public double? SellPriceInc { get; set; }
+    public decimal? SellPriceInc { get; set; }
 
     /// <summary>
     /// Gets or Sets SellPriceTax
     /// </summary>
     [DataMember(Name="SellPriceTax", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "SellPriceTax")]
-    public double? SellPriceTax { get; set; }
+    public decimal? SellPriceTax { get; set; }
 
     /// <summary>
     /// Gets or Sets LineTotalEx
     /// </summary>
     [DataMember(Name="LineTotalEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "LineTotalEx")]
-    public double? LineTotalEx { get; set; }
+    public decimal? LineTotalEx { get; set; }
 
     /// <summary>
     /// Gets or Sets LineTotalInc
     /// </summary>
     [DataMember(Name="LineTotalInc", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "LineTotalInc")]
-    public double? LineTotalInc { get; set; }
+    public decimal? LineTotalInc { get; set; }
 
     /// <summary>
     /// Gets or Sets LineTotalTax
     /// </summary>
     [DataMember(Name="LineTotalTax", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "LineTotalTax")]
-    public double? LineTotalTax { get; set; }
+    public decimal? LineTotalTax { get; set; }
 
     /// <summary>
     /// Gets or Sets Comment

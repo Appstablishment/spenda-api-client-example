@@ -73,7 +73,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="TotalInc", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalInc")]
-    public double? TotalInc { get; set; }
+    public decimal? TotalInc { get; set; }
 
     /// <summary>
     /// Gets or Sets Issues
@@ -101,21 +101,21 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="QuantityCount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "QuantityCount")]
-    public double? QuantityCount { get; set; }
+    public decimal? QuantityCount { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalEx
     /// </summary>
     [DataMember(Name="TotalEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalEx")]
-    public double? TotalEx { get; set; }
+    public decimal? TotalEx { get; set; }
 
     /// <summary>
     /// Gets or Sets AppliedAmount
     /// </summary>
     [DataMember(Name="AppliedAmount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "AppliedAmount")]
-    public double? AppliedAmount { get; set; }
+    public decimal? AppliedAmount { get; set; }
 
     /// <summary>
     /// Gets or Sets AppliedDate
