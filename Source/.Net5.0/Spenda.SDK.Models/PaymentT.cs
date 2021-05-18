@@ -157,7 +157,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="SurchargeAmount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "SurchargeAmount")]
-    public double? SurchargeAmount { get; set; }
+    public decimal? SurchargeAmount { get; set; }
 
     /// <summary>
     /// Gets or Sets SettlementDate
@@ -220,35 +220,35 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Amount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Amount")]
-    public double? Amount { get; set; }
+    public decimal? Amount { get; set; }
 
     /// <summary>
     /// Gets or Sets Fee
     /// </summary>
     [DataMember(Name="Fee", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Fee")]
-    public double? Fee { get; set; }
+    public decimal? Fee { get; set; }
 
     /// <summary>
     /// Gets or Sets AmountTendered
     /// </summary>
     [DataMember(Name="AmountTendered", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "AmountTendered")]
-    public double? AmountTendered { get; set; }
+    public decimal? AmountTendered { get; set; }
 
     /// <summary>
     /// Gets or Sets ChangeGiven
     /// </summary>
     [DataMember(Name="ChangeGiven", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "ChangeGiven")]
-    public double? ChangeGiven { get; set; }
+    public decimal? ChangeGiven { get; set; }
 
     /// <summary>
     /// Gets or Sets CashOut
     /// </summary>
     [DataMember(Name="CashOut", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "CashOut")]
-    public double? CashOut { get; set; }
+    public decimal? CashOut { get; set; }
 
     /// <summary>
     /// Gets or Sets DateTime
@@ -346,14 +346,14 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="ExchangeRate", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "ExchangeRate")]
-    public double? ExchangeRate { get; set; }
+    public decimal? ExchangeRate { get; set; }
 
     /// <summary>
     /// Gets or Sets AppliedAmount
     /// </summary>
     [DataMember(Name="AppliedAmount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "AppliedAmount")]
-    public double? AppliedAmount { get; set; }
+    public decimal? AppliedAmount { get; set; }
 
     /// <summary>
     /// Gets or Sets AppliedDate
@@ -521,7 +521,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Balance", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Balance")]
-    public double? Balance { get; set; }
+    public decimal? Balance { get; set; }
 
     /// <summary>
     /// Gets or Sets IsManuallyAllocated

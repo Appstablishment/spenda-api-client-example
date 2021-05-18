@@ -31,7 +31,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="TotalSOH", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalSOH")]
-    public double? TotalSOH { get; set; }
+    public decimal? TotalSOH { get; set; }
 
     /// <summary>
     /// Gets or Sets DefaultImageURL
@@ -157,7 +157,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="MaxStandardSellPriceEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "MaxStandardSellPriceEx")]
-    public double? MaxStandardSellPriceEx { get; set; }
+    public decimal? MaxStandardSellPriceEx { get; set; }
 
     /// <summary>
     /// Gets or Sets ChildVariants
@@ -430,35 +430,35 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="StandardSellPriceEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "StandardSellPriceEx")]
-    public double? StandardSellPriceEx { get; set; }
+    public decimal? StandardSellPriceEx { get; set; }
 
     /// <summary>
     /// Gets or Sets CostPriceEx
     /// </summary>
     [DataMember(Name="CostPriceEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "CostPriceEx")]
-    public double? CostPriceEx { get; set; }
+    public decimal? CostPriceEx { get; set; }
 
     /// <summary>
     /// Gets or Sets StandardSellPriceInc
     /// </summary>
     [DataMember(Name="StandardSellPriceInc", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "StandardSellPriceInc")]
-    public double? StandardSellPriceInc { get; set; }
+    public decimal? StandardSellPriceInc { get; set; }
 
     /// <summary>
     /// Gets or Sets LastBuyPriceEx
     /// </summary>
     [DataMember(Name="LastBuyPriceEx", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "LastBuyPriceEx")]
-    public double? LastBuyPriceEx { get; set; }
+    public decimal? LastBuyPriceEx { get; set; }
 
     /// <summary>
     /// Gets or Sets RRP
     /// </summary>
     [DataMember(Name="RRP", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "RRP")]
-    public double? RRP { get; set; }
+    public decimal? RRP { get; set; }
 
     /// <summary>
     /// Gets or Sets ExpenseAccount
@@ -542,28 +542,28 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Length_m", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Length_m")]
-    public double? LengthM { get; set; }
+    public decimal? LengthM { get; set; }
 
     /// <summary>
     /// Gets or Sets WidthM
     /// </summary>
     [DataMember(Name="Width_m", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Width_m")]
-    public double? WidthM { get; set; }
+    public decimal? WidthM { get; set; }
 
     /// <summary>
     /// Gets or Sets WeightKg
     /// </summary>
     [DataMember(Name="Weight_kg", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Weight_kg")]
-    public double? WeightKg { get; set; }
+    public decimal? WeightKg { get; set; }
 
     /// <summary>
     /// Gets or Sets DepthM
     /// </summary>
     [DataMember(Name="Depth_m", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Depth_m")]
-    public double? DepthM { get; set; }
+    public decimal? DepthM { get; set; }
 
     /// <summary>
     /// Gets or Sets CreatedDateTimeUtc
@@ -661,21 +661,21 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Volume", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Volume")]
-    public double? Volume { get; set; }
+    public decimal? Volume { get; set; }
 
     /// <summary>
     /// Gets or Sets MinSalesQty
     /// </summary>
     [DataMember(Name="MinSalesQty", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "MinSalesQty")]
-    public double? MinSalesQty { get; set; }
+    public decimal? MinSalesQty { get; set; }
 
     /// <summary>
     /// Gets or Sets MaxSalesQty
     /// </summary>
     [DataMember(Name="MaxSalesQty", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "MaxSalesQty")]
-    public double? MaxSalesQty { get; set; }
+    public decimal? MaxSalesQty { get; set; }
 
     /// <summary>
     /// Gets or Sets IsPostingInventoryItem

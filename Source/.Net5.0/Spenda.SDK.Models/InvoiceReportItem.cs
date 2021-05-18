@@ -52,14 +52,14 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="SumTotalInc", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "SumTotalInc")]
-    public double? SumTotalInc { get; set; }
+    public decimal? SumTotalInc { get; set; }
 
     /// <summary>
     /// Gets or Sets SumPaymentAmount
     /// </summary>
     [DataMember(Name="SumPaymentAmount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "SumPaymentAmount")]
-    public double? SumPaymentAmount { get; set; }
+    public decimal? SumPaymentAmount { get; set; }
 
     /// <summary>
     /// Gets or Sets CountInvoices

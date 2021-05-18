@@ -80,7 +80,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Balance", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Balance")]
-    public double? Balance { get; set; }
+    public decimal? Balance { get; set; }
 
     /// <summary>
     /// Gets or Sets OldestTransDate

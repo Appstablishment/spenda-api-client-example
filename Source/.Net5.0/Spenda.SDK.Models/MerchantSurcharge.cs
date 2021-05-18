@@ -52,28 +52,28 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="SurchargePercent", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "SurchargePercent")]
-    public double? SurchargePercent { get; set; }
+    public decimal? SurchargePercent { get; set; }
 
     /// <summary>
     /// Gets or Sets SurchargeAmount
     /// </summary>
     [DataMember(Name="SurchargeAmount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "SurchargeAmount")]
-    public double? SurchargeAmount { get; set; }
+    public decimal? SurchargeAmount { get; set; }
 
     /// <summary>
     /// Gets or Sets PaymentAmount
     /// </summary>
     [DataMember(Name="PaymentAmount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "PaymentAmount")]
-    public double? PaymentAmount { get; set; }
+    public decimal? PaymentAmount { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalAmount
     /// </summary>
     [DataMember(Name="TotalAmount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalAmount")]
-    public double? TotalAmount { get; set; }
+    public decimal? TotalAmount { get; set; }
 
     /// <summary>
     /// Gets or Sets BusTrans

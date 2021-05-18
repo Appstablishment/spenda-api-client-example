@@ -73,35 +73,35 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="TotalStockOnOrder", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalStockOnOrder")]
-    public double? TotalStockOnOrder { get; set; }
+    public decimal? TotalStockOnOrder { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalSOH
     /// </summary>
     [DataMember(Name="TotalSOH", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalSOH")]
-    public double? TotalSOH { get; set; }
+    public decimal? TotalSOH { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalStockCommitted
     /// </summary>
     [DataMember(Name="TotalStockCommitted", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalStockCommitted")]
-    public double? TotalStockCommitted { get; set; }
+    public decimal? TotalStockCommitted { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalStockAvailable
     /// </summary>
     [DataMember(Name="TotalStockAvailable", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalStockAvailable")]
-    public double? TotalStockAvailable { get; set; }
+    public decimal? TotalStockAvailable { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalStockInTransit
     /// </summary>
     [DataMember(Name="TotalStockInTransit", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalStockInTransit")]
-    public double? TotalStockInTransit { get; set; }
+    public decimal? TotalStockInTransit { get; set; }
 
 
     /// <summary>

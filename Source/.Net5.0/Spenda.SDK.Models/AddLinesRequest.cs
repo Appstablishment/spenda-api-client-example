@@ -24,7 +24,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="Discount", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "Discount")]
-    public double? Discount { get; set; }
+    public decimal? Discount { get; set; }
 
     /// <summary>
     /// Gets or Sets Lines
@@ -59,7 +59,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="TotalRefund", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalRefund")]
-    public double? TotalRefund { get; set; }
+    public decimal? TotalRefund { get; set; }
 
     /// <summary>
     /// Gets or Sets LineSort

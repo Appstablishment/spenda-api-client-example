@@ -122,7 +122,7 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="CreditLimit", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "CreditLimit")]
-    public double? CreditLimit { get; set; }
+    public decimal? CreditLimit { get; set; }
 
     /// <summary>
     /// Gets or Sets TradingTermDays

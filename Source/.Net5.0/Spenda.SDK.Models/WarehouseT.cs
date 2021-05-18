@@ -150,14 +150,14 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="TotalSOH", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalSOH")]
-    public double? TotalSOH { get; set; }
+    public decimal? TotalSOH { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalStockValue
     /// </summary>
     [DataMember(Name="TotalStockValue", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "TotalStockValue")]
-    public double? TotalStockValue { get; set; }
+    public decimal? TotalStockValue { get; set; }
 
     /// <summary>
     /// Gets or Sets IsStockOpeningBalanceComplete
@@ -171,14 +171,14 @@ namespace Spenda.SDK.Models {
     /// </summary>
     [DataMember(Name="MinimumStockHoldingValue", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "MinimumStockHoldingValue")]
-    public double? MinimumStockHoldingValue { get; set; }
+    public decimal? MinimumStockHoldingValue { get; set; }
 
     /// <summary>
     /// Gets or Sets MaximumStockHoldingValue
     /// </summary>
     [DataMember(Name="MaximumStockHoldingValue", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "MaximumStockHoldingValue")]
-    public double? MaximumStockHoldingValue { get; set; }
+    public decimal? MaximumStockHoldingValue { get; set; }
 
     /// <summary>
     /// Gets or Sets DefaultPOSCustomerID
