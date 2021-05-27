@@ -84,7 +84,7 @@ namespace Spenda.SDK.Tests
         [TestMethod()]
         public void CreateInventory_Test()
         {
-            var newInventory = Mocks.Inventory.GetInventoryWithNonCreatedCategories();
+            var newInventory = Mocks.Inventory.GetInventoryWithCreatedCategories();
 
             var searchString = newInventory.Object.ShortDescription;
 

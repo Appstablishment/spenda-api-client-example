@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 namespace Spenda.SDK.Tests
 {
     [TestClass()]
-    public class CategoryTests : BaseTests
+    public class BrandTests : BaseTests
     {
-        public List<CategoryT> SearchCategories(string searchString = null,
-                                              int maxNoOfRecords = 10,
-                                              bool isExactMatch = false)
+        public List<BrandT> SearchBrands(string searchString = null,
+                                      int maxNoOfRecords = 10,
+                                      bool isExactMatch = false)
         {
-            var request = new RestRequest("/api/Category");
+            var request = new RestRequest("/api/Brand");
 
             //Required parameters
             request.AddParameter("filter.maxResults", maxNoOfRecords);
@@ -28,7 +28,7 @@ namespace Spenda.SDK.Tests
 
             request.AddParameter("filter.sortField", "ShortDescription"); // Options include : RefNumber, Phone1, ABN, CreatedDateTime, and ModifiedDateTime
 
-            var response = Get<PagedActionResultsOfCategories>(request);
+            var response = Get<PagedActionResultsOfBrands>(request);
 
             AssertSuccess(response.Messages, response.IsSuccess);
 
@@ -36,14 +36,14 @@ namespace Spenda.SDK.Tests
         }
 
         [TestMethod()]
-        public void GetAllCategory_Test()
+        public void GetAllBrand_Test()
         {
-            var categories = SearchCategories();
+            var brands = SearchBrands();
 
             //loop through to display the records
-            foreach (var category in categories)
+            foreach (var brand in brands)
             {
-                Trace.WriteLine($"Category Id: {category.ID}, Category Description: {category.Description}");
+                Trace.WriteLine($"Brand Id: {brand.ID}, Brand Name: {brand.Name}");
             }
         }
     }

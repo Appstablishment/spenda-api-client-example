@@ -45,6 +45,51 @@ namespace Spenda.SDK.Tests.Mocks
             return newInventory;
         }
 
+        public static InventorySaveRequest GetInventoryWithCreatedBrands(int? Id = null)
+        {
+            var newInventory = new InventorySaveRequest
+            {
+                Object = new InventoryItemT
+                {
+                    ID = Id,
+                    IsShippable = true,
+                    IsOrderable = true,
+                    IsInCatalogue = false,
+                    InventoryCode = "IC27GL63PROB9",
+                    Barcode = "BC27GL63PROB9",
+                    SKU = "SKU27GL63PROB9",
+                    IsActive = true,
+                    IsAssetItem = false,
+                    IsSold = false,
+                    IsOrderTaxExempt = false,
+                    IsPhysical = true,
+                    IsSOHTracked = false,
+                    IsPurchased = false,
+                    UoM = "EA",
+                    UoMDescription = "Each",
+                    ShortDescription = "Product Bug 9",
+                    Description = "Product Bug 9",
+                    StandardSellPriceEx = 500,
+                    StandardSellPriceInc = 90,
+                    LastBuyPriceEx = null,
+                    RRP = 500,
+                    IsVariantMaster = false,
+                    Type = "Inventory",
+                    IsPublished = false,
+                    IsApproved = false,
+                    MinSalesQty = 1.0000000000m,
+                    CreatedWith = "SDK",
+                    Brand = new BrandT
+                    {
+                        ID = 121456
+                    }
+                }
+            };
+
+            return newInventory;
+        }
+
+
         public static InventorySaveRequest GetInventoryWithCreatedCategories(int? Id = null)
         {
             var newInventory = new InventorySaveRequest
@@ -55,9 +100,9 @@ namespace Spenda.SDK.Tests.Mocks
                     IsShippable = true,
                     IsOrderable = true,
                     IsInCatalogue = false,
-                    InventoryCode = "IC42GL63T123",
-                    Barcode = "BC42GL63T123",
-                    SKU = "SKU42GL63T123",
+                    InventoryCode = "IC27GL63PROB17",
+                    Barcode = "BC27GL63PROB17",
+                    SKU = "SKU27GL63PROB17",
                     IsActive = true,
                     IsAssetItem = false,
                     IsSold = false,
@@ -67,8 +112,8 @@ namespace Spenda.SDK.Tests.Mocks
                     IsPurchased = false,
                     UoM = "EA",
                     UoMDescription = "Each",
-                    ShortDescription = "LG 42GL63T 27inch",
-                    Description = "LG 42GL63T 32inch 144Hz Full HD IPS Gaming Monitor",
+                    ShortDescription = "Product Bug 17",
+                    Description = "Product Bug 17",
                     StandardSellPriceEx = 500,
                     StandardSellPriceInc = 90,
                     LastBuyPriceEx = null,
@@ -81,8 +126,7 @@ namespace Spenda.SDK.Tests.Mocks
                     CreatedWith = "SDK",
                     Categories = new List<CategoryT>()
                     {
-                       new CategoryT(){ ID = 34311, Description = "cate 1"},
-                       new CategoryT(){ ID = 34312, Description = "cate 2"},
+                       new CategoryT(){ ID = 34313, Name = "cate 3"},
                     }
                 }
             };
